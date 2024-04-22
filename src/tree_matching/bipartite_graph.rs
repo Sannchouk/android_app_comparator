@@ -68,6 +68,19 @@ impl BipartiteGraph {
         None
     }
 
+    pub fn add_node(&mut self, group: usize, node: Node) {
+        match group {
+            1 => self.node_group_1.push(node),
+            2 => self.node_group_2.push(node),
+            _ => (),
+        }
+    }
+
+    pub fn remove_node(&mut self, node: &Node) {
+        self.node_group_1.retain(|n| n != node);
+        self.node_group_2.retain(|n| n != node);
+    }
+
     pub fn add_edge(&mut self, edge: Edge) -> Result<(), &'static str> {
         if self.get_group(&edge.source.name) == self.get_group(&edge.target.name) {
             return Err("Both nodes are in the same group");

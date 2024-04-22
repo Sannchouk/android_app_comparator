@@ -1,6 +1,7 @@
+#[derive(Debug, PartialEq)]
 pub struct Edge {
-    pub source: Option<usize>,
-    pub target: Option<usize>,
+    pub source: Node,
+    pub target: Node,
 }
 
 #[derive(Debug, PartialEq)]
@@ -18,6 +19,15 @@ impl Clone for Node {
     fn clone(&self) -> Self {
         Node {
             name: self.name.clone(), // Cloning the inner String
+        }
+    }
+}
+
+impl Clone for Edge {
+    fn clone(&self) -> Self {
+        Edge {
+            source: self.source.clone(), // Cloning the inner Node
+            target: self.target.clone(), // Cloning the inner Node
         }
     }
 }
@@ -46,6 +56,32 @@ impl BipartiteGraph {
         }
 
         None
+    }
+
+    pub fn get_group(&self, name: &str) -> Option<usize> {
+        if self.find_node(1, name).is_some() {
+            return Some(1);
+        }
+        if self.find_node(2, name).is_some() {
+            return Some(2);
+        }
+        None
+    }
+
+    pub fn add_edge(&mut self, edge: Edge) -> Result<(), &'static str> {
+        if self.get_group(&edge.source.name) == self.get_group(&edge.target.name) {
+            return Err("Both nodes are in the same group");
+        }
+        self.edges.push(edge);
+        Ok(())
+    }
+
+    pub fn remove_edge(&mut self, edge: &Edge) {
+        self.edges.retain(|e| e != edge);
+    }
+
+    pub fn remove_all_adjacent_edges(&mut self, edge: &Edge) {
+        self.edges.retain(|e| !(e.source == edge.source) ^ (e.target == edge.target));
     }
 }
 

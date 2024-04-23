@@ -1,10 +1,10 @@
 use std::collections::HashMap;
 
-use super::bipartite_graph;
+use super::node::Node;
 
 pub struct Indexer {
-    pub nodes: Vec<bipartite_graph::Node>,
-    pub token_map : HashMap<String, Vec<bipartite_graph::Node>>,
+    pub nodes: Vec<Node>,
+    pub token_map : HashMap<String, Vec<Node>>,
 }
 
 impl Indexer {
@@ -15,7 +15,7 @@ impl Indexer {
         }
     }
 
-    pub fn add_node(&mut self, node: bipartite_graph::Node) {
+    pub fn add_node(&mut self, node: Node) {
         println!("Adding node {:?}", node);
         self.nodes.push(node.clone());
         for tk in &node.tokens {
@@ -23,8 +23,8 @@ impl Indexer {
         }
     }
 
-    pub fn compute_similarity_scores(&self, node: &bipartite_graph::Node) -> HashMap<&bipartite_graph::Node, f64> {
-        let mut neighbors: HashMap<&bipartite_graph::Node, f64> = HashMap::new();
+    pub fn compute_similarity_scores(&self, node: &Node) -> HashMap<&Node, f64> {
+        let mut neighbors: HashMap<&Node, f64> = HashMap::new();
 
         println!("Node tokens: {:?}", node.tokens);
         println!("Token map: {:?}", self.token_map);

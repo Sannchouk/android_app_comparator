@@ -1,7 +1,8 @@
 #[cfg(test)]
 mod tests {
 
-    use pji::tree_matching::bipartite_graph::{BipartiteGraph, Edge, Node};
+    use pji::tree_matching::bipartite_graph::{BipartiteGraph, Edge};
+    use pji::tree_matching::node::Node;
 
     #[test]
     fn test_find_node() {

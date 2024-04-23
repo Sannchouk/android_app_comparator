@@ -1,8 +1,7 @@
 #[cfg(test)]
 mod tests {
-    use pji::tree_matching::indexer::{Indexer, Tokens};
-    use pji::tree_matching::bipartite_graph;
-    use pji::tree_matching::bipartite_graph::Node;
+    use pji::tree_matching::indexer::Indexer;
+    use pji::tree_matching::node::Node;
 
     use super::*;
 

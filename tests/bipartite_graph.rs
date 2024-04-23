@@ -5,9 +5,9 @@ mod tests {
 
     #[test]
     fn test_find_node() {
-        let node1 = Node { name : String::from("name1") };
-        let node2 = Node { name : String::from("name2") };
-        let _node3 = Node { name : String::from("name3") };
+        let node1 = Node { name : String::from("name1"), tokens : vec![] };
+        let node2 = Node { name : String::from("name2"), tokens : vec![] };
+        let _node3 = Node { name : String::from("name3"), tokens : vec![] };
 
         let graph = BipartiteGraph::new(vec![node1.clone()], vec![node2.clone()], vec![]);
 
@@ -19,8 +19,8 @@ mod tests {
 
     #[test]
     fn add_edge() {
-        let node1 = Node { name : String::from("name1") };
-        let node2 = Node { name : String::from("name2") };
+        let node1 = Node { name : String::from("name1"), tokens : vec![] };
+        let node2 = Node { name : String::from("name2"), tokens : vec![] };
         let edge = Edge { source: node1.clone(), target: node2.clone() };
 
         let mut graph = BipartiteGraph::new(vec![node1.clone()], vec![node2.clone()], vec![]);
@@ -34,9 +34,9 @@ mod tests {
 
     #[test]
     fn add_edge_fails_if_same_group() {
-        let node1 = Node { name : String::from("name1") };
-        let node2 = Node { name : String::from("name2") };
-        let node3 = Node { name : String::from("name3") };
+        let node1 = Node { name : String::from("name1"), tokens : vec![] };
+        let node2 = Node { name : String::from("name2"), tokens : vec![] };
+        let node3 = Node { name : String::from("name3"), tokens : vec![] };
         let edge = Edge { source: node1.clone(), target: node2.clone() };
 
         let mut graph = BipartiteGraph::new(vec![node1.clone(), node2.clone()], vec![node3.clone()], vec![]);
@@ -49,8 +49,8 @@ mod tests {
 
     #[test]
     fn remove_edge() {
-        let node1 = Node { name : String::from("name1") };
-        let node2 = Node { name : String::from("name2") };
+        let node1 = Node { name : String::from("name1"), tokens : vec![] };
+        let node2 = Node { name : String::from("name2"), tokens : vec![] };
         let edge = Edge { source: node1.clone(), target: node2.clone() };
 
         let mut graph = BipartiteGraph::new(vec![node1.clone()], vec![node2.clone()], vec![edge.clone()]);
@@ -62,9 +62,9 @@ mod tests {
 
     #[test]
     fn get_group() {
-        let node1 = Node { name : String::from("name1") };
-        let node2 = Node { name : String::from("name2") };
-        let node3 = Node { name : String::from("name3") };
+        let node1 = Node { name : String::from("name1"), tokens : vec![] };
+        let node2 = Node { name : String::from("name2"), tokens : vec![] };
+        let node3 = Node { name : String::from("name3"), tokens : vec![] };
 
         let graph = BipartiteGraph::new(vec![node1.clone(), node2.clone()], vec![node3.clone()], vec![]);
 
@@ -76,11 +76,11 @@ mod tests {
 
     #[test]
     fn remove_all_adjacent_edges() {
-        let node1 = Node { name : String::from("name1") };
-        let node2 = Node { name : String::from("name2") };
-        let node3 = Node { name : String::from("name3") };
-        let node4 = Node { name : String::from("name4") };
-        let node5 = Node { name : String::from("name5") };
+        let node1 = Node { name : String::from("name1"), tokens : vec![] };
+        let node2 = Node { name : String::from("name2"), tokens : vec![] };
+        let node3 = Node { name : String::from("name3"), tokens : vec![] };
+        let node4 = Node { name : String::from("name4"), tokens : vec![] };
+        let node5 = Node { name : String::from("name5"), tokens : vec![] };
         let edge1 = Edge { source: node1.clone(), target: node2.clone() };
         let edge2 = Edge { source: node1.clone(), target: node3.clone() };
         let edge3 = Edge { source: node1.clone(), target: node4.clone() };

@@ -1,5 +1,5 @@
-use super::indexer::Tokens;
 use super::node::Node;
+use std::collections::HashMap;
 
 #[derive(PartialEq, Debug)]
 pub struct Edge {
@@ -7,6 +7,7 @@ pub struct Edge {
     pub target: Node,
 }
 
+#[derive(PartialEq, Debug)]
 pub struct BipartiteGraph {
     pub node_group_1: Vec<Node>,
     pub node_group_2: Vec<Node>,
@@ -85,6 +86,23 @@ impl BipartiteGraph {
 
     pub fn remove_all_adjacent_edges(&mut self, edge: &Edge) {
         self.edges.retain(|e| !(e.source == edge.source) ^ (e.target == edge.target));
+    }
+
+    pub fn build_edges_from_neighborhoods(&mut self, neighborhoods: &HashMap<&Node, HashMap<&Node, f64>>) {
+        println!("Building edges from neighborhoods {:?}", neighborhoods);
+        for (node, neighborhood) in neighborhoods {
+            self.build_edges_from_neighborhood(node, neighborhood);
+        }
+    }
+
+    pub fn build_edges_from_neighborhood(&mut self, node: &Node, neighborhood: &HashMap<&Node, f64>) {
+        println!("Building edges from neighborhood {:?}", node);
+        println!("Building edges from neighborhood {:?}", neighborhood);
+
+
+        for (&n, _) in neighborhood {
+            self.edges.push(Edge { source: node.clone(), target: n.clone()});
+        }
     }
 }
 

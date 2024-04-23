@@ -3,8 +3,6 @@ mod tests {
     use pji::tree_matching::indexer::Indexer;
     use pji::tree_matching::node::Node;
 
-    use super::*;
-
     #[test]
     fn test_compute_idf() {
         let mut indexer = Indexer::new();

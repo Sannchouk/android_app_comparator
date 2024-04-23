@@ -97,4 +97,39 @@ mod tests {
         assert_eq!(graph.edges[0], edge1);
         assert_eq!(graph.edges[1], edge5);
     }
+
+    #[test]
+    fn build_from_neighborhood() {
+        let node1 = Node { name : String::from("name1"), tokens : vec![] };
+        let node2 = Node { name : String::from("name2"), tokens : vec![] };
+        let node3 = Node { name : String::from("name3"), tokens : vec![] };
+        let node4 = Node { name : String::from("name4"), tokens : vec![] };
+        let node5 = Node { name : String::from("name5"), tokens : vec![] };
+
+        let mut neighbors = std::collections::HashMap::new();
+        neighbors.insert(&node1, std::collections::HashMap::new());
+        neighbors.get_mut(&node1).unwrap().insert(&node2, 1.0);
+        neighbors.get_mut(&node1).unwrap().insert(&node3, 1.0);
+        neighbors.get_mut(&node1).unwrap().insert(&node4, 1.0);
+        neighbors.insert(&node5, std::collections::HashMap::new());
+        neighbors.get_mut(&node5).unwrap().insert(&node2, 1.0);
+        neighbors.get_mut(&node5).unwrap().insert(&node3, 1.0);
+
+        let mut graph = BipartiteGraph::new(vec![node1.clone(), node5.clone()], vec![node2.clone(), node3.clone(), node4.clone()], vec![]);
+        graph.build_edges_from_neighborhoods(&neighbors);
+
+        assert_eq!(graph.node_group_1.len(), 2);
+        assert_eq!(graph.node_group_2.len(), 3);
+        assert_eq!(graph.edges.len(), 5);
+        let edge1 = Edge { source: node1.clone(), target: node2.clone() };
+        let edge2 = Edge { source: node1.clone(), target: node3.clone() };
+        let edge3 = Edge { source: node1.clone(), target: node4.clone() };
+        let edge4 = Edge { source: node5.clone(), target: node2.clone() };
+        let edge5 = Edge { source: node5.clone(), target: node3.clone() };
+        assert!(graph.edges.contains(&edge1));
+        assert!(graph.edges.contains(&edge2));
+        assert!(graph.edges.contains(&edge3));
+        assert!(graph.edges.contains(&edge4));
+        assert!(graph.edges.contains(&edge5));
+    }
 }

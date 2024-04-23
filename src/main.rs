@@ -26,10 +26,14 @@ fn main() {
     }
 
     let dir_path = &matches.free[0];
-    let json_file = matches.opt_str("json").unwrap_or("./tree_data.json".to_string());
-
     let mut tree: TreeNode = TreeNode::build_tree(Path::new(dir_path)).unwrap();
-    tree.convert_to_json_file(&json_file).unwrap();
+    if matches.opt_present("json") {
+        let json_file = matches.opt_str("json").unwrap();
+        tree.convert_to_json_file(&json_file).unwrap();
+    }
+    else {
+        tree.print_tree(0);
+    }
 }
 
 fn print_usage(program: &str, opts: &Options) {

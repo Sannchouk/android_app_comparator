@@ -1,10 +1,13 @@
-
 use std::fs;
+use std::fs::File;
+use std::io::Write;
 use std::path::Path;
 use std::io;
+use serde::{Serialize, Deserialize};
+use serde_json;
 
 // Structure d'un nœud de l'arbre
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct TreeNode {
     pub name: String,
     pub children: Vec<TreeNode>,
@@ -77,6 +80,13 @@ impl TreeNode {
             name: self.name.replace(prefix, ""),
             children: new_children,
         }
+    }
+
+    pub fn convert_to_json_file(&mut self, file_path: &str) -> io::Result<()> {
+        let json_data = serde_json::to_string_pretty(self)?;
+        let mut file = File::create(file_path)?;
+        file.write_all(json_data.as_bytes())?;
+        Ok(())
     }
 }
 

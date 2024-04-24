@@ -35,7 +35,26 @@ impl Edge {
     }
 }
 
+impl Clone for BipartiteGraph {
+    fn clone(&self) -> Self {
+        BipartiteGraph {
+            node_group_1: self.node_group_1.clone(),
+            node_group_2: self.node_group_2.clone(),
+            edges: self.edges.clone(),
+        
+        }
+    }
+}
+
 impl BipartiteGraph {
+
+    pub fn new_empty() -> BipartiteGraph {
+        BipartiteGraph {
+            node_group_1: vec![],
+            node_group_2: vec![],
+            edges: vec![],
+        }
+    }
 
     pub fn new(node_group_1: Vec<Node>, node_group_2: Vec<Node>, edges: Vec<Edge>) -> BipartiteGraph {
         BipartiteGraph {

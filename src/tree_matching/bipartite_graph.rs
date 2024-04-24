@@ -101,17 +101,12 @@ impl BipartiteGraph {
     }
 
     pub fn build_edges_from_neighborhoods(&mut self, neighborhoods: &HashMap<&Node, HashMap<&Node, f64>>) {
-        println!("Building edges from neighborhoods {:?}", neighborhoods);
         for (node, neighborhood) in neighborhoods {
             self.build_edges_from_neighborhood(node, neighborhood);
         }
     }
 
-    pub fn build_edges_from_neighborhood(&mut self, node: &Node, neighborhood: &HashMap<&Node, f64>) {
-        println!("Building edges from neighborhood {:?}", node);
-        println!("Building edges from neighborhood {:?}", neighborhood);
-
-
+    fn build_edges_from_neighborhood(&mut self, node: &Node, neighborhood: &HashMap<&Node, f64>) {
         for (&node_in_neighborhood, &value) in neighborhood {
             self.edges.push(Edge { source: node.clone(), target: node_in_neighborhood.clone(), value:value});
         }

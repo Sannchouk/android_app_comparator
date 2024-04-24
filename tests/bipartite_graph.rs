@@ -22,7 +22,7 @@ mod tests {
     fn add_edge() {
         let node1 = Node { name : String::from("name1"), tokens : vec![] };
         let node2 = Node { name : String::from("name2"), tokens : vec![] };
-        let edge = Edge { source: node1.clone(), target: node2.clone() };
+        let edge = Edge::new(node1.clone(), node2.clone());
 
         let mut graph = BipartiteGraph::new(vec![node1.clone()], vec![node2.clone()], vec![]);
 
@@ -38,7 +38,7 @@ mod tests {
         let node1 = Node { name : String::from("name1"), tokens : vec![] };
         let node2 = Node { name : String::from("name2"), tokens : vec![] };
         let node3 = Node { name : String::from("name3"), tokens : vec![] };
-        let edge = Edge { source: node1.clone(), target: node2.clone() };
+        let edge = Edge::new(node1.clone(), node2.clone());
 
         let mut graph = BipartiteGraph::new(vec![node1.clone(), node2.clone()], vec![node3.clone()], vec![]);
 
@@ -52,7 +52,7 @@ mod tests {
     fn remove_edge() {
         let node1 = Node { name : String::from("name1"), tokens : vec![] };
         let node2 = Node { name : String::from("name2"), tokens : vec![] };
-        let edge = Edge { source: node1.clone(), target: node2.clone() };
+        let edge = Edge::new(node1.clone(), node2.clone());
 
         let mut graph = BipartiteGraph::new(vec![node1.clone()], vec![node2.clone()], vec![edge.clone()]);
 
@@ -82,11 +82,11 @@ mod tests {
         let node3 = Node { name : String::from("name3"), tokens : vec![] };
         let node4 = Node { name : String::from("name4"), tokens : vec![] };
         let node5 = Node { name : String::from("name5"), tokens : vec![] };
-        let edge1 = Edge { source: node1.clone(), target: node2.clone() };
-        let edge2 = Edge { source: node1.clone(), target: node3.clone() };
-        let edge3 = Edge { source: node1.clone(), target: node4.clone() };
-        let edge4 = Edge { source: node5.clone(), target: node2.clone() };
-        let edge5 = Edge { source: node5.clone(), target: node3.clone() };
+        let edge1 = Edge::new(node1.clone(), node2.clone());
+        let edge2 = Edge::new(node1.clone(), node3.clone());
+        let edge3 = Edge::new(node1.clone(), node4.clone());
+        let edge4 = Edge::new(node5.clone(), node2.clone());
+        let edge5 = Edge::new(node5.clone(), node3.clone());
 
         let edges = vec![edge1.clone(), edge2.clone(), edge3.clone(), edge4.clone(), edge5.clone()];
         let mut graph = BipartiteGraph::new(vec![node1.clone(), node5.clone()], vec![node2.clone(), node3.clone(), node4.clone()], edges);
@@ -121,11 +121,11 @@ mod tests {
         assert_eq!(graph.node_group_1.len(), 2);
         assert_eq!(graph.node_group_2.len(), 3);
         assert_eq!(graph.edges.len(), 5);
-        let edge1 = Edge { source: node1.clone(), target: node2.clone() };
-        let edge2 = Edge { source: node1.clone(), target: node3.clone() };
-        let edge3 = Edge { source: node1.clone(), target: node4.clone() };
-        let edge4 = Edge { source: node5.clone(), target: node2.clone() };
-        let edge5 = Edge { source: node5.clone(), target: node3.clone() };
+        let edge1 = Edge::new(node1.clone(), node2.clone());
+        let edge2 = Edge::new(node1.clone(), node3.clone());
+        let edge3 = Edge::new(node1.clone(), node4.clone());
+        let edge4 = Edge::new(node5.clone(), node2.clone());
+        let edge5 = Edge::new(node5.clone(), node3.clone());
         assert!(graph.edges.contains(&edge1));
         assert!(graph.edges.contains(&edge2));
         assert!(graph.edges.contains(&edge3));

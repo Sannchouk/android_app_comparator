@@ -5,6 +5,7 @@ use std::collections::HashMap;
 pub struct Edge {
     pub source: Node,
     pub target: Node,
+    pub value : f64,
 }
 
 #[derive(PartialEq, Debug)]
@@ -19,6 +20,17 @@ impl Clone for Edge {
         Edge {
             source: self.source.clone(), // Cloning the inner Node
             target: self.target.clone(), // Cloning the inner Node
+            value: self.value,
+        }
+    }
+}
+
+impl Edge {
+    pub fn new(source: Node, target: Node) -> Edge {
+        Edge {
+            source,
+            target,
+            value: 1.0,
         }
     }
 }
@@ -100,8 +112,8 @@ impl BipartiteGraph {
         println!("Building edges from neighborhood {:?}", neighborhood);
 
 
-        for (&n, _) in neighborhood {
-            self.edges.push(Edge { source: node.clone(), target: n.clone()});
+        for (&node_in_neighborhood, &value) in neighborhood {
+            self.edges.push(Edge { source: node.clone(), target: node_in_neighborhood.clone(), value:value});
         }
     }
 }

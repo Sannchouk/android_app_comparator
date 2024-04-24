@@ -115,8 +115,18 @@ impl BipartiteGraph {
         self.edges.retain(|e| e != edge);
     }
 
+    pub fn connected_edges(&self, edge: &Edge) -> Vec<Edge> {
+        self.edges.iter()
+        .filter(|e| (e.source == edge.source) ^ (e.target == edge.target))
+        .cloned()
+        .collect()
+    }
+
     pub fn remove_all_adjacent_edges(&mut self, edge: &Edge) {
-        self.edges.retain(|e| !(e.source == edge.source) ^ (e.target == edge.target));
+        let edges_to_remove = self.connected_edges(edge);
+        for edge_to_remove in edges_to_remove {
+            self.remove_edge(&edge_to_remove);
+        }
     }
 
     pub fn build_edges_from_neighborhoods(&mut self, neighborhoods: &HashMap<&Node, HashMap<&Node, f64>>) {

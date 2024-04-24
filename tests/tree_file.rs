@@ -87,10 +87,11 @@ fn test_build_tree() {
     // THEN
     assert_eq!(tree.name, "test_dir");
     assert_eq!(tree.children.len(), 2);
-    assert_eq!(tree.children[0].name, "test_dir/subdir");
-    assert_eq!(tree.children[1].name, "test_dir/file1.txt");
-    assert_eq!(tree.children[0].children.len(), 1);
-    assert_eq!(tree.children[0].children[0].name, "test_dir/subdir/file2.txt");
+    let index = tree.children.iter().position(|child| child.name == "test_dir/subdir").unwrap();
+    let child = &tree.children[index];
+    assert_eq!(child.children.len(), 1);
+    assert_eq!(child.children[0].name, "test_dir/subdir/file2.txt");
+    assert!(tree.children.iter().any(|child| child.name == "test_dir/file1.txt"));
 }
 
 #[test]
@@ -180,8 +181,9 @@ fn test_remove_root_directory_from_paths() {
     // THEN
     assert_eq!(new_tree.name, "");
     assert_eq!(new_tree.children.len(), 2);
-    assert_eq!(new_tree.children[0].name, "/subdir");
-    assert_eq!(new_tree.children[1].name, "/file1.txt");
-    assert_eq!(new_tree.children[0].children.len(), 1);
-    assert_eq!(new_tree.children[0].children[0].name, "/subdir/file2.txt");
+    let index = new_tree.children.iter().position(|child| child.name == "/subdir").unwrap();
+    let child = &new_tree.children[index];
+    assert_eq!(child.children.len(), 1);
+    assert_eq!(child.children[0].name, "/subdir/file2.txt");
+    assert!(new_tree.children.iter().any(|child| child.name == "/file1.txt"));
 }

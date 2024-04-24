@@ -64,6 +64,12 @@ impl BipartiteGraph {
         }
     }
 
+    pub fn add_nodes(&mut self, nodes: Vec<Node>, group: usize) {
+        for node in nodes {
+            self.add_node(group, node);
+        }
+    }
+
     pub fn find_node(&self, group: usize, name: &str) -> Option<&Node> {
         let node_group = match group {
             1 => &self.node_group_1,
@@ -101,6 +107,13 @@ impl BipartiteGraph {
     pub fn remove_node(&mut self, node: &Node) {
         self.node_group_1.retain(|n| n != node);
         self.node_group_2.retain(|n| n != node);
+    }
+
+    pub fn add_edges(&mut self, edges: Vec<Edge>) -> Result<(), &'static str> {
+        for edge in edges {
+            self.add_edge(edge)?;
+        }
+        Ok(())
     }
 
     pub fn add_edge(&mut self, edge: Edge) -> Result<(), &'static str> {

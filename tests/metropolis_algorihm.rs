@@ -97,8 +97,6 @@ mod tests {
 
         let mapping = metropolis_algorithm.get_mapping();
         let final_cost = metropolis_algorithm.compute_cost(mapping);
-        println!("Final mapping: {:?}", metropolis_algorithm.get_mapping());
-        println!("Final cost: {}", final_cost);
         assert!(mapping.len() == 2);
         assert!(final_cost == lowest_cost);
     }

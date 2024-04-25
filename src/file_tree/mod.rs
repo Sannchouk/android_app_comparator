@@ -52,12 +52,10 @@ impl TreeNode {
                 root_node.children.push(child_node);
             }
         }
-
         Ok(root_node)
     }
 
     pub fn print_tree(&mut self, depth: usize) {
-        println!("{:indent$}{}", "", self.name, indent = depth * 2);
         for child in &mut self.children {
             child.print_tree(depth + 1);
         }
@@ -89,11 +87,11 @@ impl TreeNode {
         Ok(())
     }
 
-    pub fn all_nodes_data(&self) -> Vec<String> {
+    pub fn get_all_nodes_data(&self) -> Vec<String> {
         let mut nodes = Vec::new();
         nodes.push(self.name.clone());
         for child in &self.children {
-            nodes.append(&mut child.all_nodes_data());
+            nodes.append(&mut child.get_all_nodes_data());
         }
         nodes
     }

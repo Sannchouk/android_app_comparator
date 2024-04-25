@@ -108,28 +108,6 @@ impl MetropolisAlgorithm {
         new_mapping
     }
 
-    pub fn is_full_mapping(&self, mapping: &Mapping) -> bool {
-        let mut nodes = vec![];
-        for edge in mapping {
-            if nodes.contains(&edge.source) || nodes.contains(&edge.target) {
-                return false;
-            }
-            nodes.push(edge.source.clone());
-            nodes.push(edge.target.clone());
-        }
-        let mut res = true;
-        let mut group1 = self.graph.node_group_1.clone();
-        let mut group2 = self.graph.node_group_2.clone();
-        let wanted_nodes = &mut group1;
-        wanted_nodes.append(&mut group2);
-        for node in wanted_nodes {
-            if !nodes.contains(&node) {
-                res = false;
-            }
-        }
-        res
-    }
-
     pub fn run(&mut self) {
         let mut current_cost = self.compute_cost(&self.current_mapping);
         for _ in 0..self.nb_iterations {

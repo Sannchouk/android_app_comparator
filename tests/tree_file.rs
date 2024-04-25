@@ -215,7 +215,7 @@ fn all_nodes_data() {
     };
 
     //WHEN
-    let nodes = tree_node.all_nodes_data();
+    let nodes = tree_node.get_all_nodes_data();
 
     //THEN
     assert_eq!(nodes.len(), 5);

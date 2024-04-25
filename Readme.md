@@ -5,17 +5,23 @@
 - [x] Parse the apk architecture
 - [] Use complex nodes to represent files
 
+
+
 ### Bipartite Graph
 - [x] Define bipartite graph
 - [x] Implement bipartite graph usage
-
+- [x] Transform tree to graph
 
 ### Tokens
 - [x] Implement tokenization process
-- [] Define how to determine tokens
+- [x] Define a first approach to tokenize tokens (path)
+- [] Define a more robust approcah to tokenize
 
 ### Metropolis
 - [x] Define methods to run the algorithm
 - [x] Have functional algorithm (choice : remove conencted edges also remove the edge)
+
+### Optimization
+- [] use &str instead of String  in nodes
 
 

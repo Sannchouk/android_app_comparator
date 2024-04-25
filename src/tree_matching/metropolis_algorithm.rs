@@ -124,7 +124,7 @@ impl MetropolisAlgorithm {
         let mut res = true;
         let mut group1 = self.graph.node_group_1.clone();
         let mut group2 = self.graph.node_group_2.clone();
-        let mut wanted_nodes = &mut group1;
+        let wanted_nodes = &mut group1;
         wanted_nodes.append(&mut group2);
         for node in wanted_nodes {
             if !nodes.contains(&node) {

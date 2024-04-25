@@ -191,7 +191,7 @@ fn test_remove_root_directory_from_paths() {
 #[test]
 fn all_nodes_data() {
     // GIVEN
-    let TreeNode = pji::file_tree::TreeNode {
+    let tree_node = pji::file_tree::TreeNode {
         name: "root".to_string(),
         children: vec![
             pji::file_tree::TreeNode {
@@ -215,7 +215,7 @@ fn all_nodes_data() {
     };
 
     //WHEN
-    let nodes = TreeNode.all_nodes_data();
+    let nodes = tree_node.all_nodes_data();
 
     //THEN
     assert_eq!(nodes.len(), 5);

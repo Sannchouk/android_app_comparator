@@ -101,10 +101,6 @@ impl MetropolisAlgorithm {
                 }
                 edge = self.select_edge_from(&remaining_edges);
             }
-            if edge.is_none() {
-                let mut edge = self.select_edge_from(&remaining_edges);
-                break;
-            }
             let edge = edge.unwrap();
             new_mapping.push(edge.clone());
             self.remove_edge_and_adjacent_ones(&mut remaining_edges, &edge);

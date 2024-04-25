@@ -88,6 +88,15 @@ impl TreeNode {
         file.write_all(json_data.as_bytes())?;
         Ok(())
     }
+
+    pub fn all_nodes_data(&self) -> Vec<String> {
+        let mut nodes = Vec::new();
+        nodes.push(self.name.clone());
+        for child in &self.children {
+            nodes.append(&mut child.all_nodes_data());
+        }
+        nodes
+    }
 }
 
 

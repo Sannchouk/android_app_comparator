@@ -187,3 +187,41 @@ fn test_remove_root_directory_from_paths() {
     assert_eq!(child.children[0].name, "/subdir/file2.txt");
     assert!(new_tree.children.iter().any(|child| child.name == "/file1.txt"));
 }
+
+#[test]
+fn all_nodes_data() {
+    // GIVEN
+    let TreeNode = pji::file_tree::TreeNode {
+        name: "root".to_string(),
+        children: vec![
+            pji::file_tree::TreeNode {
+                name: "child1".to_string(),
+                children: vec![
+                    pji::file_tree::TreeNode {
+                        name: "child1-1".to_string(),
+                        children: vec![],
+                    },
+                    pji::file_tree::TreeNode {
+                        name: "child1-2".to_string(),
+                        children: vec![],
+                    },
+                ],
+            },
+            pji::file_tree::TreeNode {
+                name: "child2".to_string(),
+                children: vec![],
+            },
+        ],
+    };
+
+    //WHEN
+    let nodes = TreeNode.all_nodes_data();
+
+    //THEN
+    assert_eq!(nodes.len(), 5);
+    assert!(nodes.contains(&String::from("root")));
+    assert!(nodes.contains(&String::from("child1")));
+    assert!(nodes.contains(&String::from("child1-1")));
+    assert!(nodes.contains(&String::from("child1-2")));
+    assert!(nodes.contains(&String::from("child2")));
+}

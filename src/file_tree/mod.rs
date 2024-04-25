@@ -11,6 +11,7 @@ use serde_json;
 pub struct TreeNode {
     pub name: String,
     pub children: Vec<TreeNode>,
+    pub parent: Option<Box<TreeNode>>,
 }
 
 impl TreeNode {
@@ -18,6 +19,7 @@ impl TreeNode {
         TreeNode {
             name: name.to_string(),
             children: Vec::new(),
+            parent: None,
         }
     }
 
@@ -30,6 +32,7 @@ impl TreeNode {
         TreeNode {
             name: self.name.clone(),
             children: new_children,
+            parent: None,
         }
     }
 
@@ -39,6 +42,7 @@ impl TreeNode {
         let mut root_node = TreeNode {
             name: root_path.to_string_lossy().to_string(),
             children: Vec::new(),
+            parent: None,
         };
 
         if root_path.is_dir() {
@@ -77,6 +81,7 @@ impl TreeNode {
         TreeNode {
             name: self.name.replace(prefix, ""),
             children: new_children,
+            parent:None,
         }
     }
 

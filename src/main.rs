@@ -13,7 +13,7 @@ fn main() {
 
     let matches = match opts.parse(&args[1..]) {
         Ok(m) => m,
-        Err(e) => {
+        Err(_e) => {
             print_usage(&program, &opts);
             process::exit(1);
         }

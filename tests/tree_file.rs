@@ -200,18 +200,23 @@ fn all_nodes_data() {
                     pji::file_tree::TreeNode {
                         name: "child1-1".to_string(),
                         children: vec![],
+                        parent: None,
                     },
                     pji::file_tree::TreeNode {
                         name: "child1-2".to_string(),
                         children: vec![],
+                        parent: None,
                     },
                 ],
+                parent: None,
             },
             pji::file_tree::TreeNode {
                 name: "child2".to_string(),
                 children: vec![],
+                parent: None,
             },
         ],
+        parent: None,
     };
 
     //WHEN

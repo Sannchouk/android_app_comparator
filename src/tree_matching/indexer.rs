@@ -36,7 +36,6 @@ impl Indexer {
 
     pub fn compute_similarity_scores(&self) -> HashMap<&Node, HashMap<&Node, f64>> {
         let mut neighbors: HashMap<&Node, HashMap<&Node, f64>> = HashMap::new();
-        println!("Token map: {:?}", self.token_map);
         for node in &self.group1 {
             *neighbors.entry(&node).or_insert(HashMap::new()) = self.compute_similary_scores_for_node(&node);
             }
@@ -47,15 +46,12 @@ impl Indexer {
         let mut neighbors: HashMap<&Node, f64> = HashMap::new();
         for tk in &node.tokens {
             for neighbor in self.token_map.get(tk).unwrap() {
-                println!("Neighbor: {:?}", neighbor);
-                println!("Node: {:?}", node);
                 if self.group1.contains(&node) && self.group1.contains(&neighbor) {
                     continue;
                 } else if self.group2.contains(&node) && self.group2.contains(&neighbor) {
                     continue;
                 } else {
                     let score = self.compute_idf(tk);
-                    println!("Score: {:?}", score);
                     if score > 0.0 {
                         *neighbors.entry(neighbor).or_insert(0.0) += score;
                     }

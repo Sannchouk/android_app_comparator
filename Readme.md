@@ -15,6 +15,11 @@
 - [x] Define a first approach to tokenize tokens (path)
 - [] Define a more robust approach to tokenize
 
+### Similarity
+- [x] Label similarity
+- [] Penalization
+- [] Propagation
+
 ### Metropolis
 - [x] Define methods to run the algorithm
 - [x] Have functional algorithm (choice : remove conencted edges also remove the edge)

@@ -38,4 +38,9 @@ impl Node {
     pub fn get_tokens(&self) -> &Vec<String> {
         &self.tokens
     }
+
+    pub fn tokenize(&mut self) {
+        self.tokens = self.name.split('/').map(|s| s.to_string()).collect();
+        println!("Tokens: {:?}", self.tokens);
+    }
 }

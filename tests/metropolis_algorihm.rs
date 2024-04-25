@@ -45,6 +45,28 @@ mod tests {
     }
 
     #[test]
+    fn remove_all_adjacent_edges() {
+        let mut graph = BipartiteGraph::new_empty(); 
+        let node1 = Node { name: "node1".to_string(), tokens: vec![] };
+        let node2 = Node { name: "node2".to_string(), tokens: vec![] };
+        let node3 = Node { name: "node3".to_string(), tokens: vec![] };
+        let edges: Mapping = vec![
+            Edge { source: node2.clone(), target: node3.clone(), value: 2.0 },
+            Edge { source: node1.clone(), target: node3.clone(), value: 3.0 },
+        ];
+
+        graph.add_nodes(vec![node1.clone(), node2.clone()], 1);
+        graph.add_nodes(vec![node3.clone()], 2);
+        let _ = graph.add_edges(edges.clone());
+
+        let mut metropolis_algorithm = MetropolisAlgorithm::new(graph, 2.5, 1.0, 10);
+        let mut remaining_edges = edges.clone();
+        let edge = Edge { source: node2.clone(), target: node3.clone(), value: 2.0 };
+        metropolis_algorithm.remove_edge_and_adjacent_ones(&mut remaining_edges, &edge);
+        assert!(remaining_edges.len() == 0);
+    }
+
+    #[test]
     fn test_algorithm() {
         // GIVEN
         let node1 = Node { name: "node1".to_string(), tokens: vec![] };

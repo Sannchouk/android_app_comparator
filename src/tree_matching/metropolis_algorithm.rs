@@ -59,7 +59,8 @@ impl MetropolisAlgorithm {
     fn connected_edges(&self, edges: &Vec<Edge>, edge: &Edge) -> Vec<Edge> {
         let mut connected_edges = vec![];
         for e in edges {
-            if (e.source == edge.source) ^ (e.target == edge.target){
+            if (e.source == edge.source) || (e.target == edge.target){
+                // We add the edge to the list of connected edges
                 connected_edges.push(e.clone());
             }
         }
@@ -72,7 +73,7 @@ impl MetropolisAlgorithm {
     }
     
     /// Removes all the edges connected to a given edge from a list of edges
-    pub fn remove_all_adjacent_edges(&mut self, edges: &mut Mapping, edge: &Edge){
+    pub fn remove_edge_and_adjacent_ones(&mut self, edges: &mut Mapping, edge: &Edge){
         let connected_edges = self.connected_edges(edges, edge);
         Self::remove_edges(edges, &connected_edges);
     }
@@ -83,26 +84,30 @@ impl MetropolisAlgorithm {
         let mut remaining_edges = self.graph.edges.clone();
         remaining_edges.sort_by(|a, b| a.value.partial_cmp(&b.value).unwrap());
         let to_keep = rand::thread_rng().gen_range(0..self.current_mapping.len());
-        println!("To keep: {:?}", to_keep);
         for _ in 0..to_keep {
-            println!("Remaining edges: {:?}", remaining_edges);
             let edge = remaining_edges.pop();
             if edge.is_none() {
                 break;
             }
             let edge = edge.unwrap();
             new_mapping.push(edge.clone());
-            self.remove_all_adjacent_edges(&mut remaining_edges, &edge);
+            self.remove_edge_and_adjacent_ones(&mut remaining_edges, &edge);
         }
-        println!("Wip mapping: {:?}", new_mapping);
         while !remaining_edges.is_empty() {
-            let edge = self.select_edge_from(&remaining_edges);
+            let mut edge = self.select_edge_from(&remaining_edges);
+            loop {
+                if edge.is_some() {
+                    break;
+                }
+                edge = self.select_edge_from(&remaining_edges);
+            }
             if edge.is_none() {
+                let mut edge = self.select_edge_from(&remaining_edges);
                 break;
             }
             let edge = edge.unwrap();
             new_mapping.push(edge.clone());
-            self.remove_all_adjacent_edges(&mut remaining_edges, &edge);
+            self.remove_edge_and_adjacent_ones(&mut remaining_edges, &edge);
         }
         new_mapping
     }
@@ -129,14 +134,12 @@ impl MetropolisAlgorithm {
         res
     }
 
-    
-
     pub fn run(&mut self) {
         let mut current_cost = self.compute_cost(&self.current_mapping);
         for _ in 0..self.nb_iterations {
             let new_mapping = self.select_new_mapping();
             let new_cost = self.compute_cost(&new_mapping);
-            if new_cost < current_cost && self.is_full_mapping(&new_mapping){
+            if new_cost < current_cost {
                 self.current_mapping = new_mapping;
                 current_cost = new_cost;
             }

@@ -16,6 +16,6 @@
 
 ### Metropolis
 - [x] Define methods to run the algorithm
-- [] Have functional algorithm 
+- [x] Have functional algorithm (choice : remove conencted edges also remove the edge)
 
 

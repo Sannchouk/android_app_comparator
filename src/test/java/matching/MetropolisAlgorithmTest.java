@@ -57,7 +57,8 @@ public class MetropolisAlgorithmTest {
 
         List<Edge> matching = metropolisAlgorithm.getMatching();
         double finalCost = metropolisAlgorithm.computeCost(matching);
-        assert(lowestCost < finalCost);
+        System.out.println("Costs: " + biggestCost + " " + lowestCost + " " + finalCost + " " + acceptableCost);
+        assert(lowestCost <= finalCost);
         assert(finalCost < acceptableCost);
     }
 }

@@ -3,10 +3,7 @@ package matching;
 import bipartiteGraph.Node;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -24,7 +21,7 @@ public class SimilarityScoresComputerTest {
     public void testComputeSimilarityScores() {
         Indexer indexer = createMockIndexer();
         SimilarityScoresComputer similarityScoresComputer = new SimilarityScoresComputer(indexer);
-        Map<Node, Map<Node, Double>> similarityScores = similarityScoresComputer.computeSimilarityScores();
+        Map<Node, HashMap<Node, Double>> similarityScores = similarityScoresComputer.computeSimilarityScores();
 
         assertEquals(2, similarityScores.size());
         assertTrue(similarityScores.containsKey(node1));

@@ -13,16 +13,16 @@ public class SimilarityScoresComputer {
         this.indexer = indexer;
     }
 
-    public Map<Node, Map<Node, Double>> computeSimilarityScores() {
-        Map<Node, Map<Node, Double>> neighbors = new HashMap<>();
+    public Map<Node, HashMap<Node, Double>> computeSimilarityScores() {
+        Map<Node, HashMap<Node, Double>> neighbors = new HashMap<>();
         for (Node node : indexer.getGroup1()) {
             neighbors.put(node, computeSimilarityScoresForNode(node));
         }
         return neighbors;
     }
 
-    public Map<Node, Double> computeSimilarityScoresForNode(Node node) {
-        Map<Node, Double> neighbors = new HashMap<>();
+    public HashMap<Node, Double> computeSimilarityScoresForNode(Node node) {
+        HashMap<Node, Double> neighbors = new HashMap<>();
         for (String tk : node.getTokens()) {
             for (Node neighbor : indexer.getTokenMap().getOrDefault(tk, Collections.emptyList())) {
                 if ((indexer.getGroup1().contains(node) && indexer.getGroup1().contains(neighbor)) ||

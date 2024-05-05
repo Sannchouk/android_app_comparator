@@ -1,13 +1,22 @@
 package bipartiteGraph;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class BipartiteGraph {
+    @Getter
+    @Setter
     private List<Node> nodeGroup1;
+    @Getter
+    @Setter
     private List<Node> nodeGroup2;
+    @Getter
+    @Setter
     private List<Edge> edges;
 
     public BipartiteGraph() {

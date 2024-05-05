@@ -50,7 +50,7 @@ public class MetropolisAlgorithm {
     }
 
     private List<Edge> selectNewMatching() {
-        MatchingSuggester suggester = new MatchingSuggester();
+        MatchingSuggester suggester = new MatchingSuggester(gamma);
         return suggester.suggestNewMatching(graph, currentMatching);
     }
 }

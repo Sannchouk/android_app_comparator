@@ -10,6 +10,12 @@ import java.util.Random;
 
 public class MatchingSuggester {
 
+    private final double gamma;
+
+    public MatchingSuggester(double gamma) {
+        this.gamma = gamma;
+    }
+
     public List<Edge> suggestNewMatching(BipartiteGraph graph, List<Edge> currentMatching) {
         List<Edge> newMatching = new ArrayList<>();
         List<Edge> remainingEdges = new ArrayList<>(graph.getEdges());
@@ -32,7 +38,13 @@ public class MatchingSuggester {
     }
 
     private Edge selectEdgeFrom(List<Edge> edges) {
-        return edges.get(new Random().nextInt(edges.size()));
+        while (true) {
+            for (Edge edge : edges) {
+                if (new Random().nextDouble() < gamma) {
+                    return edge;
+                }
+            }
+        }
     }
 
     private void removeConnectedEdges(List<Edge> edges, Edge edge) {

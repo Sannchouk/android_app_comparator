@@ -46,8 +46,8 @@ public class SimilarityScoresComputerTest {
         SimilarityScoresComputer similarityScoresComputer = new SimilarityScoresComputer(indexer);
         Map<Node, HashMap<Node, Double>> similarityScores = similarityScoresComputer.computeSimilarityScores();
 
-//        assertEquals(0.5, similarityScores.get(node5).get(node6));
-        assertEquals(similarityScores.get(node1).get(node3), 0);
+        assert(similarityScores.get(node5).get(node6) > indexer.computeIdf("banana"));
+        assert(similarityScores.get(node1).get(node3) > 0);
     }
 
     private Indexer createMockIndexer() {

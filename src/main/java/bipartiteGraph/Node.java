@@ -1,9 +1,6 @@
 package bipartiteGraph;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +9,14 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 public class Node {
-    @Getter
     @Setter
     private int id;
     private String name;
     private List<String> tokens;
     @Setter
     private Node parent = null;
+    @NonNull
+    private List<Node> children = new ArrayList<>();
 
     public Node(String name) {
         this.name = name;

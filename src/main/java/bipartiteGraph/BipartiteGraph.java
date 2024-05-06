@@ -45,6 +45,7 @@ public class BipartiteGraph {
             Integer parentId = entry.getValue();
             Node parent = nodes.stream().filter(n -> n.getId() == parentId).findFirst().orElse(null);
             node.setParent(parent);
+            parent.getChildren().add(node);
         }
     }
 

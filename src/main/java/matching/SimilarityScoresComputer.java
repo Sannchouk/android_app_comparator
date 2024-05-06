@@ -44,11 +44,31 @@ public class SimilarityScoresComputer {
         }
     }
 
+    private void applyPenalizations() {
+        for (Node node : indexer.getGroup1()) {
+            for (Node neighbor : indexer.getGroup2()) {
+                penalize(node, neighbor);
+            }
+        }
+    }
+
+    private void penalize(Node node, Node neighbor) {
+        int nodeChildren = node.getChildren().size();
+        int neighborChildren = neighbor.getChildren().size();
+        if (nodeChildren == 0 || neighborChildren == 0) {
+            return;
+        }
+        double penalization = (double) Math.abs(nodeChildren - neighborChildren) / Math.max(nodeChildren, neighborChildren);
+        double score = similarityScores.get(node).get(neighbor);
+        similarityScores.get(node).put(neighbor, score * (1 - penalization));
+    }
+
     public Map<Node, HashMap<Node, Double>> computeSimilarityScores() {
         for (Node node : indexer.getGroup1()) {
             similarityScores.put(node, computeSimilarityScoresForNode(node));
         }
         computePropagationScores();
+        applyPenalizations();
         return similarityScores;
     }
 

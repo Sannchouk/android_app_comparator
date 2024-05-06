@@ -50,6 +50,26 @@ public class SimilarityScoresComputerTest {
         assert(similarityScores.get(node1).get(node3) > 0);
     }
 
+    @Test
+    public void testPenalization() {
+        Indexer indexer = createMockIndexer();
+        Node node5 = new Node("test5", Arrays.asList("apple", "banana"));
+        Node node6 = new Node("test6", Arrays.asList("banana", "orange"));
+        Node node7 = new Node("test7", Arrays.asList("banana", "orange"));
+        SimilarityScoresComputer similarityScoresComputer = new SimilarityScoresComputer(indexer);
+        Map<Node, HashMap<Node, Double>> similarityScoresBeforeNewOnes = similarityScoresComputer.computeSimilarityScores();
+        node5.setParent(node1);
+        node6.setParent(node4);
+        node7.setParent(node4);
+        indexer.addNode(node5, 1);
+        indexer.addNode(node6, 2);
+        indexer.addNode(node7, 2);
+        similarityScoresComputer = new SimilarityScoresComputer(indexer);
+        Map<Node, HashMap<Node, Double>> similarityScoresAfterNewOnes = similarityScoresComputer.computeSimilarityScores();
+
+        assert(similarityScoresBeforeNewOnes.get(node1).get(node4) < similarityScoresAfterNewOnes.get(node1).get(node4));
+    }
+
     private Indexer createMockIndexer() {
         Indexer indexer = new Indexer();
         indexer.addNode(node1, 1);

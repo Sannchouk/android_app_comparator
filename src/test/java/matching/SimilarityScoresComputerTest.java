@@ -27,8 +27,10 @@ public class SimilarityScoresComputerTest {
         assertTrue(similarityScores.containsKey(node1));
         assertTrue(similarityScores.containsKey(node2));
         System.out.println(similarityScores);
-        assertEquals(1, similarityScores.get(node1).size());
-        assertEquals(0, similarityScores.get(node2).size());
+        assertEquals(2, similarityScores.get(node1).size());
+        assertEquals(2, similarityScores.get(node2).size());
+        assertEquals(0.0, similarityScores.get(node1).get(node3));
+        assertEquals(0.0, similarityScores.get(node2).get(node4));
         assertEquals(indexer.computeIdf("apple"), similarityScores.get(node1).get(node4));
     }
 

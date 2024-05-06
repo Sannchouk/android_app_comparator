@@ -34,6 +34,22 @@ public class SimilarityScoresComputerTest {
         assertEquals(indexer.computeIdf("apple"), similarityScores.get(node1).get(node4));
     }
 
+    @Test
+    public void testPropagationScores(){
+        Indexer indexer = createMockIndexer();
+        Node node5 = new Node("test5", Arrays.asList("apple", "banana"));
+        Node node6 = new Node("test6", Arrays.asList("banana", "orange"));
+        node5.setParent(node1);
+        node6.setParent(node3);
+        indexer.addNode(node5, 1);
+        indexer.addNode(node6, 2);
+        SimilarityScoresComputer similarityScoresComputer = new SimilarityScoresComputer(indexer);
+        Map<Node, HashMap<Node, Double>> similarityScores = similarityScoresComputer.computeSimilarityScores();
+
+//        assertEquals(0.5, similarityScores.get(node5).get(node6));
+        assertEquals(similarityScores.get(node1).get(node3), 0);
+    }
+
     private Indexer createMockIndexer() {
         Indexer indexer = new Indexer();
         indexer.addNode(node1, 1);

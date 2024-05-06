@@ -3,14 +3,17 @@ package bipartiteGraph;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @AllArgsConstructor
+@ToString
 public class Node {
     @Getter
+    @Setter
     private int id;
     private String name;
     private List<String> tokens;
@@ -60,13 +63,5 @@ public class Node {
         int result = name.hashCode();
         result = 31 * result + tokens.hashCode();
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Node{" +
-                "name='" + name + '\'' +
-                ", tokens=" + tokens +
-                '}';
     }
 }

@@ -1,5 +1,8 @@
 package fileTree;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -7,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileTree {
+    public static int ID_COUNTER = 0;
+    @Getter
+    @Setter
+    private int id;
     private String data;
     private FileTree parent;
     private List<FileTree> children;
@@ -15,6 +22,16 @@ public class FileTree {
         this.data = data;
         this.parent = null;
         this.children = new ArrayList<>();
+        this.id = ID_COUNTER++;
+    }
+
+    public List<FileTree> getNodes() {
+        List<FileTree> nodes = new ArrayList<>();
+        nodes.add(this);
+        for (FileTree child : children) {
+            nodes.addAll(child.getNodes());
+        }
+        return nodes;
     }
 
     public String getData() {

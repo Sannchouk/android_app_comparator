@@ -10,7 +10,8 @@ public class SimilarityScoresComputer {
     private final Indexer indexer;
 
     private static final int PROPAGATION = 3;
-    private static final float[] PROPAGATION_WEIGHTS = {0.4f, 0.04f, 0.004f};
+    private static final float[] W_PROPAGATION_WEIGHTS = {0.4f, 0.04f, 0.004f};
+    private static final float[] V_PROPAGATION_WEIGHTS = {0.8f, 0.08f, 0.008f};
 
     private final Map<Node, HashMap<Node, Double>> similarityScores = new HashMap<>();
 
@@ -19,24 +20,35 @@ public class SimilarityScoresComputer {
         this.indexer = indexer;
     }
 
-    private double computePropagationScore(Node node, Node neighbor, double score) {
+    private void computePropagationScores() {
+        for (Node node : indexer.getGroup1()) {
+            for (Node neighbor : indexer.getGroup2()) {
+                computePropagationScore(node, neighbor);
+            }
+        }
+    }
+
+    private void computePropagationScore(Node node, Node neighbor) {
+        double score = similarityScores.get(node).get(neighbor);
         double parentScore;
         Node nodeParent = node.getParent();
         Node neighborParent = neighbor.getParent();
         for (int i = 0; i < PROPAGATION; i++) {
-            parentScore = similarityScores.getOrDefault(nodeParent, new HashMap<>()).getOrDefault(neighborParent, 0.0);
-            score = score + PROPAGATION_WEIGHTS[i] * parentScore;
-//            if (nodeParent != null && neighbo1rParent != null) {
-//                similarityScores.getOrDefault()
-//            }
+            if (nodeParent != null && neighborParent != null) {
+                parentScore = similarityScores.get(nodeParent).get(neighborParent);
+                double newScore = score + W_PROPAGATION_WEIGHTS[i] * parentScore;
+                double newParentScore = parentScore + V_PROPAGATION_WEIGHTS[i] * score;
+                similarityScores.get(node).put(neighbor, newScore);
+                similarityScores.get(nodeParent).put(neighborParent, newParentScore);
+            }
         }
-        return score;
     }
 
     public Map<Node, HashMap<Node, Double>> computeSimilarityScores() {
         for (Node node : indexer.getGroup1()) {
             similarityScores.put(node, computeSimilarityScoresForNode(node));
         }
+        computePropagationScores();
         return similarityScores;
     }
 

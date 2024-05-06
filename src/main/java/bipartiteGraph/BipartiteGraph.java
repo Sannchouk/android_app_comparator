@@ -1,12 +1,9 @@
 package bipartiteGraph;
 
 import fileTree.FileTree;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,6 +24,8 @@ public class BipartiteGraph {
         List<Node> nodes2 = new ArrayList<>();
         initNodes(tree1, nodes1);
         initNodes(tree2, nodes2);
+        graph.addNodes(nodes1, 1);
+        graph.addNodes(nodes2, 2);
         return graph;
     }
 
@@ -34,6 +33,7 @@ public class BipartiteGraph {
         Map<Node, Integer> parents = new HashMap<>();
         for (FileTree fileTree : tree.getNodes()) {
             Node node = new Node(fileTree.getData());
+            node.setId(fileTree.getId());
             node.tokenize();
             nodes.add(node);
             if (fileTree.getParent() != null) {
@@ -146,7 +146,7 @@ public class BipartiteGraph {
         for (Map.Entry<Node, Double> entry : neighborhood.entrySet()) {
             Node neighbor = entry.getKey();
             double value = entry.getValue();
-            edges.add(new Edge(node, neighbor, value));
+            if (value > 0.0) edges.add(new Edge(node, neighbor, value));
         }
     }
 

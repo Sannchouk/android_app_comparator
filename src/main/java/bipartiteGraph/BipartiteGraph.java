@@ -23,18 +23,19 @@ public class BipartiteGraph {
         BipartiteGraph graph = new BipartiteGraph();
         List<Node> nodes1 = new ArrayList<>();
         List<Node> nodes2 = new ArrayList<>();
-        initNodes(tree1, nodes1);
-        initNodes(tree2, nodes2);
+        initNodes(tree1, nodes1, 1);
+        initNodes(tree2, nodes2, 2);
         graph.addNodes(nodes1, 1);
         graph.addNodes(nodes2, 2);
         return graph;
     }
 
-    private static void initNodes(FileTree tree, List<Node> nodes) {
+    private static void initNodes(FileTree tree, List<Node> nodes, int group) {
         Map<Node, Integer> parents = new HashMap<>();
         for (FileTree fileTree : tree.getNodes()) {
             Node node = new Node(fileTree.getData());
             node.setId(fileTree.getId());
+            node.setGroup(group);
             tokenizer.tokenize(node);
             nodes.add(node);
             if (fileTree.getParent() != null) {

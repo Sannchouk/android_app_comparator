@@ -39,6 +39,8 @@ public class SimilarityScoresComputerTest {
         Indexer indexer = createMockIndexer();
         Node node5 = new Node("test5", Arrays.asList("apple", "banana"));
         Node node6 = new Node("test6", Arrays.asList("banana", "orange"));
+        node5.setGroup(1);
+        node6.setGroup(2);
         node5.setParent(node1);
         node6.setParent(node3);
         indexer.addNode(node5, 1);
@@ -56,6 +58,9 @@ public class SimilarityScoresComputerTest {
         Node node5 = new Node("test5", Arrays.asList("apple", "banana"));
         Node node6 = new Node("test6", Arrays.asList("banana", "orange"));
         Node node7 = new Node("test7", Arrays.asList("banana", "orange"));
+        node5.setGroup(1);
+        node6.setGroup(2);
+        node7.setGroup(2);
         SimilarityScoresComputer similarityScoresComputer = new SimilarityScoresComputer(indexer);
         Map<Node, HashMap<Node, Double>> similarityScoresBeforeNewOnes = similarityScoresComputer.computeSimilarityScores();
         node5.setParent(node1);
@@ -72,6 +77,10 @@ public class SimilarityScoresComputerTest {
 
     private Indexer createMockIndexer() {
         Indexer indexer = new Indexer();
+        node1.setGroup(1);
+        node2.setGroup(1);
+        node3.setGroup(2);
+        node4.setGroup(2);
         indexer.addNode(node1, 1);
         indexer.addNode(node2, 1);
         indexer.addNode(node3, 2);

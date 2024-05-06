@@ -7,11 +7,14 @@ import matching.MetropolisAlgorithm;
 import matching.SimilarityScoresComputer;
 import org.junit.jupiter.api.Test;
 
+import javax.sound.midi.SysexMessage;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class IntegrationTest {
 
@@ -44,10 +47,7 @@ public class IntegrationTest {
         metropolisAlgorithm.run();
 
         List<Edge> matching = metropolisAlgorithm.getMatching();
-        System.out.println("Matching: " + matching);
-        System.out.println("Matching length: " + matching.size());
-        System.out.println("Group 1 length: " + graph_nodes_1.size());
-        System.out.println("Group 2 length: " + graph_nodes_2.size());
+        assertTrue(matching.size() < graph_nodes_1.size());
     }
 
     @Test
@@ -68,6 +68,7 @@ public class IntegrationTest {
         var similarityScoresComputer = new SimilarityScoresComputer(indexer);
         var similarityScores = similarityScoresComputer.computeSimilarityScores();
         graph.buildEdgesFromNeighborhoods(similarityScores);
+        assertFalse(graph.getEdges().isEmpty());
 
         MetropolisAlgorithm metropolisAlgorithm = new MetropolisAlgorithm(
                 graph,
@@ -79,9 +80,6 @@ public class IntegrationTest {
         metropolisAlgorithm.run();
 
         List<Edge> matching = metropolisAlgorithm.getMatching();
-        System.out.println("Matching: " + matching);
-        System.out.println("Matching length: " + matching.size());
-        System.out.println("Group 1 length: " + graph_nodes_1.size());
-        System.out.println("Group 2 length: " + graph_nodes_2.size());
+        assertEquals(graph_nodes_1.size(), matching.size());
     }
 }

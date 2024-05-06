@@ -4,6 +4,7 @@ import bipartiteGraph.BipartiteGraph;
 import bipartiteGraph.Edge;
 import lombok.Getter;
 
+import java.awt.desktop.SystemEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class MetropolisAlgorithm {
     private final double gamma;
     private final int nbIterations;
     private List<Edge> currentMatching;
+    private final MatchingSuggester suggester;
 
     public MetropolisAlgorithm(BipartiteGraph graph, double beta, double gamma, int nbIterations) {
         this.graph = graph;
@@ -21,6 +23,7 @@ public class MetropolisAlgorithm {
         this.gamma = gamma;
         this.nbIterations = nbIterations;
         this.currentMatching = new ArrayList<>(graph.getEdges());
+        this.suggester = new MatchingSuggester(gamma);
     }
 
     public List<Edge> getMatching() {
@@ -33,6 +36,9 @@ public class MetropolisAlgorithm {
             cost += edge.getValue();
         }
         cost *= -beta;
+        if (edges.isEmpty()) {
+            return Double.POSITIVE_INFINITY;
+        }
         cost /= edges.size();
         return Math.exp(cost);
     }
@@ -42,7 +48,11 @@ public class MetropolisAlgorithm {
         for (int i = 0; i < nbIterations; i++) {
             List<Edge> newMatching = selectNewMatching();
             double newCost = computeCost(newMatching);
+            System.out.println("New cost: " + newCost + " Current cost: " + currentCost);
+            System.out.println("New matching: " + newMatching.size() + " Current matching: " + currentMatching.size());
             if (newCost < currentCost) {
+                System.out.println("In if");
+                System.out.println("New matching: " + newMatching.size());
                 currentMatching = newMatching;
                 currentCost = newCost;
             }
@@ -50,7 +60,6 @@ public class MetropolisAlgorithm {
     }
 
     private List<Edge> selectNewMatching() {
-        MatchingSuggester suggester = new MatchingSuggester(gamma);
         return suggester.suggestNewMatching(graph, currentMatching);
     }
 }

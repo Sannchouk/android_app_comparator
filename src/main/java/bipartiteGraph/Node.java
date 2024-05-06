@@ -9,12 +9,13 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor
-@ToString
 public class Node {
     @Setter
     private int id;
     private String name;
     private List<String> tokens;
+    @Setter
+    private Integer group = null;
     @Setter
     private Node parent = null;
     @NonNull
@@ -55,5 +56,9 @@ public class Node {
         int result = name.hashCode();
         result = 31 * result + tokens.hashCode();
         return result;
+    }
+
+    public String toString() {
+        return name;
     }
 }

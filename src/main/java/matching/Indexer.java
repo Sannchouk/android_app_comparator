@@ -38,9 +38,9 @@ public class Indexer {
             default:
                 throw new IllegalArgumentException("Invalid group number");
         }
-
         for (String tk : node.getTokens()) {
-            tokenMap.computeIfAbsent(tk, k -> new ArrayList<>()).add(node);
+            tokenMap.putIfAbsent(tk, new ArrayList<>());
+            tokenMap.get(tk).add(node);
         }
     }
 

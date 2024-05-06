@@ -79,8 +79,7 @@ public class SimilarityScoresComputer {
         }
         for (String tk : node.getTokens()) {
             for (Node neighbor : indexer.getTokenMap().getOrDefault(tk, Collections.emptyList())) {
-                if ((indexer.getGroup1().contains(node) && indexer.getGroup1().contains(neighbor)) ||
-                        (indexer.getGroup2().contains(node) && indexer.getGroup2().contains(neighbor))) {
+                if ((node.getGroup() != null && node.getGroup().equals(neighbor.getGroup()))) {
                     continue;
                 } else {
                     double score = indexer.computeIdf(tk);

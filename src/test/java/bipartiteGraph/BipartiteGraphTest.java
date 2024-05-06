@@ -6,6 +6,7 @@ import org.mockito.Mock;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.*;
@@ -159,11 +160,17 @@ public class BipartiteGraphTest {
 
     @Test
     public void testBuildFromTrees() throws IOException {
-        Files.createFile(Paths.get("name1"));
-        Files.createFile(Paths.get("name2"));
-        Files.createFile(Paths.get("name3"));
-        Files.createFile(Paths.get("name4"));
-        Files.createFile(Paths.get("name5"));
+        Path path1 = Paths.get("name1");
+        Path path2 = Paths.get("name2");
+        Path path3 = Paths.get("name3");
+        Path path4 = Paths.get("name4");
+        Path path5 = Paths.get("name5");
+
+        Files.createFile(path1);
+        Files.createFile(path2);
+        Files.createFile(path3);
+        Files.createFile(path4);
+        Files.createFile(path5);
         FileTree tree1 = new FileTree("name1");
         FileTree tree2 = new FileTree("name2");
         FileTree tree3 = new FileTree("name3");
@@ -180,10 +187,10 @@ public class BipartiteGraphTest {
         assertEquals(graph.getNodeGroup1().get(1).getName(), "name3");
         assertEquals(graph.getNodeGroup1().get(1).getParent(), graph.getNodeGroup1().get(0));
 
-        Files.delete(Paths.get("name1"));
-        Files.delete(Paths.get("name2"));
-        Files.delete(Paths.get("name3"));
-        Files.delete(Paths.get("name4"));
-        Files.delete(Paths.get("name5"));
+        Files.delete(path1);
+        Files.delete(path2);
+        Files.delete(path3);
+        Files.delete(path4);
+        Files.delete(path5);
     }
 }

@@ -1,14 +1,21 @@
 package bipartiteGraph;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
+@AllArgsConstructor
 public class Node {
+    @Getter
+    private int id;
     private String name;
     private List<String> tokens;
+    @Setter
+    private Node parent = null;
 
     public Node(String name) {
         this.name = name;

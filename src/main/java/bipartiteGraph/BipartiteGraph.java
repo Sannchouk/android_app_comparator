@@ -1,40 +1,57 @@
 package bipartiteGraph;
 
+import fileTree.FileTree;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Getter
 public class BipartiteGraph {
-    @Getter
     @Setter
     private List<Node> nodeGroup1;
-    @Getter
     @Setter
     private List<Node> nodeGroup2;
-    @Getter
     @Setter
     private List<Edge> edges;
+
+    public static BipartiteGraph buildFromTrees(FileTree tree1, FileTree tree2) {
+        BipartiteGraph graph = new BipartiteGraph();
+        List<Node> nodes1 = new ArrayList<>();
+        List<Node> nodes2 = new ArrayList<>();
+        initNodes(tree1, nodes1);
+        initNodes(tree2, nodes2);
+        return graph;
+    }
+
+    private static void initNodes(FileTree tree, List<Node> nodes) {
+        Map<Node, Integer> parents = new HashMap<>();
+        for (FileTree fileTree : tree.getNodes()) {
+            Node node = new Node(fileTree.getData());
+            node.tokenize();
+            nodes.add(node);
+            if (fileTree.getParent() != null) {
+                parents.put(node, fileTree.getParent().getId());
+            }
+        }
+        for (Map.Entry<Node, Integer> entry : parents.entrySet()) {
+            Node node = entry.getKey();
+            Integer parentId = entry.getValue();
+            Node parent = nodes.stream().filter(n -> n.getId() == parentId).findFirst().orElse(null);
+            node.setParent(parent);
+        }
+    }
 
     public BipartiteGraph() {
         this.nodeGroup1 = new ArrayList<>();
         this.nodeGroup2 = new ArrayList<>();
         this.edges = new ArrayList<>();
-    }
-
-    public List<Node> getNodeGroup1() {
-        return nodeGroup1;
-    }
-
-    public List<Node> getNodeGroup2() {
-        return nodeGroup2;
-    }
-
-    public List<Edge> getEdges() {
-        return edges;
     }
 
     public void addNodes(List<Node> nodes, int group) {

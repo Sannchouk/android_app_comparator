@@ -27,7 +27,7 @@ public class MetropolisAlgorithmTest {
         MetropolisAlgorithm metropolisAlgorithm = new MetropolisAlgorithm(graph, 2.5, 0.8, 10);
 
         double cost = metropolisAlgorithm.computeCost(edges);
-        double expectedCost = Math.exp(-2.5 * (1.0 + 2.0 + 3.0) / 3.0);
+        double expectedCost = Math.exp(-2.5 * ((double) 1 /2 + (double) 1 /3 + (double) 1 /4) / 3.0);
         assertEquals(expectedCost, cost);
     }
 
@@ -48,8 +48,8 @@ public class MetropolisAlgorithmTest {
         graph.addNodes(List.of(node3, node4), 2);
         graph.addEdges(edges);
         MetropolisAlgorithm metropolisAlgorithm = new MetropolisAlgorithm(graph, 2.5, 0.8, 10);
-        double biggestCost = metropolisAlgorithm.computeCost(List.of(edge1, edge4));
-        double lowestCost = metropolisAlgorithm.computeCost(List.of(edge2, edge3));
+        double biggestCost = metropolisAlgorithm.computeCost(List.of(edge2, edge3));
+        double lowestCost = metropolisAlgorithm.computeCost(List.of(edge1, edge4));
         double acceptableCost = (biggestCost + lowestCost) / 2;
 
         // When
@@ -58,7 +58,7 @@ public class MetropolisAlgorithmTest {
         List<Edge> matching = metropolisAlgorithm.getMatching();
         double finalCost = metropolisAlgorithm.computeCost(matching);
         System.out.println("Costs: " + biggestCost + " " + lowestCost + " " + finalCost + " " + acceptableCost);
-        assert(lowestCost <= finalCost);
-        assert(finalCost < acceptableCost);
+        assertTrue(lowestCost <= finalCost);
+        assertTrue(finalCost < acceptableCost);
     }
 }

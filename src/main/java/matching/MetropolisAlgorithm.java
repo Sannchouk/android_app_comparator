@@ -33,7 +33,7 @@ public class MetropolisAlgorithm {
     public double computeCost(List<Edge> edges) {
         double cost = 0.0;
         for (Edge edge : edges) {
-            cost += edge.getValue();
+            cost += 1 / (1 + edge.getValue());
         }
         cost *= -beta;
         if (edges.isEmpty()) {
@@ -48,11 +48,7 @@ public class MetropolisAlgorithm {
         for (int i = 0; i < nbIterations; i++) {
             List<Edge> newMatching = selectNewMatching();
             double newCost = computeCost(newMatching);
-            System.out.println("New cost: " + newCost + " Current cost: " + currentCost);
-            System.out.println("New matching: " + newMatching.size() + " Current matching: " + currentMatching.size());
             if (newCost < currentCost) {
-                System.out.println("In if");
-                System.out.println("New matching: " + newMatching.size());
                 currentMatching = newMatching;
                 currentCost = newCost;
             }

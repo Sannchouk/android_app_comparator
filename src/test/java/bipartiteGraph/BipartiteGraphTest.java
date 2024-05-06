@@ -2,6 +2,11 @@ package bipartiteGraph;
 
 import fileTree.FileTree;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -153,7 +158,12 @@ public class BipartiteGraphTest {
     }
 
     @Test
-    public void testBuildFromTrees() {
+    public void testBuildFromTrees() throws IOException {
+        Files.createFile(Paths.get("name1"));
+        Files.createFile(Paths.get("name2"));
+        Files.createFile(Paths.get("name3"));
+        Files.createFile(Paths.get("name4"));
+        Files.createFile(Paths.get("name5"));
         FileTree tree1 = new FileTree("name1");
         FileTree tree2 = new FileTree("name2");
         FileTree tree3 = new FileTree("name3");
@@ -170,5 +180,10 @@ public class BipartiteGraphTest {
         assertEquals(graph.getNodeGroup1().get(1).getName(), "name3");
         assertEquals(graph.getNodeGroup1().get(1).getParent(), graph.getNodeGroup1().get(0));
 
+        Files.delete(Paths.get("name1"));
+        Files.delete(Paths.get("name2"));
+        Files.delete(Paths.get("name3"));
+        Files.delete(Paths.get("name4"));
+        Files.delete(Paths.get("name5"));
     }
 }

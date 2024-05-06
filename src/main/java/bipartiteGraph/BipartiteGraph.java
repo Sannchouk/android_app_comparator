@@ -17,7 +17,7 @@ public class BipartiteGraph {
     private List<Node> nodeGroup2;
     @Setter
     private List<Edge> edges;
-    private static final Tokenizer tokenizer = new Tokenizer(false, false);
+    private static final Tokenizer tokenizer = new Tokenizer();
 
     public static BipartiteGraph buildFromTrees(FileTree tree1, FileTree tree2) {
         BipartiteGraph graph = new BipartiteGraph();

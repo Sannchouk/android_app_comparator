@@ -17,8 +17,8 @@ public class IntegrationTest {
 
     @Test
     void testApp() throws IOException {
-        Path apk1 = Paths.get("resources/lichess-apk/assets");
-        Path apk2 = Paths.get("resources/chesscom-apk/assets");
+        Path apk1 = Paths.get("resources/lichess-apk");
+        Path apk2 = Paths.get("resources/chesscom-apk");
 
         FileTree tree1 = FileTree.buildTree(apk1);
         FileTree tree2 = FileTree.buildTree(apk2);
@@ -52,8 +52,8 @@ public class IntegrationTest {
 
     @Test
     void testAppWithTwoIdenticalApks() throws IOException {
-        Path apk1 = Paths.get("resources/lichess-apk/assets");
-        Path apk2 = Paths.get("resources/lichess-apk/assets");
+        Path apk1 = Paths.get("resources/lichess-apk");
+        Path apk2 = Paths.get("resources/lichess-apk");
 
         FileTree tree1 = FileTree.buildTree(apk1);
         FileTree tree2 = FileTree.buildTree(apk2);

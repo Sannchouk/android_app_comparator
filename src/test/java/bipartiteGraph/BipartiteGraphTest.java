@@ -1,5 +1,6 @@
 package bipartiteGraph;
 
+import fileTree.FileTree;
 import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.*;
@@ -149,5 +150,25 @@ public class BipartiteGraphTest {
         assertTrue(graph.getEdges().contains(new Edge(node1, node4, 0.5)));
         assertTrue(graph.getEdges().contains(new Edge(node5, node2, 3.0)));
         assertTrue(graph.getEdges().contains(new Edge(node5, node3, 2.0)));
+    }
+
+    @Test
+    public void testBuildFromTrees() {
+        FileTree tree1 = new FileTree("name1");
+        FileTree tree2 = new FileTree("name2");
+        FileTree tree3 = new FileTree("name3");
+        FileTree tree4 = new FileTree("name4");
+        FileTree tree5 = new FileTree("name5");
+        tree1.addChild(tree3);
+        tree1.addChild(tree4);
+        tree2.addChild(tree5);
+
+        BipartiteGraph graph = BipartiteGraph.buildFromTrees(tree1, tree2);
+
+        assertEquals(3, graph.getNodeGroup1().size());
+        assertEquals(2, graph.getNodeGroup2().size());
+        assertEquals(graph.getNodeGroup1().get(1).getName(), "name3");
+        assertEquals(graph.getNodeGroup1().get(1).getParent(), graph.getNodeGroup1().get(0));
+
     }
 }

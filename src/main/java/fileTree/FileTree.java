@@ -14,9 +14,9 @@ public class FileTree {
     @Getter
     @Setter
     private int id;
-    private String data;
+    private final String data;
     private FileTree parent;
-    private List<FileTree> children;
+    private final List<FileTree> children;
 
     public FileTree(String data) {
         this.data = data;

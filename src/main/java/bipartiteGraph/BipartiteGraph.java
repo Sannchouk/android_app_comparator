@@ -17,6 +17,7 @@ public class BipartiteGraph {
     private List<Node> nodeGroup2;
     @Setter
     private List<Edge> edges;
+    private static final Tokenizer tokenizer = new Tokenizer(false, false);
 
     public static BipartiteGraph buildFromTrees(FileTree tree1, FileTree tree2) {
         BipartiteGraph graph = new BipartiteGraph();
@@ -34,7 +35,7 @@ public class BipartiteGraph {
         for (FileTree fileTree : tree.getNodes()) {
             Node node = new Node(fileTree.getData());
             node.setId(fileTree.getId());
-            node.tokenize();
+            tokenizer.tokenize(node);
             nodes.add(node);
             if (fileTree.getParent() != null) {
                 parents.put(node, fileTree.getParent().getId());
@@ -45,6 +46,7 @@ public class BipartiteGraph {
             Integer parentId = entry.getValue();
             Node parent = nodes.stream().filter(n -> n.getId() == parentId).findFirst().orElse(null);
             node.setParent(parent);
+            assert parent != null;
             parent.getChildren().add(node);
         }
     }

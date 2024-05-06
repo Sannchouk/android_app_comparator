@@ -1,7 +1,9 @@
 package bipartiteGraph;
 
 import lombok.*;
+import org.apache.commons.io.FileUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,14 +40,6 @@ public class Node {
 
     public void removeAllTokens() {
         tokens.clear();
-    }
-
-    public void tokenize() {
-        tokens.clear();
-        String[] tokenArray = name.split("/");
-        for (String token : tokenArray) {
-            tokens.add(token);
-        }
     }
 
     @Override

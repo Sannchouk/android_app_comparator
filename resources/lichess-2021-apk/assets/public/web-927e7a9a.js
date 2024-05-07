@@ -1,0 +1,1 @@
+import{W as a}from"./main.js";class s extends a{constructor(){super({name:"SoundEffect",platforms:["web"]}),this.audioMap={}}async loadSound({id:a,path:s}){const t=new Audio;t.setAttribute("src",s),t.load(),this.audioMap[a]=t}async play({id:a}){const s=this.audioMap[a];s&&s.play()}}export{s as SoundEffectWeb};

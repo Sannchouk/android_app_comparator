@@ -48,6 +48,9 @@ public class MetropolisAlgorithm {
         for (int i = 0; i < nbIterations; i++) {
             List<Edge> newMatching = selectNewMatching();
             double newCost = computeCost(newMatching);
+            System.out.println("Current cost: " + currentCost);
+            System.out.println("New cost: " + newCost);
+            System.out.println("Current matching: " + currentMatching.size());
             if (newCost < currentCost) {
                 currentMatching = newMatching;
                 currentCost = newCost;

@@ -4,6 +4,7 @@ import fileTree.FileTree;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +34,7 @@ public class BipartiteGraph {
     private static void initNodes(FileTree tree, List<Node> nodes, int group) {
         Map<Node, Integer> parents = new HashMap<>();
         for (FileTree fileTree : tree.getNodes()) {
-            Node node = new Node(fileTree.getData());
+            Node node = new Node(fileTree.getPath());
             node.setId(fileTree.getId());
             node.setGroup(group);
             tokenizer.tokenize(node);
@@ -64,23 +65,23 @@ public class BipartiteGraph {
         }
     }
 
-    public Node findNode(int group, String name) {
+    public Node findNode(int group, Node node) {
         List<Node> nodeGroup = (group == 1) ? nodeGroup1 : (group == 2) ? nodeGroup2 : null;
         if (nodeGroup == null) return null;
 
-        for (Node node : nodeGroup) {
-            if (node.getName().equals(name)) {
+        for (Node n : nodeGroup) {
+            if (n == node) {
                 return node;
             }
         }
         return null;
     }
 
-    public Integer getGroup(String name) {
-        if (findNode(1, name) != null) {
+    public Integer getGroup(Node node) {
+        if (findNode(1, node) != null) {
             return 1;
         }
-        if (findNode(2, name) != null) {
+        if (findNode(2, node) != null) {
             return 2;
         }
         return null;
@@ -106,8 +107,8 @@ public class BipartiteGraph {
     }
 
     public void addEdge(Edge edge) throws IllegalArgumentException {
-        Integer sourceGroup = getGroup(edge.getSource().getName());
-        Integer targetGroup = getGroup(edge.getTarget().getName());
+        Integer sourceGroup = getGroup(edge.getSource());
+        Integer targetGroup = getGroup(edge.getTarget());
 
         if (sourceGroup == null || targetGroup == null || sourceGroup.equals(targetGroup)) {
             throw new IllegalArgumentException("Both nodes are in the same group");

@@ -25,16 +25,18 @@ public class Tokenizer {
 
     public void tokenize(Node node) {
         node.getTokens().clear();
-        String tokenFileName = node.getName().substring(node.getName().lastIndexOf("/") + 1);
+        System.out.println(node.getPath().toString());
+        String tokenFileName = node.getPath().toString().substring(node.getPath().toString().lastIndexOf("\\") + 1);
         node.addToken(tokenFileName);
+        System.out.println("Tokenizing: " + tokenFileName);
         if (fileSize) {
-            File file = new File(node.getName());
+            File file = new File(String.valueOf(node.getPath()));
             String tokenFileSize = FileUtils.sizeOf(file) + "";
             node.addToken(tokenFileSize);
         }
         if (fileHash) {
             try {
-                byte[] fileBytes = getFileBytes(node.getName());
+                byte[] fileBytes = getFileBytes(String.valueOf(node.getPath()));
                 String tokenFileHash = getSHA256(fileBytes);
                 node.addToken(tokenFileHash);
             } catch (IOException | NoSuchAlgorithmException e) {

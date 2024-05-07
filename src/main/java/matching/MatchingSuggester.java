@@ -49,6 +49,6 @@ public class MatchingSuggester {
     }
 
     private void removeConnectedEdges(List<Edge> edges, Edge edge) {
-        edges.removeIf(e -> e.getSource().equals(edge.getSource()) || e.getTarget().equals(edge.getTarget()));
+        edges.removeIf(e -> e.getSource() == edge.getSource() || e.getTarget() == edge.getTarget());
     }
 }

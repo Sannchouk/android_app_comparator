@@ -40,7 +40,9 @@ public class SimilarityScoresComputer {
     private void computePropagationScores() {
         for (Node node : indexer.getGroup1()) {
             for (Node neighbor : indexer.getGroup2()) {
-                computePropagationScore(node, neighbor);
+                if (similarityScores.get(node).get(neighbor) != 0.0) {
+                    computePropagationScore(node, neighbor);
+                }
             }
         }
     }
@@ -83,7 +85,9 @@ public class SimilarityScoresComputer {
     private void applyPenalization() {
         for (Node node : indexer.getGroup1()) {
             for (Node neighbor : indexer.getGroup2()) {
-                penalize(node, neighbor);
+                if (similarityScores.get(node).get(neighbor) != 0.0) {
+                    penalize(node, neighbor);
+                }
             }
         }
     }
@@ -100,7 +104,7 @@ public class SimilarityScoresComputer {
     private void penalize(Node node, Node neighbor) {
         int nodeChildren = node.getChildren().size();
         int neighborChildren = neighbor.getChildren().size();
-        if (nodeChildren == 0 || neighborChildren == 0) {
+        if (nodeChildren == 0 && neighborChildren == 0) {
             return;
         }
         double penalization = (double) Math.abs(nodeChildren - neighborChildren) / Math.max(nodeChildren, neighborChildren);

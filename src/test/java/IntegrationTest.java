@@ -46,10 +46,9 @@ public class IntegrationTest {
 
         metropolisAlgorithm.run();
 
-        System.out.println("Matching: " + metropolisAlgorithm.getMatching().size());
-        System.out.println("graph_nodes_1: " + indexer.getGroup1().size());
         List<Edge> matching = metropolisAlgorithm.getMatching();
         assertTrue(matching.size() < graph_nodes_1.size());
+        assertFalse(matching.isEmpty());
     }
 
     @Test

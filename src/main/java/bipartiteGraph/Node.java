@@ -54,7 +54,7 @@ public class Node {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Node node = (Node) obj;
-        return path.equals(node.path) && tokens.equals(node.tokens);
+        return path.equals(node.path) && tokens.equals(node.tokens) && group.equals(node.group) && parent.equals(node.parent) && children.equals(node.children);
     }
 
     @Override

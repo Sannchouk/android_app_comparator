@@ -18,20 +18,20 @@ public class BipartiteGraph {
     private List<Node> nodeGroup2;
     @Setter
     private List<Edge> edges;
-    private static final Tokenizer tokenizer = new Tokenizer();
+    private final Tokenizer tokenizer = new Tokenizer();
 
     public static BipartiteGraph buildFromTrees(FileTree tree1, FileTree tree2) {
         BipartiteGraph graph = new BipartiteGraph();
         List<Node> nodes1 = new ArrayList<>();
         List<Node> nodes2 = new ArrayList<>();
-        initNodes(tree1, nodes1, 1);
-        initNodes(tree2, nodes2, 2);
+        graph.initNodes(tree1, nodes1, 1);
+        graph.initNodes(tree2, nodes2, 2);
         graph.addNodes(nodes1, 1);
         graph.addNodes(nodes2, 2);
         return graph;
     }
 
-    private static void initNodes(FileTree tree, List<Node> nodes, int group) {
+    private void initNodes(FileTree tree, List<Node> nodes, int group) {
         Map<Node, Integer> parents = new HashMap<>();
         for (FileTree fileTree : tree.getNodes()) {
             Node node = new Node(fileTree.getPath());

@@ -1,42 +1,55 @@
 package utils;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Properties;
 
 public class AppConfigModifier {
-    private final String configFilePath;
+    private final String configFileName = "application.properties";
+    private final File configFile;
 
     public AppConfigModifier() {
-        this.configFilePath = "application.properties";
+        ClassLoader classLoader = getClass().getClassLoader();
+        this.configFile = new File(Objects.requireNonNull(classLoader.getResource(configFileName)).getFile());
     }
 
-    public AppConfigModifier(String configFilePath) {
-        this.configFilePath = configFilePath;
+    public synchronized void modifyConfigForTesting(Map<String, Boolean> propertiesToUpdate) throws IOException {
+        Properties properties = loadProperties();
+        updateProperties(properties, propertiesToUpdate);
+        saveProperties(properties);
+        System.out.println(propertiesToUpdate);
+        System.out.println("Config updated" + properties);
     }
 
-    public void modifyConfigForTesting(Map<String, Boolean> configValues) {
-        try {
-            Properties properties = new Properties();
-            InputStream inputStream = getClass().getClassLoader().getResourceAsStream(configFilePath);
+    private Properties loadProperties() throws IOException {
+        Properties properties = new Properties();
+        try (InputStream inputStream = new FileInputStream(configFile)) {
             properties.load(inputStream);
-
-            // Modify the values
-            for (Map.Entry<String, Boolean> entry : configValues.entrySet()) {
-                properties.setProperty(entry.getKey(), entry.getValue().toString());
-            }
-
-            // Save the changes
-            FileOutputStream outputStream = new FileOutputStream(configFilePath);
-            properties.store(outputStream, null);
-
-            inputStream.close();
-            outputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+        return properties;
+    }
+
+    private void updateProperties(Properties properties, Map<String, Boolean> propertiesToUpdate) {
+        for (Map.Entry<String, Boolean> entry : propertiesToUpdate.entrySet()) {
+            properties.setProperty(entry.getKey(), String.valueOf(entry.getValue()));
+        }
+    }
+
+    private void saveProperties(Properties properties) throws IOException {
+        try (FileOutputStream outputStream = new FileOutputStream(configFile);
+             FileChannel channel = outputStream.getChannel();
+             FileLock lock = channel.lock()) {
+            properties.store(outputStream, null);
+        }
+    }
+
+    public synchronized void restoreConfig() throws IOException {
+        Properties properties = new Properties();
+        properties.setProperty("fileSize", "false");
+        properties.setProperty("fileHash", "false");
+        saveProperties(properties);
     }
 }

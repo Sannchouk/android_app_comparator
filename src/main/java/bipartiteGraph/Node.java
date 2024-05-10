@@ -65,6 +65,9 @@ public class Node {
     }
 
     public String toString() {
-        return path.toString();
+        return "Node{" +
+                "path=" + path +
+                ", tokens=" + tokens +
+                '}';
     }
 }

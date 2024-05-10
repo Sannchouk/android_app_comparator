@@ -5,11 +5,13 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
+
 
 
 public class Tokenizer {
@@ -19,8 +21,8 @@ public class Tokenizer {
     private boolean fileHash;
 
     public Tokenizer() {
-        this.fileSize = config.getBoolean("tokenizer.fileSize");
-        this.fileHash = config.getBoolean("tokenizer.fileHash");
+        this.fileSize = config.getBoolean("fileSize");
+        this.fileHash = config.getBoolean("fileHash");
     }
 
     public void tokenize(Node node) {
@@ -30,26 +32,40 @@ public class Tokenizer {
         node.addToken(tokenFileName);
         System.out.println("Tokenizing: " + tokenFileName);
         if (fileSize) {
-            File file = new File(String.valueOf(node.getPath()));
-            String tokenFileSize = FileUtils.sizeOf(file) + "";
-            node.addToken(tokenFileSize);
+            int fileSize = getFileSize(node.getPath());
+            node.addToken(String.valueOf(fileSize));
+
         }
         if (fileHash) {
             try {
-                byte[] fileBytes = getFileBytes(String.valueOf(node.getPath()));
-                String tokenFileHash = getSHA256(fileBytes);
-                node.addToken(tokenFileHash);
+                byte[] fileBytes = getFileBytes(node.getPath());
+                if (fileBytes.length != 0) {
+                    String tokenFileHash = getSHA256(fileBytes);
+                    node.addToken(tokenFileHash);
+                }
             } catch (IOException | NoSuchAlgorithmException e) {
                 e.printStackTrace();
             }
         }
+        System.out.println("Tokens: " + node.getTokens());
     }
 
-    private static byte[] getFileBytes(String filePath) throws IOException {
-        File file = new File(filePath);
+    public int getFileSize(Path path) {
+        File file = new File(String.valueOf(path));
+        return (int) FileUtils.sizeOf(file);
+    }
+
+    private static byte[] getFileBytes(Path filePath) throws IOException {
+        File file = new File(String.valueOf(filePath));
+        if (!file.isFile()) {
+            return new byte[0];
+        }
         byte[] fileBytes = new byte[(int) file.length()];
         FileInputStream fileInputStream = new FileInputStream(file);
-        fileInputStream.read(fileBytes);
+        int readBytes = fileInputStream.read(fileBytes);
+        if (readBytes != fileBytes.length) {
+            throw new IOException("Cannot read file: " + filePath);
+        }
         fileInputStream.close();
         return fileBytes;
     }

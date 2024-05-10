@@ -35,15 +35,13 @@ public class Tokenizer {
         node.addToken(tokenFileName);
         if (fileSize) {
             int fileSize = getFileSize(node.getPath());
-            if (fileSize != 0) node.addToken(String.valueOf(fileSize));
+            node.addToken(String.valueOf(fileSize));
         }
         if (fileHash) {
             try {
                 byte[] fileBytes = getFileBytes(node.getPath());
-                if (fileBytes.length != 0) {
-                    String tokenFileHash = getSHA256(fileBytes);
-                    node.addToken(tokenFileHash);
-                }
+                String tokenFileHash = getSHA256(fileBytes);
+                node.addToken(tokenFileHash);
             } catch (IOException | NoSuchAlgorithmException e) {
                 e.printStackTrace();
             }

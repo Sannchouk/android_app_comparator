@@ -140,10 +140,9 @@ public class IntegrationTest {
     @Test
     void testAppWithTwoIdenticalApksAndAllTokens() throws IOException {
         Path apk1 = Paths.get("resources/lichess-apk");
-        Path apk2 = Paths.get("resources/lichess-apk");
 
         FileTree tree1 = FileTree.buildTree(apk1);
-        FileTree tree2 = FileTree.buildTree(apk2);
+        FileTree tree2 = FileTree.buildTree(apk1);
 
         BipartiteGraph graph;
         ConfigFactory.invalidateCaches();
@@ -180,5 +179,6 @@ public class IntegrationTest {
                 "\n" + graph_nodes_2.stream().filter(node -> matching.stream().noneMatch(edge -> edge.getTarget().equals(node))).collect(Collectors.toList())
         );
     }
+
 
 }

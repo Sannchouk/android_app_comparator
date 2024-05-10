@@ -55,6 +55,7 @@ public class MetropolisAlgorithm {
                 currentCost = newCost;
             }
         }
+        graph.setEdges(currentMatching);
     }
 
     private boolean isFullMatchingCorrect(List<Edge> matching) {
@@ -62,6 +63,6 @@ public class MetropolisAlgorithm {
     }
 
     private List<Edge> selectNewMatching() {
-        return suggester.suggestNewMatching(graph, currentMatching);
+        return suggester.suggestNewMatching(currentMatching);
     }
 }

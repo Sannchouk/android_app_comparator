@@ -16,16 +16,16 @@ public class MatchingSuggester {
         this.gamma = gamma;
     }
 
-    public List<Edge> suggestNewMatching(BipartiteGraph graph, List<Edge> currentMatching) {
+    public List<Edge> suggestNewMatching(List<Edge> currentMatching) {
         List<Edge> newMatching = new ArrayList<>();
-        List<Edge> remainingEdges = new ArrayList<>(graph.getEdges());
+        List<Edge> remainingEdges = new ArrayList<>(currentMatching);
         remainingEdges.sort(Comparator.comparingDouble(Edge::getValue)); // sortedEdges(g)
         int toKeep = new Random().nextInt(currentMatching.size() + 1); // randomInt(0, |Mi|)
         for (int j = 0; j < toKeep; j++) {
             if (remainingEdges.isEmpty()) {
                 break;
             }
-            Edge edge = remainingEdges.remove(0); // remainingEdges.first
+            Edge edge = remainingEdges.get(0); // remainingEdges.first
             newMatching.add(edge);
             removeConnectedEdges(remainingEdges, edge);
         }

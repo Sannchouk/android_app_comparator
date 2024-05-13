@@ -8,6 +8,14 @@ import java.util.Map;
 public class Neo4JCsvWriter {
 
     public void writeCsv(Path filename, Map<Path, HashMap<Path, Float>> distances) {
+        if (filename.toFile().exists()) {
+            filename.toFile().delete();
+        }
+        try {
+            filename.toFile().createNewFile();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         try (PrintWriter writer = new PrintWriter(filename.toString())) {
             writer.println("source,target,weight");
             for (Path source : distances.keySet()) {

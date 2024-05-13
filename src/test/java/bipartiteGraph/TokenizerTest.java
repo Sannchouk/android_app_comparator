@@ -15,6 +15,6 @@ public class TokenizerTest {
         Node node = new Node(path);
         Tokenizer tokenizer = new Tokenizer();
         tokenizer.tokenize(node);
-        assertEquals(node.getTokens().get(0), "lichess-apk");
+        assertEquals("lichess-apk", node.getTokens().get(0));
     }
 }

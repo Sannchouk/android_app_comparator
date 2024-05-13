@@ -1,3 +1,5 @@
+package integration;
+
 import bipartiteGraph.BipartiteGraph;
 import bipartiteGraph.Edge;
 import bipartiteGraph.Node;

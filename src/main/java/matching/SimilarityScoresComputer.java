@@ -29,6 +29,7 @@ public class SimilarityScoresComputer {
         for (Node node : indexer.getGroup1()) {
             similarityScores.put(node, computeSimilarityScoresForNode(node));
         }
+        System.out.println("Computing propagation scores...");
         computePropagationScores();
         applyPenalization();
         return similarityScores;

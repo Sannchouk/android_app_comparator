@@ -1,7 +1,7 @@
 source,target,weight
-chesscom-apk,chesscom-apk,0.0
-chesscom-apk,lichess-2021-apk,0.9702537
-chesscom-apk,lichess-apk,0.96711683
-lichess-2021-apk,lichess-2021-apk,0.0
-lichess-apk,lichess-2021-apk,0.13408238
-lichess-apk,lichess-apk,0.0
+2,2,0.0
+2,3,0.13408238
+3,3,0.0
+1,2,0.96711683
+1,3,0.9702537
+1,1,0.0

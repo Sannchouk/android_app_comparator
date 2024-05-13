@@ -14,7 +14,7 @@ public class Apk {
     private Path path;
 
     public Apk(Path path) {
-        this.id = ID_COUNTER++;
+        this.id = ++ID_COUNTER;
         this.name = path.getFileName().toString();
         this.path = path;
     }

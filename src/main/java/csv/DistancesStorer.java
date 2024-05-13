@@ -1,27 +1,26 @@
 package csv;
 
-import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
 public final class DistancesStorer {
 
-    private Map<String, HashMap<String, Float>> distances;
+    private Map<Apk, HashMap<Apk, Float>> distances;
 
     public DistancesStorer() {
         this.distances = new HashMap<>();
     }
 
-    public void addDistance(String source, String target, Float distance) {
+    public void addDistance(Apk source, Apk target, Float distance) {
         this.distances.putIfAbsent(source, new HashMap<>());
         this.distances.get(source).put(target, distance);
     }
 
-    public Map<String, HashMap<String, Float>> getDistances() {
+    public Map<Apk, HashMap<Apk, Float>> getDistances() {
         return this.distances;
     }
 
-    public boolean hasDistanceBeenAlreadyComputed(String source, String target) {
+    public boolean hasDistanceBeenAlreadyComputed(Apk source, Apk target) {
         return distances.get(target) != null && distances.get(target).get(source) != null;
     }
 }

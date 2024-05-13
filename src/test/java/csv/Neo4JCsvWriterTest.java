@@ -28,11 +28,14 @@ class Neo4JCsvWriterTest {
     @Test
     void testWriteCsv() throws IOException {
         //GIVEN
-        Map<String, HashMap<String, Float>> distances = new HashMap<>();
-        HashMap<String, Float> source1Distances = new HashMap<>();
-        source1Distances.put("nodeB", 10.5f);
-        source1Distances.put("nodeC", 15.2f);
-        distances.put("nodeA", source1Distances);
+        Map<Apk, HashMap<Apk, Float>> distances = new HashMap<>();
+        HashMap<Apk, Float> source1Distances = new HashMap<>();
+        Apk source1 = new Apk(Path.of("test1"));
+        Apk source2 = new Apk(Path.of("test2"));
+        Apk source3 = new Apk(Path.of("test3"));
+        source1Distances.put(source2, 10.5f);
+        source1Distances.put(source3, 15.2f);
+        distances.put(source1, source1Distances);
         Neo4JCsvWriter writer = new Neo4JCsvWriter();
         Path testFilename = Path.of("test_distances.csv");
 
@@ -42,8 +45,8 @@ class Neo4JCsvWriterTest {
         //THEN
         assertTrue(testFilename.toFile().exists());
         String expectedContent = "source,target,weight\n" +
-                "nodeA,nodeB,10.5\n" +
-                "nodeA,nodeC,15.2\n";
+                "1,3,15.2\n" +
+                "1,2,10.5\n";
         byte[] encodedBytes = Files.readAllBytes(Paths.get(testFilename.toString()));
         String actualContent = new String(encodedBytes, StandardCharsets.UTF_8);
         assertEquals(expectedContent, actualContent);

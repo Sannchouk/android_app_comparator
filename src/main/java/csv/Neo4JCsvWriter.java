@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Neo4JCsvWriter {
 
-    public void writeCsv(Path filename, Map<String, HashMap<String, Float>> distances) {
+    public void writeCsv(Path filename, Map<Apk, HashMap<Apk, Float>> distances) {
         if (filename.toFile().exists()) {
             filename.toFile().delete();
         }
@@ -18,9 +18,9 @@ public class Neo4JCsvWriter {
         }
         try (PrintWriter writer = new PrintWriter(filename.toString())) {
             writer.println("source,target,weight");
-            for (String source : distances.keySet()) {
-                for (String target : distances.get(source).keySet()) {
-                    writer.println(source + "," + target + "," + distances.get(source).get(target));
+            for (Apk source : distances.keySet()) {
+                for (Apk target : distances.get(source).keySet()) {
+                    writer.println(source.getId() + "," + target.getId() + "," + distances.get(source).get(target));
                 }
             }
         } catch (Exception e) {

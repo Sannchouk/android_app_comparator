@@ -40,11 +40,11 @@ public class Main {
         for (Apk apk1: apks) {
             for (Apk apk2 : apks) {
                 try {
-                    if (distancesStorer.hasDistanceBeenAlreadyComputed(apk1.getName(), apk2.getName())) {
+                    if (distancesStorer.hasDistanceBeenAlreadyComputed(apk1, apk2)) {
                         continue;
                     }
                     float distance = compareTwoApks(apk1.getPath(), apk2.getPath());
-                    distancesStorer.addDistance(apk1.getName(), apk2.getName(), distance);
+                    distancesStorer.addDistance(apk1, apk2, distance);
                 } catch (IOException e) {
                     System.out.println("Error while comparing");
                 }

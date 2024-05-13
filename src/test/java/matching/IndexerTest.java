@@ -3,6 +3,7 @@ package matching;
 import bipartiteGraph.Node;
 import org.junit.jupiter.api.Test;
 
+import java.nio.file.Path;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,8 +13,8 @@ public class IndexerTest {
         @Test
         public void testAddNode() {
             Indexer indexer = new Indexer();
-            Node node1 = new Node("test", Arrays.asList("apple", "banana"));
-            Node node2 = new Node("test", Arrays.asList("banana", "orange"));
+            Node node1 = new Node(Path.of("test"), Arrays.asList("apple", "banana"));
+            Node node2 = new Node(Path.of("test"), Arrays.asList("banana", "orange"));
 
             indexer.addNode(node1, 1);
             indexer.addNode(node2, 2);
@@ -26,8 +27,8 @@ public class IndexerTest {
         @Test
         public void testComputeIdf() {
             Indexer indexer = new Indexer();
-            Node node1 = new Node("test", Arrays.asList("apple", "banana"));
-            Node node2 = new Node("test", Arrays.asList("banana", "orange"));
+            Node node1 = new Node(Path.of("test"), Arrays.asList("apple", "banana"));
+            Node node2 = new Node(Path.of("test"), Arrays.asList("banana", "orange"));
 
             indexer.addNode(node1, 1);
             indexer.addNode(node2, 2);

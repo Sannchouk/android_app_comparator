@@ -4,6 +4,7 @@ import fileTree.FileTree;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,23 +18,23 @@ public class BipartiteGraph {
     private List<Node> nodeGroup2;
     @Setter
     private List<Edge> edges;
-    private static final Tokenizer tokenizer = new Tokenizer();
+    private final Tokenizer tokenizer = new Tokenizer();
 
     public static BipartiteGraph buildFromTrees(FileTree tree1, FileTree tree2) {
         BipartiteGraph graph = new BipartiteGraph();
         List<Node> nodes1 = new ArrayList<>();
         List<Node> nodes2 = new ArrayList<>();
-        initNodes(tree1, nodes1, 1);
-        initNodes(tree2, nodes2, 2);
+        graph.initNodes(tree1, nodes1, 1);
+        graph.initNodes(tree2, nodes2, 2);
         graph.addNodes(nodes1, 1);
         graph.addNodes(nodes2, 2);
         return graph;
     }
 
-    private static void initNodes(FileTree tree, List<Node> nodes, int group) {
+    private void initNodes(FileTree tree, List<Node> nodes, int group) {
         Map<Node, Integer> parents = new HashMap<>();
         for (FileTree fileTree : tree.getNodes()) {
-            Node node = new Node(fileTree.getData());
+            Node node = new Node(fileTree.getPath());
             node.setId(fileTree.getId());
             node.setGroup(group);
             tokenizer.tokenize(node);
@@ -64,23 +65,23 @@ public class BipartiteGraph {
         }
     }
 
-    public Node findNode(int group, String name) {
+    public Node findNode(int group, Node node) {
         List<Node> nodeGroup = (group == 1) ? nodeGroup1 : (group == 2) ? nodeGroup2 : null;
         if (nodeGroup == null) return null;
 
-        for (Node node : nodeGroup) {
-            if (node.getName().equals(name)) {
+        for (Node n : nodeGroup) {
+            if (n == node) {
                 return node;
             }
         }
         return null;
     }
 
-    public Integer getGroup(String name) {
-        if (findNode(1, name) != null) {
+    public Integer getGroup(Node node) {
+        if (findNode(1, node) != null) {
             return 1;
         }
-        if (findNode(2, name) != null) {
+        if (findNode(2, node) != null) {
             return 2;
         }
         return null;
@@ -106,8 +107,8 @@ public class BipartiteGraph {
     }
 
     public void addEdge(Edge edge) throws IllegalArgumentException {
-        Integer sourceGroup = getGroup(edge.getSource().getName());
-        Integer targetGroup = getGroup(edge.getTarget().getName());
+        Integer sourceGroup = getGroup(edge.getSource());
+        Integer targetGroup = getGroup(edge.getTarget());
 
         if (sourceGroup == null || targetGroup == null || sourceGroup.equals(targetGroup)) {
             throw new IllegalArgumentException("Both nodes are in the same group");

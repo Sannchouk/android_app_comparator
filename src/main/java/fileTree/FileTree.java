@@ -9,17 +9,17 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class FileTree {
     public static int ID_COUNTER = 0;
-    @Getter
     @Setter
     private int id;
-    private final String data;
+    private final Path path;
     private FileTree parent;
     private final List<FileTree> children;
 
-    public FileTree(String data) {
-        this.data = data;
+    public FileTree(Path path) {
+        this.path = path;
         this.parent = null;
         this.children = new ArrayList<>();
         this.id = ID_COUNTER++;
@@ -34,18 +34,6 @@ public class FileTree {
         return nodes;
     }
 
-    public String getData() {
-        return data;
-    }
-
-    public FileTree getParent() {
-        return parent;
-    }
-
-    public List<FileTree> getChildren() {
-        return children;
-    }
-
     public void addChild(FileTree child) {
         children.add(child);
         child.setParent(this);
@@ -57,7 +45,7 @@ public class FileTree {
 
     public static FileTree buildTree(Path rootPath) throws IOException {
         rootPath = rootPath.normalize();
-        FileTree rootNode = new FileTree(rootPath.toString());
+        FileTree rootNode = new FileTree(rootPath);
 
         if (Files.isDirectory(rootPath)) {
             try (var entries = Files.newDirectoryStream(rootPath)) {
@@ -79,19 +67,10 @@ public class FileTree {
         for (int i = 0; i < depth; i++) {
             indent.append("  ");
         }
-        System.out.println(indent + data);
+        System.out.println(indent + path.toString());
         for (FileTree child : children) {
             child.printTreeRec(depth + 1);
         }
-    }
-
-    public List<String> getAllNodesData() {
-        List<String> nodes = new ArrayList<>();
-        nodes.add(data);
-        for (FileTree child : children) {
-            nodes.addAll(child.getAllNodesData());
-        }
-        return nodes;
     }
 }
 

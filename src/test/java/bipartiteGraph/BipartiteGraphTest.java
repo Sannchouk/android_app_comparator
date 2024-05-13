@@ -23,10 +23,10 @@ public class BipartiteGraphTest {
         graph.addNode(node1, 1);
         graph.addNode(node2, 2);
 
-        assertEquals(node1, graph.findNode(1, "name1"));
-        assertEquals(node2, graph.findNode(2, "name2"));
-        assertNull(graph.findNode(1, "name3"));
-        assertNull(graph.findNode(2, "name1"));
+        assertEquals(node1, graph.findNode(1, node1));
+        assertEquals(node2, graph.findNode(2, node2));
+        assertNull(graph.findNode(1, node3));
+        assertNull(graph.findNode(2, node1));
     }
 
     @Test
@@ -85,10 +85,10 @@ public class BipartiteGraphTest {
         graph.addNode(node2, 1);
         graph.addNode(node3, 2);
 
-        assertEquals(1, graph.getGroup("name1"));
-        assertEquals(1, graph.getGroup("name2"));
-        assertEquals(2, graph.getGroup("name3"));
-        assertNull(graph.getGroup("name4"));
+        assertEquals(1, graph.getGroup(node1));
+        assertEquals(1, graph.getGroup(node2));
+        assertEquals(2, graph.getGroup(node3));
+        assertNull(graph.getGroup(new Node("name4")));
     }
 
     @Test
@@ -171,11 +171,11 @@ public class BipartiteGraphTest {
         Files.createFile(path3);
         Files.createFile(path4);
         Files.createFile(path5);
-        FileTree tree1 = new FileTree("name1");
-        FileTree tree2 = new FileTree("name2");
-        FileTree tree3 = new FileTree("name3");
-        FileTree tree4 = new FileTree("name4");
-        FileTree tree5 = new FileTree("name5");
+        FileTree tree1 = new FileTree(path1);
+        FileTree tree2 = new FileTree(path1);
+        FileTree tree3 = new FileTree(path3);
+        FileTree tree4 = new FileTree(path4);
+        FileTree tree5 = new FileTree(path5);
         tree1.addChild(tree3);
         tree1.addChild(tree4);
         tree2.addChild(tree5);
@@ -184,7 +184,7 @@ public class BipartiteGraphTest {
 
         assertEquals(3, graph.getNodeGroup1().size());
         assertEquals(2, graph.getNodeGroup2().size());
-        assertEquals(graph.getNodeGroup1().get(1).getName(), "name3");
+        assertEquals(graph.getNodeGroup1().get(1).getPath(), path3);
         assertEquals(graph.getNodeGroup1().get(1).getParent(), graph.getNodeGroup1().get(0));
 
         Files.delete(path1);

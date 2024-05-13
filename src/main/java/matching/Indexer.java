@@ -8,11 +8,11 @@ import java.util.*;
 public class Indexer {
 
     @Getter
-    private Map<String, List<Node>> tokenMap;
+    private final Map<String, List<Node>> tokenMap;
     @Getter
-    private List<Node> group1;
+    private final List<Node> group1;
     @Getter
-    private List<Node> group2;
+    private final List<Node> group2;
 
     public Indexer() {
         this.tokenMap = new HashMap<>();

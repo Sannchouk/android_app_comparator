@@ -3,6 +3,7 @@ package matching;
 import bipartiteGraph.Node;
 import org.junit.jupiter.api.Test;
 
+import java.nio.file.Path;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SimilarityScoresComputerTest {
 
-    final Node node1 = new Node("test1", Arrays.asList("apple", "banana"));
-    final Node node2 = new Node("test2", Arrays.asList("banana", "orange"));
-    final Node node3 = new Node("test3", Collections.singletonList("kiwi"));
-    final Node node4 = new Node("test4", Arrays.asList("apple", "kiwi"));
+    final Node node1 = new Node(Path.of("test1"), Arrays.asList("apple", "banana"));
+    final Node node2 = new Node(Path.of("test2"), Arrays.asList("banana", "orange"));
+    final Node node3 = new Node(Path.of("test3"), Collections.singletonList("kiwi"));
+    final Node node4 = new Node(Path.of("test4"), Arrays.asList("apple", "kiwi"));
 
 
     @Test
@@ -37,8 +38,8 @@ public class SimilarityScoresComputerTest {
     @Test
     public void testPropagationScores(){
         Indexer indexer = createMockIndexer();
-        Node node5 = new Node("test5", Arrays.asList("apple", "banana"));
-        Node node6 = new Node("test6", Arrays.asList("banana", "orange"));
+        Node node5 = new Node(Path.of("test5"), Arrays.asList("apple", "banana"));
+        Node node6 = new Node(Path.of("test6"), Arrays.asList("banana", "orange"));
         node5.setGroup(1);
         node6.setGroup(2);
         node5.setParent(node1);
@@ -55,9 +56,9 @@ public class SimilarityScoresComputerTest {
     @Test
     public void testPenalization() {
         Indexer indexer = createMockIndexer();
-        Node node5 = new Node("test5", Arrays.asList("apple", "banana"));
-        Node node6 = new Node("test6", Arrays.asList("banana", "orange"));
-        Node node7 = new Node("test7", Arrays.asList("banana", "orange"));
+        Node node5 = new Node(Path.of("test5"), Arrays.asList("apple", "banana"));
+        Node node6 = new Node(Path.of("test6"), Arrays.asList("banana", "orange"));
+        Node node7 = new Node(Path.of("test7"), Arrays.asList("banana", "orange"));
         node5.setGroup(1);
         node6.setGroup(2);
         node7.setGroup(2);

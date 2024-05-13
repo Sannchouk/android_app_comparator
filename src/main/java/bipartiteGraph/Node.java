@@ -4,6 +4,7 @@ import lombok.*;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
 public class Node {
     @Setter
     private int id;
-    private String name;
+    private Path path;
     private List<String> tokens;
     @Setter
     private Integer group = null;
@@ -21,13 +22,18 @@ public class Node {
     @NonNull
     private List<Node> children = new ArrayList<>();
 
-    public Node(String name) {
-        this.name = name;
+    public Node(String path) {
+        this.path = Path.of(path);
         this.tokens = new ArrayList<>();
     }
 
-    public Node(String name, List<String> tokens) {
-        this.name = name;
+    public Node(Path path) {
+        this.path = path;
+        this.tokens = new ArrayList<>();
+    }
+
+    public Node(Path path, List<String> tokens) {
+        this.path = path;
         this.tokens = tokens;
     }
 
@@ -48,17 +54,20 @@ public class Node {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Node node = (Node) obj;
-        return name.equals(node.name) && tokens.equals(node.tokens);
+        return path.equals(node.path) && tokens.equals(node.tokens) && group.equals(node.group) && parent.equals(node.parent) && children.equals(node.children);
     }
 
     @Override
     public int hashCode() {
-        int result = name.hashCode();
+        int result = path.hashCode();
         result = 31 * result + tokens.hashCode();
         return result;
     }
 
     public String toString() {
-        return name;
+        return "Node{" +
+                "path=" + path +
+                ", tokens=" + tokens +
+                '}';
     }
 }

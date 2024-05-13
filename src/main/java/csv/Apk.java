@@ -7,11 +7,16 @@ import java.nio.file.Path;
 @Getter
 public class Apk {
 
+    @Getter
     private static int ID_COUNTER = 0;
 
     private int id;
     private String name;
     private Path path;
+
+    public static void resetIdCounter() {
+        ID_COUNTER = 0;
+    }
 
     public Apk(Path path) {
         this.id = ++ID_COUNTER;

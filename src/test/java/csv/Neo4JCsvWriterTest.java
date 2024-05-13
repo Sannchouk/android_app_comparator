@@ -1,6 +1,8 @@
 package csv;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -16,7 +18,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Neo4JCsvWriterTest {
 
-    static String testFileName = "test_distances.csv";
+    static String testFileName = "test.csv";
+
+    @BeforeEach
+    void setUp() {
+        Apk.resetIdCounter();
+    }
 
     @AfterAll
     static void cleanUp() {
@@ -27,7 +34,31 @@ class Neo4JCsvWriterTest {
     }
 
     @Test
-    void testWriteCsv() throws IOException {
+    void testWriteCsvNodes() throws IOException {
+        //GIVEN
+        List<Apk> nodes = List.of(new Apk(Path.of("test1")), new Apk(Path.of("test2")));
+        Neo4JCsvWriter writer = new Neo4JCsvWriter();
+        Path testFilename = Path.of("test_nodes.csv");
+
+        //WHEN
+        writer.writeNodesCsv(testFilename, nodes);
+
+        //THEN
+        assertTrue(testFilename.toFile().exists());
+        List<String> expectedLines = List.of("id,label", "1,test1", "2,test2");
+        byte[] encodedBytes = Files.readAllBytes(Paths.get(testFilename.toString()));
+        String actualContent = new String(encodedBytes, StandardCharsets.UTF_8);
+        List<String> actualLines = List.of(actualContent.split("\n"));
+        assertEquals(expectedLines.get(0), actualLines.get(0));
+        System.out.println(actualLines);
+        System.out.println(expectedLines);
+        for (int i = 1; i < expectedLines.size(); i++) {
+            assertTrue(actualLines.contains(expectedLines.get(i)));
+        }
+    }
+
+    @Test
+    void testWriteCsvDistance() throws IOException {
         //GIVEN
         Map<Apk, HashMap<Apk, Float>> distances = new HashMap<>();
         HashMap<Apk, Float> source1Distances = new HashMap<>();
@@ -45,7 +76,7 @@ class Neo4JCsvWriterTest {
 
         //THEN
         assertTrue(testFilename.toFile().exists());
-        List<String> expectedLines = List.of("source,target,weight", "1,3,15.2", "1,2,10.5");
+        List<String> expectedLines = List.of(":START_ID,:END_ID,weight", "1,3,15.2", "1,2,10.5");
         byte[] encodedBytes = Files.readAllBytes(Paths.get(testFilename.toString()));
         String actualContent = new String(encodedBytes, StandardCharsets.UTF_8);
         List<String> actualLines = List.of(actualContent.split("\n"));

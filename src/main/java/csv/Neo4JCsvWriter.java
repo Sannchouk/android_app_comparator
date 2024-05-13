@@ -37,7 +37,7 @@ public class Neo4JCsvWriter {
             e.printStackTrace();
         }
         try (PrintWriter writer = new PrintWriter(filename.toString())) {
-            writer.println("source,target,weight");
+            writer.println(":START_ID,:END_ID,weight");
             for (Apk source : distances.keySet()) {
                 for (Apk target : distances.get(source).keySet()) {
                     writer.println(source.getId() + "," + target.getId() + "," + distances.get(source).get(target));

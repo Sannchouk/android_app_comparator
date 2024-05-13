@@ -16,11 +16,11 @@ public class MatchingSuggester {
         this.gamma = gamma;
     }
 
-    public List<Edge> suggestNewMatching(List<Edge> currentMatching) {
+    public List<Edge> suggestNewMatching(List<Edge> edges) {
         List<Edge> newMatching = new ArrayList<>();
-        List<Edge> remainingEdges = new ArrayList<>(currentMatching);
+        List<Edge> remainingEdges = new ArrayList<>(edges);
         remainingEdges.sort(Comparator.comparingDouble(Edge::getValue)); // sortedEdges(g)
-        int toKeep = new Random().nextInt(currentMatching.size() + 1); // randomInt(0, |Mi|)
+        int toKeep = new Random().nextInt(edges.size() + 1); // randomInt(0, |Mi|)
         for (int j = 0; j < toKeep; j++) {
             if (remainingEdges.isEmpty()) {
                 break;

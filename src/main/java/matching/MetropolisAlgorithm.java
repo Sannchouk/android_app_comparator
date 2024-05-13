@@ -58,6 +58,6 @@ public class MetropolisAlgorithm {
     }
 
     private List<Edge> selectNewMatching() {
-        return suggester.suggestNewMatching(currentMatching);
+        return suggester.suggestNewMatching(graph.getEdges());
     }
 }

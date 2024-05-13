@@ -28,11 +28,11 @@ class Neo4JCsvWriterTest {
     @Test
     void testWriteCsv() throws IOException {
         //GIVEN
-        Map<Path, HashMap<Path, Float>> distances = new HashMap<>();
-        HashMap<Path, Float> source1Distances = new HashMap<>();
-        source1Distances.put(Path.of("nodeB"), 10.5f);
-        source1Distances.put(Path.of("nodeC"), 15.2f);
-        distances.put(Path.of("nodeA"), source1Distances);
+        Map<String, HashMap<String, Float>> distances = new HashMap<>();
+        HashMap<String, Float> source1Distances = new HashMap<>();
+        source1Distances.put("nodeB", 10.5f);
+        source1Distances.put("nodeC", 15.2f);
+        distances.put("nodeA", source1Distances);
         Neo4JCsvWriter writer = new Neo4JCsvWriter();
         Path testFilename = Path.of("test_distances.csv");
 

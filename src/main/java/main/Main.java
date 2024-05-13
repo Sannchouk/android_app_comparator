@@ -50,7 +50,9 @@ public class Main {
                 }
             }
         }
-        new Neo4JCsvWriter().writeCsv(Paths.get("csv/distances.csv"), distancesStorer.getDistances());
+        Neo4JCsvWriter neo4JCsvWriter = new Neo4JCsvWriter();
+        neo4JCsvWriter.writeNodesCsv(Paths.get("csv/nodes.csv"), apks);
+        neo4JCsvWriter.writeDistanceCsv(Paths.get("csv/distances.csv"), distancesStorer.getDistances());
     }
 
     private static List<Apk> listApks(String path) throws IOException {

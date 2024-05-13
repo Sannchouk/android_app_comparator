@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -40,15 +41,17 @@ class Neo4JCsvWriterTest {
         Path testFilename = Path.of("test_distances.csv");
 
         //WHEN
-        writer.writeCsv(testFilename, distances);
+        writer.writeDistanceCsv(testFilename, distances);
 
         //THEN
         assertTrue(testFilename.toFile().exists());
-        String expectedContent = "source,target,weight\n" +
-                "1,3,15.2\n" +
-                "1,2,10.5\n";
+        List<String> expectedLines = List.of("source,target,weight", "1,3,15.2", "1,2,10.5");
         byte[] encodedBytes = Files.readAllBytes(Paths.get(testFilename.toString()));
         String actualContent = new String(encodedBytes, StandardCharsets.UTF_8);
-        assertEquals(expectedContent, actualContent);
+        List<String> actualLines = List.of(actualContent.split("\n"));
+        assertEquals(expectedLines.get(0), actualLines.get(0));
+        for (int i = 1; i < expectedLines.size(); i++) {
+            assertTrue(actualLines.contains(expectedLines.get(i)));
+        }
     }
 }

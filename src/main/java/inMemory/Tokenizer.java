@@ -1,5 +1,6 @@
-package bipartiteGraph;
+package inMemory;
 
+import bipartiteGraph.Node;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -23,14 +24,10 @@ public class Tokenizer {
     public Tokenizer() {
         this.fileSize = config.getBoolean("fileSize");
         this.fileHash = config.getBoolean("fileHash");
-        System.out.println("=============================== Tokenizer ===============================" );
-        System.out.println("File size: " + fileSize);
-        System.out.println("File hash: " + fileHash);
     }
 
     public void tokenize(Node node) {
         node.getTokens().clear();
-        System.out.println(node.getPath().toString());
         String tokenFileName = node.getPath().toString().substring(node.getPath().toString().lastIndexOf('/') + 1);
         node.addToken(tokenFileName);
         if (fileSize) {
@@ -46,7 +43,6 @@ public class Tokenizer {
                 e.printStackTrace();
             }
         }
-        System.out.println("Tokens: " + node.getTokens());
     }
 
     public int getFileSize(Path path) {

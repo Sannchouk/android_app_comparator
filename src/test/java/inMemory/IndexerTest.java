@@ -1,6 +1,7 @@
-package matching;
+package inMemory;
 
 import bipartiteGraph.Node;
+import inMemory.Indexer;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;

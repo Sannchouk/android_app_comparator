@@ -1,5 +1,6 @@
 package bipartiteGraph;
 
+import inMemory.Tokenizer;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;

@@ -1,4 +1,4 @@
-package matching;
+package inMemory;
 
 import bipartiteGraph.Node;
 import lombok.Getter;

@@ -1,10 +1,10 @@
 package bipartiteGraph;
 
 import fileTree.FileTree;
+import inMemory.Tokenizer;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

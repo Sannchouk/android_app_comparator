@@ -1,6 +1,7 @@
 package matching;
 
 import bipartiteGraph.Node;
+import inMemory.Indexer;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
@@ -27,7 +28,6 @@ public class SimilarityScoresComputerTest {
         assertEquals(2, similarityScores.size());
         assertTrue(similarityScores.containsKey(node1));
         assertTrue(similarityScores.containsKey(node2));
-        System.out.println(similarityScores);
         assertEquals(2, similarityScores.get(node1).size());
         assertEquals(2, similarityScores.get(node2).size());
         assertEquals(0.0, similarityScores.get(node1).get(node3));

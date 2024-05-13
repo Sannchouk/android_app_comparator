@@ -3,6 +3,8 @@ package main;
 import bipartiteGraph.BipartiteGraph;
 import bipartiteGraph.Edge;
 import bipartiteGraph.Node;
+import csv.DistancesStorer;
+import csv.Neo4JCsvWriter;
 import fileTree.FileTree;
 import matching.DistanceComputer;
 import inMemory.Indexer;
@@ -14,6 +16,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.List;
@@ -33,16 +37,23 @@ public class Main {
         } catch (IOException e) {
             System.out.println("Wrong path: " + path);
         }
+        DistancesStorer distancesStorer = new DistancesStorer();
         for (Path path1: directories) {
             for (Path path2 : directories) {
                 try {
+                    Path fileName1 = path1.getFileName();
+                    Path fileName2 = path2.getFileName();
+                    if (distancesStorer.hasDistanceBeenAlreadyComputed(fileName1, fileName2)) {
+                        continue;
+                    }
                     float distance = compareTwoApks(path1, path2);
-                    System.out.println("Distance between " + path1 + " and " + path2 + " is " + distance);
+                    distancesStorer.addDistance(fileName1, fileName2, distance);
                 } catch (IOException e) {
                     System.out.println("Error while comparing " + path1 + " and " + path2);
                 }
             }
         }
+        new Neo4JCsvWriter().writeCsv(Paths.get("distances.csv"), distancesStorer.getDistances());
     }
 
     private static List<Path> listDirectories(String path) throws IOException {

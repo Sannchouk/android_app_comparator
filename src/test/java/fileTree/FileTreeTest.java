@@ -51,14 +51,10 @@ public class FileTreeTest {
 
     @Test
     public void testBuildTree() {
-        try {
-            FileTree root = FileTree.buildTree(TEST_DIR);
-            assertNotNull(root);
-            assertEquals(TEST_DIR, Path.of("./test_dir"));
-            assertNotNull(root.getChildren());
-            assertFalse(root.getChildren().isEmpty());
-        } catch (IOException e) {
-            fail("IOException occurred during tree building: " + e.getMessage());
-        }
+        FileTree fileTree = new FileTree(Path.of("parent/child"));
+        fileTree.addChild(new FileTree(Path.of("parent/child/grandchild")));
+        fileTree.cleanPaths();
+        assertEquals(fileTree.getPath(), Path.of("child"));
+        assertEquals(fileTree.getChildren().get(0).getPath(), Path.of("child/grandchild"));
     }
 }

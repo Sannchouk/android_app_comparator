@@ -14,7 +14,7 @@ public class FileTree {
     public static int ID_COUNTER = 0;
     @Setter
     private int id;
-    private final Path path;
+    private Path path;
     private FileTree parent;
     private final List<FileTree> children;
 
@@ -70,6 +70,18 @@ public class FileTree {
         System.out.println(indent + path.toString());
         for (FileTree child : children) {
             child.printTreeRec(depth + 1);
+        }
+    }
+
+    public void cleanPaths() {
+        Path parentFolder = this.path.getParent();
+        cleanPathsRec(parentFolder);
+    }
+
+    private void cleanPathsRec(Path parentFolder) {
+        path = parentFolder.relativize(path);
+        for (FileTree child : children) {
+            child.cleanPathsRec(parentFolder);
         }
     }
 }

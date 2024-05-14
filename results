@@ -1,0 +1,15 @@
+MATCH (n)
+DETACH DELETE n;
+CREATE (:Apk{name:"chesscom", numberOfFiles:"5500", size:"105863868"})
+CREATE (:Apk{name:"lichess", numberOfFiles:"1312", size:"123971704"})
+CREATE (:Apk{name:"lichess_2021", numberOfFiles:"1358", size:"71904532"})
+WITH 1 AS _
+MATCH (chesscom:Apk{name:"chesscom", numberOfFiles:"5500", size:"105863868"})
+MATCH (lichess:Apk{name:"lichess", numberOfFiles:"1312", size:"123971704"})
+MATCH (lichess_2021:Apk{name:"lichess_2021", numberOfFiles:"1358", size:"71904532"})
+MERGE (chesscom)-[r1:COMPARED_TO]-(lichess)
+MERGE (chesscom)-[r2:COMPARED_TO]-(lichess_2021)
+MERGE (lichess)-[r3:COMPARED_TO]-(lichess_2021)
+SET r2.value = 0.80664915
+SET r3.value = 0.08389515
+SET r1.value = 0.8103347

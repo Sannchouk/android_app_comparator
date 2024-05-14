@@ -16,7 +16,7 @@ public class MetropolisAlgorithm {
     private final int nbIterations;
     private List<Edge> currentMatching;
     private final MatchingSuggester suggester;
-//    private final static double WN = 1.0;
+    private final static double WN = 0.1;
 
     public MetropolisAlgorithm(BipartiteGraph graph, double beta, double gamma, int nbIterations) {
         this.graph = graph;
@@ -36,7 +36,7 @@ public class MetropolisAlgorithm {
             return Double.POSITIVE_INFINITY;
         }
         double cost = edges.stream().mapToDouble(edge -> 1 / (1 + edge.getValue())).sum();
-//        cost += WN *(graph.getNodeGroup1().size() + graph.getNodeGroup2().size() - 2 * edges.size());
+        cost += WN *(graph.getNodeGroup1().size() + graph.getNodeGroup2().size() - 2 * edges.size());
         return Math.exp(-beta * cost / edges.size());
     }
 

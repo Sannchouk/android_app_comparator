@@ -48,6 +48,7 @@ public class AppConfigModifier {
         Properties properties = new Properties();
         properties.setProperty("fileSize", "false");
         properties.setProperty("fileHash", "false");
+        properties.setProperty("fileExtension", "false");
         saveProperties(properties);
     }
 }

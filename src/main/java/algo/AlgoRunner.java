@@ -26,7 +26,6 @@ public class AlgoRunner {
         List<Apk> apks = new ArrayList<>();
         try {
             apks = listApks(path);
-            System.out.println("Directories:" + apks);
         } catch (IOException e) {
             System.out.println("Wrong path: " + path);
         }

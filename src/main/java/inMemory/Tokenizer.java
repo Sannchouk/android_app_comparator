@@ -20,10 +20,12 @@ public class Tokenizer {
 
     private boolean fileSize;
     private boolean fileHash;
+    private boolean fileExtension;
 
     public Tokenizer() {
         this.fileSize = config.getBoolean("fileSize");
         this.fileHash = config.getBoolean("fileHash");
+        this.fileExtension = config.getBoolean("fileExtension");
     }
 
     public void tokenize(Node node) {
@@ -42,6 +44,15 @@ public class Tokenizer {
             } catch (IOException | NoSuchAlgorithmException e) {
                 e.printStackTrace();
             }
+        }
+        if (fileExtension) {
+            int lastIndexOfDot = node.getPath().toString().lastIndexOf('.');
+            if (lastIndexOfDot != -1) {
+                String tokenFileExtension = node.getPath().toString().substring(lastIndexOfDot + 1);
+                System.out.println(tokenFileExtension);
+                node.addToken(tokenFileExtension);
+            }
+
         }
     }
 

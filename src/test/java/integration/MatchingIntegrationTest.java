@@ -143,8 +143,8 @@ public class MatchingIntegrationTest {
     }
 
     private static Stream<Map<String, Boolean>> tokenProperties() {
-        Map<String, Boolean> noOtherTokens = Map.of("fileSize", false, "fileHash", false);
-        Map<String, Boolean> allTokens = Map.of("fileSize", true, "fileHash", true);
+        Map<String, Boolean> noOtherTokens = Map.of("fileSize", false, "fileHash", false, "fileExtension", false);
+        Map<String, Boolean> allTokens = Map.of("fileSize", true, "fileHash", true, "fileExtension", false);
         return Stream.of(noOtherTokens, allTokens);
     }
 }

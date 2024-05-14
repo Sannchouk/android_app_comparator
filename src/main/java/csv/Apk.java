@@ -1,11 +1,12 @@
 package csv;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.nio.file.Path;
 
 @Getter
-public class Apk {
+public final class Apk {
 
     @Getter
     private static int ID_COUNTER = 0;
@@ -13,6 +14,10 @@ public class Apk {
     private int id;
     private String name;
     private Path path;
+    @Setter
+    private int numberOfFiles;
+    @Setter
+    private long totalSize;
 
     public static void resetIdCounter() {
         ID_COUNTER = 0;
@@ -25,6 +30,12 @@ public class Apk {
     }
 
     public String toString() {
-        return this.name;
+        return "Apk {" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", path=" + path +
+                ", numberOfFiles=" + numberOfFiles +
+                ", totalSize=" + totalSize +
+                '}';
     }
 }

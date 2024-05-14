@@ -84,6 +84,26 @@ public class FileTree {
             child.cleanPathsRec(parentFolder);
         }
     }
+
+    public int getNumberOfFiles() {
+        int numberOfFiles = 0;
+        for (FileTree child : children) {
+            numberOfFiles += child.getNumberOfFiles();
+        }
+        return numberOfFiles + 1;
+    }
+
+    public long getTotalSize() {
+        long totalSize = 0;
+        for (FileTree child : children) {
+            totalSize += child.getTotalSize();
+        }
+        try {
+            return (long) Files.size(path) + totalSize;
+        } catch (IOException e) {
+            return totalSize;
+        }
+    }
 }
 
 

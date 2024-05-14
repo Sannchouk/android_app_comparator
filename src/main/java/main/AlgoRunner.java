@@ -34,7 +34,7 @@ public class AlgoRunner {
         for (Apk apk1: apks) {
             for (Apk apk2 : apks) {
                 try {
-                    if (distancesStorer.hasDistanceBeenAlreadyComputed(apk1, apk2)) {
+                    if (distancesStorer.hasDistanceBeenAlreadyComputed(apk1, apk2) || apk1.equals(apk2)) {
                         continue;
                     }
                     float distance = compareTwoApks(apk1, apk2);

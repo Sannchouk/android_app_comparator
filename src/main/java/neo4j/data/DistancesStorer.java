@@ -1,4 +1,6 @@
-package neo4j;
+package neo4j.data;
+
+import neo4j.data.Apk;
 
 import java.util.HashMap;
 import java.util.Map;

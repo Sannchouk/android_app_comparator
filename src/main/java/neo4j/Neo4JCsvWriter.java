@@ -1,5 +1,7 @@
 package neo4j;
 
+import neo4j.data.Apk;
+
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.util.HashMap;

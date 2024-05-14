@@ -1,4 +1,4 @@
-package neo4j;
+package neo4j.data;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -37,5 +37,13 @@ public final class Apk {
                 ", numberOfFiles=" + numberOfFiles +
                 ", totalSize=" + totalSize +
                 '}';
+    }
+
+    public String toNeo4JString() {
+        return String.format("Apk{name:\"%s\", numberOfFiles:\"%d\", size:\"%d\"}", getNeo4JName(), numberOfFiles, totalSize);
+    }
+
+    public String getNeo4JName() {
+        return name.replace("-apk", "").replace("-", "_");
     }
 }

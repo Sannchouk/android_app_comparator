@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+option java_package = "com.lime.rider.proto.model";
+option java_multiple_files = true;
+
+message FeatureFlag {
+  google.protobuf.StringValue key = 1;
+  google.protobuf.StringValue type = 2;
+  google.protobuf.StringValue value = 3;
+  google.protobuf.StringValue description = 4;
+  google.protobuf.StringValue originValue = 5;
+  google.protobuf.BoolValue isCustomized = 6;
+  google.protobuf.BoolValue updatedByUser = 7;
+}

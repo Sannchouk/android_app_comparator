@@ -1,0 +1,11 @@
+Name,LevelLimit,ExportNamePostfix,Enabled,Snow,LoadingScreenFileName
+String,int,String,boolean,boolean,String
+ChineseNewYear,9,_winter,true,true,sc/loading_screen_winter.sc
+Valentines,9,,true,,
+Easter,9,,true,,
+Summer,9,_summer,true,,
+Halloween,9,_halloween,true,,sc/loading_screen_halloween.sc
+Autumn,9,_autumn,true,,
+Winter,9,_winter,true,true,sc/loading_screen_winter.sc
+Christmas,9,_winter,true,true,sc/loading_screen_winter.sc
+NewYear,9,_winter,true,true,sc/loading_screen_winter.sc

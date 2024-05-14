@@ -20,8 +20,6 @@ public class AppConfigModifier {
         Properties properties = loadProperties();
         updateProperties(properties, propertiesToUpdate);
         saveProperties(properties);
-        System.out.println(propertiesToUpdate);
-        System.out.println("Config updated" + properties);
     }
 
     private Properties loadProperties() throws IOException {

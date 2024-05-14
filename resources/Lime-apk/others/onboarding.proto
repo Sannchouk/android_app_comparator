@@ -1,0 +1,25 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+option java_package = "com.lime.rider.proto.model.others";
+
+message OnboardingSection {
+  google.protobuf.StringValue title = 1;
+  repeated OnboardingMethod methods = 2;
+  google.protobuf.StringValue loginUserAgreementHtmlText = 3;
+  SectionType sectionType = 4;
+
+  enum OnboardingMethod {
+    METHOD_UNKNOWN = 0;
+    PHONE = 1;
+    EMAIL = 2;
+    FACEBOOK = 3;
+    GOOGLE = 4;
+  }
+
+  enum SectionType {
+    SECTION_TYPE_UNKNOWN = 0;
+    SECTION_TYPE_PHONE = 1;
+    SECTION_TYPE_EMAIL = 2;
+    SECTION_TYPE_SOCIAL = 3;
+  }
+}

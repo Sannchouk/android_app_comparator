@@ -22,7 +22,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class IntegrationTest {
+public class MatchingIntegrationTest {
 
     static final AppConfigModifier appConfigModifier = new AppConfigModifier();
 

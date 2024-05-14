@@ -1,4 +1,4 @@
-package csv;
+package neo4j;
 
 import java.io.PrintWriter;
 import java.nio.file.Path;

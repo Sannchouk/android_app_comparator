@@ -1,4 +1,4 @@
-package csv;
+package neo4j;
 
 import java.util.HashMap;
 import java.util.Map;

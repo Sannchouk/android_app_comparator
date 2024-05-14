@@ -1,4 +1,4 @@
-package matching;
+package matching.algorithm;
 
 import bipartiteGraph.BipartiteGraph;
 import bipartiteGraph.Edge;

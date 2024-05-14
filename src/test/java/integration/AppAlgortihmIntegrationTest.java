@@ -1,8 +1,7 @@
 package integration;
 
-import com.typesafe.config.ConfigFactory;
-import csv.Apk;
-import main.AlgoRunner;
+import neo4j.Apk;
+import algo.AlgoRunner;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import utils.AppConfigModifier;
@@ -10,7 +9,6 @@ import utils.AppConfigModifier;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -39,7 +37,6 @@ public class AppAlgortihmIntegrationTest {
             assertTrue(apk.getTotalSize() > 0);
             assertTrue(apk.getNumberOfFiles() > 0);
         }
-        System.out.println(algorithmResults.getDistances());
         assertEquals(2, algorithmResults.getDistances().size());
         Apk chesscomApk = algorithmResults.getApks().get(0);
         Apk lichessApk = algorithmResults.getApks().get(1);

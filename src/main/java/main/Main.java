@@ -1,5 +1,8 @@
 package main;
 
+import algo.AlgoRunner;
+import algo.AlgorithmResults;
+
 public class Main {
 
     public static void main(String[] args) {

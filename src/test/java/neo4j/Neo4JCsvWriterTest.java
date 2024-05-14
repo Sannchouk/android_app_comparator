@@ -1,7 +1,6 @@
-package csv;
+package neo4j;
 
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -50,8 +49,6 @@ class Neo4JCsvWriterTest {
         String actualContent = new String(encodedBytes, StandardCharsets.UTF_8);
         List<String> actualLines = List.of(actualContent.split("\n"));
         assertEquals(expectedLines.get(0), actualLines.get(0));
-        System.out.println(actualLines);
-        System.out.println(expectedLines);
         for (int i = 1; i < expectedLines.size(); i++) {
             assertTrue(actualLines.contains(expectedLines.get(i)));
         }

@@ -1,10 +1,10 @@
-package matching;
+package matching.algorithm;
 
 import bipartiteGraph.BipartiteGraph;
 import bipartiteGraph.Edge;
 import lombok.Getter;
+import matching.algorithm.MatchingSuggester;
 
-import java.awt.desktop.SystemEventListener;
 import java.util.ArrayList;
 import java.util.List;
 

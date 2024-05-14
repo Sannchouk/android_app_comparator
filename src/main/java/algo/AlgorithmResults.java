@@ -1,6 +1,6 @@
-package main;
+package algo;
 
-import csv.Apk;
+import neo4j.Apk;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

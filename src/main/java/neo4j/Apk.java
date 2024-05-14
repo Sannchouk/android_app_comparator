@@ -1,4 +1,4 @@
-package csv;
+package neo4j;
 
 import lombok.Getter;
 import lombok.Setter;

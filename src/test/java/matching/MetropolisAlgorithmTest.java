@@ -3,6 +3,7 @@ package matching;
 import bipartiteGraph.BipartiteGraph;
 import bipartiteGraph.Edge;
 import bipartiteGraph.Node;
+import matching.algorithm.MetropolisAlgorithm;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
@@ -58,7 +59,6 @@ public class MetropolisAlgorithmTest {
 
         List<Edge> matching = metropolisAlgorithm.getMatching();
         double finalCost = metropolisAlgorithm.computeCost(matching);
-        System.out.println("Costs: " + biggestCost + " " + lowestCost + " " + finalCost + " " + acceptableCost);
         assertTrue(lowestCost <= finalCost);
         assertTrue(finalCost < acceptableCost);
     }

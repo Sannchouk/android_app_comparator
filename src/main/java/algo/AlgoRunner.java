@@ -1,15 +1,15 @@
-package main;
+package algo;
 
 import bipartiteGraph.BipartiteGraph;
 import bipartiteGraph.Edge;
 import bipartiteGraph.Node;
-import csv.Apk;
-import csv.DistancesStorer;
+import neo4j.Apk;
+import neo4j.DistancesStorer;
 import fileTree.FileTree;
 import inMemory.Indexer;
-import matching.DistanceComputer;
-import matching.MetropolisAlgorithm;
-import matching.SimilarityScoresComputer;
+import matching.computers.DistanceComputer;
+import matching.algorithm.MetropolisAlgorithm;
+import matching.computers.SimilarityScoresComputer;
 
 import java.io.IOException;
 import java.nio.file.Files;

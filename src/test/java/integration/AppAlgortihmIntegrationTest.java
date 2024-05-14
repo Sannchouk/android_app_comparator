@@ -1,14 +1,16 @@
 package integration;
 
-import neo4j.Apk;
+import neo4j.data.Apk;
 import algo.AlgoRunner;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import utils.AppConfigModifier;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -23,9 +25,9 @@ public class AppAlgortihmIntegrationTest {
     }
 
     @Test
-    void testApp() throws IOException {
+    void testApp() throws IOException, URISyntaxException {
         //GIVEN
-        Path resources = Paths.get("resources/");
+        Path resources = Paths.get(Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResource("apks")).toURI());
 
         //WHEN
         var algorithmResults = AlgoRunner.run(resources.toString());
@@ -33,7 +35,7 @@ public class AppAlgortihmIntegrationTest {
         //THEN
         assertEquals(3, algorithmResults.getApks().size());
         for (Apk apk : algorithmResults.getApks()) {
-            assertTrue(apk.getPath().toString().contains("resources"));
+            assertTrue(apk.getPath().toString().contains("apks"));
             assertTrue(apk.getTotalSize() > 0);
             assertTrue(apk.getNumberOfFiles() > 0);
         }

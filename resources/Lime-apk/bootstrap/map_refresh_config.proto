@@ -1,0 +1,9 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+option java_package = "com.lime.rider.proto.model.bootstrap";
+option java_multiple_files = true;
+
+message MapRefreshConfig {
+  google.protobuf.Int32Value userLocationChangeDistanceMeters = 1;
+  google.protobuf.DoubleValue mapCenterChangeDebounceSeconds = 2;
+}

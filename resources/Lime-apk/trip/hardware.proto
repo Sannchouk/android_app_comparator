@@ -1,0 +1,20 @@
+syntax = "proto3";
+option java_package = "com.lime.rider.proto.model.trip";
+option java_multiple_files = true;
+
+message PhysicalHardwareWithTypeModel {
+  Hardware hardware = 1;
+  HardwareType hardwareType = 2;
+
+  enum HardwareType {
+    UNKNOWN = 0;
+    BLUETOOTH = 1;
+    CAN = 2;
+  }
+
+  enum Hardware {
+    NONE = 0;
+    HELMET = 1;
+    LOCK_TO = 2;
+  }
+}

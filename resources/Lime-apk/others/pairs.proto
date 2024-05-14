@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+option java_package = "com.lime.rider.proto.model.others";
+
+message TripIdBatteryPair {
+  google.protobuf.StringValue tripId = 1;
+  google.protobuf.Int32Value capacity = 2;
+}
+
+message TripIdLockDismissedPair {
+  google.protobuf.StringValue tripId = 1;
+  google.protobuf.BoolValue dismissed = 2;
+}

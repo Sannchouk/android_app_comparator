@@ -1,6 +1,6 @@
 package algo;
 
-import neo4j.Apk;
+import neo4j.data.Apk;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

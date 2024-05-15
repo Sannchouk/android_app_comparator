@@ -1,8 +1,0 @@
-syntax = "proto3";
-import "google/protobuf/wrappers.proto";
-option java_package = "com.lime.rider.proto.model.others";
-
-message UserAgreementPair {
-  google.protobuf.StringValue countryCode = 1;
-  google.protobuf.Int32Value version = 2;
-}

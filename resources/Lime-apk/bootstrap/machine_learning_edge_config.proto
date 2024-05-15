@@ -1,9 +1,0 @@
-syntax = "proto3";
-import "google/protobuf/wrappers.proto";
-option java_package = "com.lime.rider.proto.model.bootstrap";
-option java_multiple_files = true;
-
-message MLOnEdgeConfig {
-  google.protobuf.Int32Value insufficientPhotoLimit = 1;
-  google.protobuf.Int32Value badParkingLimit = 2;
-}

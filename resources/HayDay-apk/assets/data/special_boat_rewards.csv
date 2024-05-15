@@ -1,3 +1,0 @@
-Name,FirstSpecialBoatDay,FirstSpecialBoatHour,MaxSpecialBoatsInWeek,MinBoatsBetweenSpecialBoat,MaxBoatsBetweenSpecialBoat,ForceSpecialBoatOnFirstOfMonth
-String,int,int,int,int,int,boolean
-Normal,0,10,2,2,3,true

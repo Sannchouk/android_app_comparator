@@ -1,4 +1,0 @@
-Name,ToolIconExportName,BonusIconExportName,BonusTID,TID,DescriptionTID,DiamondPrice,UnlockLevel
-String,String,String,String,String,String,int,int
-CountyFairDummyLuckyBonusTicket,icon_lucky_bonus,,,TID_COUNTY_FAIR_LUCKY_BONUS_TICKET,TID_COUNTY_FAIR_LUCKY_BONUS_TICKET_DESCRIPTION,1,1
-CountyFairDummyRibbon,icon_county_fair_ribbon,,,TID_COUNTY_FAIR_RIBBON,TID_COUNTY_FAIR_RIBBON_DESCRIPTION,1,1

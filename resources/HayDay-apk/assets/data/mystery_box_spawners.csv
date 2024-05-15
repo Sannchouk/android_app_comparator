@@ -1,3 +1,0 @@
-Name,UnlockLevel,MinSpawnTimeOpened,MaxSpawnTimeOpened,MinSpawnTimeClosed,MaxSpawnTimeClosed,MinSpawnTimeOpenedFriend,MaxSpawnTimeOpenedFriend,MinSpawnTimeClosedFriend,MaxSpawnTimeClosedFriend
-String,int,int,int,int,int,int,int,int,int
-MysteryBoxSpawner,5,30,400,300,28800,10,30,120,1800

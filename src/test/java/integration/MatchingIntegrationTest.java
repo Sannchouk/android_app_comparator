@@ -14,10 +14,12 @@ import org.junit.jupiter.params.provider.MethodSource;
 import utils.AppConfigModifier;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,6 +27,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class MatchingIntegrationTest {
 
     static final AppConfigModifier appConfigModifier = new AppConfigModifier();
+
+    Path resources = Paths.get(Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResource("apks")).toURI());
+
+    public MatchingIntegrationTest() throws URISyntaxException {
+    }
 
     @AfterAll
     static void tearDown() throws IOException {
@@ -36,8 +43,8 @@ public class MatchingIntegrationTest {
     @MethodSource({"tokenProperties"})
     void testApp(Map<String, Boolean> tokenProperties) throws IOException {
         //GIVEN
-        Path apk1 = Paths.get("resources/lichess-apk");
-        Path apk2 = Paths.get("resources/chesscom-apk");
+        Path apk1 = resources.resolve("lichess-apk");
+        Path apk2 = resources.resolve("chesscom-apk");
         FileTree tree1 = FileTree.buildTree(apk1);
         FileTree tree2 = FileTree.buildTree(apk2);
         BipartiteGraph graph;
@@ -73,7 +80,7 @@ public class MatchingIntegrationTest {
     @MethodSource({"tokenProperties"})
     void testAppWithTwoIdenticalApks(Map<String, Boolean> tokenProperties) throws IOException {
         //GIVEN
-        Path apk1 = Paths.get("resources/lichess-apk");
+        Path apk1 = resources.resolve("lichess-apk");
         FileTree tree1 = FileTree.buildTree(apk1);
         FileTree tree2 = FileTree.buildTree(apk1);
         ConfigFactory.invalidateCaches();
@@ -108,8 +115,8 @@ public class MatchingIntegrationTest {
     @MethodSource({"tokenProperties"})
     void testAppWithTwoIdenticalApksWithDifferentVersions(Map<String, Boolean> tokenProperties) throws IOException {
         //GIVEN
-        Path apk1 = Paths.get("resources/lichess-apk");
-        Path apk2 = Paths.get("resources/lichess-2021-apk");
+        Path apk1 = resources.resolve("lichess-apk");
+        Path apk2 = resources.resolve("lichess-2021-apk");
         FileTree tree1 = FileTree.buildTree(apk1);
         FileTree tree2 = FileTree.buildTree(apk2);
         BipartiteGraph graph;

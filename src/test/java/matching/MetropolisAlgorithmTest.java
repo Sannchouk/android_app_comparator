@@ -15,25 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class MetropolisAlgorithmTest {
 
     @Test
-    void testComputeCost() {
-        BipartiteGraph graph = new BipartiteGraph();
-        Node node1 = new Node(Path.of("node1"), List.of());
-        Node node2 = new Node(Path.of("node2"), List.of());
-        Node node3 = new Node(Path.of("node3"), List.of());
-        List<Edge> edges = List.of(
-                new Edge(node1, node2, 1.0),
-                new Edge(node2, node3, 2.0),
-                new Edge(node1, node3, 3.0)
-        );
-
-        MetropolisAlgorithm metropolisAlgorithm = new MetropolisAlgorithm(graph, 2.5, 0.8, 10);
-
-        double cost = metropolisAlgorithm.computeCost(edges);
-        double expectedCost = Math.exp(-2.5 * ((double) 1 /2 + (double) 1 /3 + (double) 1 /4) / 3.0);
-        assertEquals(expectedCost, cost);
-    }
-
-    @Test
     void testAlgorithm() {
         // Given
         Node node1 = new Node(Path.of("node1"), List.of());

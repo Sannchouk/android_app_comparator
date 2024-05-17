@@ -147,6 +147,10 @@ public class BipartiteGraph {
         }
     }
 
+    public int getTotalNumberOfNodes() {
+        return nodeGroup1.size() + nodeGroup2.size();
+    }
+
     private void buildEdgesFromNeighborhood(Node node, Map<Node, Double> neighborhood) {
         for (Map.Entry<Node, Double> entry : neighborhood.entrySet()) {
             Node neighbor = entry.getKey();

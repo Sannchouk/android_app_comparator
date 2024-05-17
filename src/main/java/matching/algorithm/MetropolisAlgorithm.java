@@ -16,7 +16,7 @@ public class MetropolisAlgorithm {
     private final int nbIterations;
     private List<Edge> currentMatching;
     private final MatchingSuggester suggester;
-//    private final static double WN = 1.0;
+    private final CostComputer costComputer;
 
     public MetropolisAlgorithm(BipartiteGraph graph, double beta, double gamma, int nbIterations) {
         this.graph = graph;
@@ -25,19 +25,11 @@ public class MetropolisAlgorithm {
         this.nbIterations = nbIterations;
         this.currentMatching = new ArrayList<>(graph.getEdges());
         this.suggester = new MatchingSuggester(gamma);
+        this.costComputer = new CostComputer(beta);
     }
 
     public List<Edge> getMatching() {
         return currentMatching;
-    }
-
-    public double computeCost(List<Edge> edges) {
-        if (edges.isEmpty()) {
-            return Double.POSITIVE_INFINITY;
-        }
-        double cost = edges.stream().mapToDouble(edge -> 1 / (1 + edge.getValue())).sum();
-//        cost += WN *(graph.getNodeGroup1().size() + graph.getNodeGroup2().size() - 2 * edges.size());
-        return Math.exp(-beta * cost / edges.size());
     }
 
     public void run() {
@@ -51,6 +43,10 @@ public class MetropolisAlgorithm {
             }
         }
         graph.setEdges(currentMatching);
+    }
+
+    public double computeCost(List<Edge> matching) {
+        return this.costComputer.computeCost(matching, Math.max(graph.getNodeGroup1().size(), graph.getNodeGroup2().size()));
     }
 
     private boolean isFullMatchingCorrect(List<Edge> matching) {

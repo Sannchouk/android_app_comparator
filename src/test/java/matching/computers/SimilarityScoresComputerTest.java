@@ -1,8 +1,7 @@
-package matching;
+package matching.computers;
 
 import bipartiteGraph.Node;
 import inMemory.Indexer;
-import matching.computers.SimilarityScoresComputer;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;

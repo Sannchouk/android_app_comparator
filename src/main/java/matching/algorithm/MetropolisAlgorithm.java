@@ -15,6 +15,7 @@ public class MetropolisAlgorithm {
     private final double gamma;
     private final int nbIterations;
     private List<Edge> currentMatching;
+    @Getter
     private final MatchingSuggester suggester;
     private final CostComputer costComputer;
 

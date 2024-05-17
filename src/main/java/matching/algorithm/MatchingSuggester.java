@@ -2,6 +2,7 @@ package matching.algorithm;
 
 import bipartiteGraph.BipartiteGraph;
 import bipartiteGraph.Edge;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -11,6 +12,8 @@ import java.util.Random;
 public class MatchingSuggester {
 
     private final double gamma;
+    @Getter
+    private Random rand = new Random();
 
     public MatchingSuggester(double gamma) {
         this.gamma = gamma;
@@ -20,7 +23,7 @@ public class MatchingSuggester {
         List<Edge> newMatching = new ArrayList<>();
         List<Edge> remainingEdges = new ArrayList<>(edges);
         remainingEdges.sort(Comparator.comparingDouble(Edge::getValue)); // sortedEdges(g)
-        int toKeep = new Random().nextInt(edges.size() + 1); // randomInt(0, |Mi|)
+        int toKeep = rand.nextInt(edges.size() + 1); // randomInt(0, |Mi|)
         for (int j = 0; j < toKeep; j++) {
             if (remainingEdges.isEmpty()) {
                 break;

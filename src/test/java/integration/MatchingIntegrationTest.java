@@ -101,6 +101,7 @@ public class MatchingIntegrationTest {
                 0.8,
                 10
         );
+        metropolisAlgorithm.getSuggester().getRand().setSeed(42);
 
         //WHEN
         metropolisAlgorithm.run();

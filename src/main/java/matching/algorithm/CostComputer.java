@@ -16,13 +16,13 @@ public class CostComputer {
         this.beta = beta;
     }
 
-    public double computeCost(List<Edge> edges, int totalNumberOfNodes) {
+    public double computeCost(List<Edge> edges, int maxSize) {
         if (edges.isEmpty()) {
             return Double.POSITIVE_INFINITY;
         }
-        double cost = edges.stream().mapToDouble(edge -> 1 / (1 + edge.getValue())).sum();
-        cost += WN *(totalNumberOfNodes - 2 * edges.size());
-        return Math.exp(-beta * cost / edges.size());
+        double nomatchCost = WN * (maxSize - edges.size());
+        double matchCosts = edges.stream().mapToDouble(edge -> 1 / (1 + edge.getValue())).sum();
+        return Math.exp(-beta * (nomatchCost + matchCosts) / edges.size());
     }
 
 

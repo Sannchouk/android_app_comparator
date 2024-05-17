@@ -6,7 +6,10 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Getter
 @AllArgsConstructor
@@ -21,6 +24,8 @@ public class Node {
     private Node parent = null;
     @NonNull
     private List<Node> children = new ArrayList<>();
+
+    private Map<String, String> attributes = new HashMap<>();
 
     public Node(String path) {
         this.path = Path.of(path);
@@ -37,16 +42,18 @@ public class Node {
         this.tokens = tokens;
     }
 
+    public Node(Path path, Map<String, String> attributes) {
+        this.path = path;
+        this.attributes = attributes;
+        this.tokens = new ArrayList<>(attributes.values());
+    }
+
     public void addToken(String token) {
         tokens.add(token);
     }
 
-    public void removeToken(String token) {
-        tokens.remove(token);
-    }
-
-    public void removeAllTokens() {
-        tokens.clear();
+    public void addAttribute(String attribute, String name) {
+        attributes.put(attribute, name);
     }
 
     @Override

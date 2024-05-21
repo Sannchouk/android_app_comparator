@@ -2,10 +2,15 @@ package matching.computers;
 
 import bipartiteGraph.Node;
 import inMemory.Indexer;
+import matching.computers.hashs.HammingDistanceComputer;
+import matching.computers.hashs.HashDistanceComputer;
+import matching.computers.names.LevenshteinNameDistanceComputer;
+import matching.computers.names.NameDistanceComputer;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class SimilarityScoresComputer {
     private final Indexer indexer;
@@ -125,14 +130,21 @@ public class SimilarityScoresComputer {
         for(Node nodes : indexer.getGroup2()) {
             neighbors.put(nodes, 0.0);
         }
-        for (String tk : node.getTokens()) {
-            for (Node neighbor : indexer.getTokenMap().getOrDefault(tk, Collections.emptyList())) {
-                if ((node.getGroup() != null && node.getGroup().equals(neighbor.getGroup()))) {
-                    continue;
+        double score = 0;
+        NameDistanceComputer nameDistanceComputer = new LevenshteinNameDistanceComputer();
+        HashDistanceComputer hashDistanceComputer = new HammingDistanceComputer();
+        for (String attribute : node.getAttributes().keySet()) {
+            for (Node neighbor : indexer.getGroup2()) {
+                if (Objects.equals(attribute, "name")) {
+                    score += 1.0 / nameDistanceComputer.computeDistanceBetweenTwoNames(node.getAttributes().get(attribute), neighbor.getAttributes().get(attribute));
                 }
-                double score = indexer.computeIdf(tk);
+                if (Objects.equals(attribute, "hash")) {
+                    score += 1.0 / hashDistanceComputer.computeDistanceBetweenTwoHashes(node.getAttributes().get(attribute), neighbor.getAttributes().get(attribute));
+                }
+                System.out.println(score);
                 neighbors.merge(neighbor, score, Double::sum);
             }
+
         }
         return neighbors;
     }

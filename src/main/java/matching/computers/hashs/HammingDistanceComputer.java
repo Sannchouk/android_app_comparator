@@ -1,6 +1,6 @@
 package matching.computers.hashs;
 
-public class HammingDistanceComputer {
+public class HammingDistanceComputer implements HashDistanceComputer {
 
     public int computeDistanceBetweenTwoHashes (String hash1, String hash2) {
         if (hash1.isEmpty() || hash2.isEmpty()) {

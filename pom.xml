@@ -48,6 +48,12 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>edu.gatech.gtri.bk-tree</groupId>
+      <artifactId>bk-tree</artifactId>
+      <version>1.0</version>
+    </dependency>
+
     <!-- to get afterClass -->
     <dependency>
       <groupId>junit</groupId>

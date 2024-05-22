@@ -1,16 +1,17 @@
 package matching.computers;
 
 import bipartiteGraph.Node;
+import edu.gatech.gtri.bktree.BkTreeSearcher;
+import edu.gatech.gtri.bktree.BkTreeSearcher.Match;
+import edu.gatech.gtri.bktree.Metric;
+import edu.gatech.gtri.bktree.MutableBkTree;
 import inMemory.Indexer;
 import matching.computers.hashs.HammingDistanceComputer;
-import matching.computers.hashs.HashDistanceComputer;
 import matching.computers.names.LevenshteinNameDistanceComputer;
-import matching.computers.names.NameDistanceComputer;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
+import java.util.Set;
 
 public class SimilarityScoresComputer {
     private final Indexer indexer;
@@ -20,6 +21,15 @@ public class SimilarityScoresComputer {
     private static final float[] V_PROPAGATION_WEIGHTS = {0.8f, 0.08f, 0.008f};
 
     private final Map<Node, HashMap<Node, Double>> similarityScores = new HashMap<>();
+
+    private final static int NAME_DISTANCE_THRESHOLD = 3;
+    private final static int HASH_DISTANCE_THRESHOLD = 6;
+    private final static double HASH_WEIGHT = 0.7;
+    private final static double NAME_WEIGHT = 0.3;
+
+    private static int computeDistance(int nameDistance, int hashDistance) {
+        return (int) ((NAME_WEIGHT * nameDistance + 1) + (HASH_WEIGHT * hashDistance + 1));
+    }
 
 
     public SimilarityScoresComputer(Indexer indexer) {
@@ -32,8 +42,27 @@ public class SimilarityScoresComputer {
      * @return the similarity scores
      */
     public Map<Node, HashMap<Node, Double>> computeSimilarityScores() {
+        Metric<Node> distance = (x, y) -> {
+            LevenshteinNameDistanceComputer levenshteinNameDistanceComputer = new LevenshteinNameDistanceComputer();
+            int nameDistance = levenshteinNameDistanceComputer.computeDistanceBetweenTwoNames(x.getAttributes().get("name"), y.getAttributes().get("name"));
+//            if (x.getAttributes().get("hash") == null || y.getAttributes().get("hash") == null) {
+//                // we authorize distance d
+//                return nameDistance;
+//            }
+//            else {
+                HammingDistanceComputer hammingDistanceComputer = new HammingDistanceComputer();
+                int hashDistance = hammingDistanceComputer.computeDistanceBetweenTwoHashes(x.getAttributes().get("hash"), y.getAttributes().get("hash"));
+                // we authorize distance d or one quarter of the hash length
+                return computeDistance(nameDistance, hashDistance);
+//            }
+        };
+        MutableBkTree<Node> bkTree = new MutableBkTree<>(distance);
+        for (Node node : indexer.getGroup2()) {
+            bkTree.add(node);
+        }
+        BkTreeSearcher<Node> searcher = new BkTreeSearcher<>(bkTree);
         for (Node node : indexer.getGroup1()) {
-            similarityScores.put(node, computeSimilarityScoresForNode(node));
+            similarityScores.put(node, computeSimilarityScoresForNode(node, searcher));
         }
         computePropagationScores();
         applyPenalization();
@@ -125,26 +154,18 @@ public class SimilarityScoresComputer {
      * @param node the node
      * @return the similarity scores
      */
-    private HashMap<Node, Double> computeSimilarityScoresForNode(Node node) {
+    private HashMap<Node, Double> computeSimilarityScoresForNode(Node node, BkTreeSearcher<Node> searcher) {
         HashMap<Node, Double> neighbors = new HashMap<>();
         for(Node nodes : indexer.getGroup2()) {
             neighbors.put(nodes, 0.0);
         }
-        double score = 0;
-        NameDistanceComputer nameDistanceComputer = new LevenshteinNameDistanceComputer();
-        HashDistanceComputer hashDistanceComputer = new HammingDistanceComputer();
-        for (String attribute : node.getAttributes().keySet()) {
-            for (Node neighbor : indexer.getGroup2()) {
-                if (Objects.equals(attribute, "name")) {
-                    score += 1.0 / nameDistanceComputer.computeDistanceBetweenTwoNames(node.getAttributes().get(attribute), neighbor.getAttributes().get(attribute));
-                }
-                if (Objects.equals(attribute, "hash")) {
-                    score += 1.0 / hashDistanceComputer.computeDistanceBetweenTwoHashes(node.getAttributes().get(attribute), neighbor.getAttributes().get(attribute));
-                }
-                System.out.println(score);
-                neighbors.merge(neighbor, score, Double::sum);
+        Set<Match<? extends Node>> matches = searcher.search(node, computeDistance(NAME_DISTANCE_THRESHOLD, HASH_DISTANCE_THRESHOLD));
+        for (Match<? extends Node> match : matches) {
+            double similarity = 0.0;
+            if (match.getDistance() != 0) {
+                similarity = (double) 1 / match.getDistance();
             }
-
+            neighbors.put(match.getMatch(), similarity);
         }
         return neighbors;
     }

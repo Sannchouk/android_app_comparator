@@ -28,7 +28,7 @@ public class Tokenizer {
 
     public void tokenize(Node node) {
         node.getTokens().clear();
-        String tokenFileName = node.getPath().toString().substring(node.getPath().toString().lastIndexOf('/') + 1);
+        String tokenFileName = node.getPath().toString().substring(node.getPath().toString().lastIndexOf(File.separator) + 1);
         node.addToken(tokenFileName);
         node.addAttribute("name", tokenFileName);
         if (fileSize) {

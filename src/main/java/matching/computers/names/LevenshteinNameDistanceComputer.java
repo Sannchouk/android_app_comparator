@@ -2,7 +2,15 @@ package matching.computers.names;
 
 public class LevenshteinNameDistanceComputer implements NameDistanceComputer {
 
-    public double computeDistanceBetweenTwoNames(String name1, String name2) {
+    public int computeDistanceBetweenTwoNames(String name1, String name2) {
+        if (name1 == null || name2 == null) {
+            return Integer.MAX_VALUE;
+        }
+
+        if (name1.isEmpty() || name2.isEmpty()) {
+            return Math.max(name1.length(), name2.length());
+        }
+
         int m = name1.length();
         int n = name2.length();
 

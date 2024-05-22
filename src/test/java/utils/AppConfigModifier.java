@@ -46,8 +46,8 @@ public class AppConfigModifier {
 
     public synchronized void restoreConfig() throws IOException {
         Properties properties = new Properties();
-        properties.setProperty("fileSize", "false");
-        properties.setProperty("fileHash", "false");
+        properties.setProperty("fileSize", "true");
+        properties.setProperty("fileHash", "true");
         saveProperties(properties);
     }
 }

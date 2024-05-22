@@ -1,45 +1,59 @@
 MATCH (n)
 DETACH DELETE n;
-CREATE (:Apk{name:"lichess_2021", numberOfFiles:"1358", size:"71904532"})
-CREATE (:Apk{name:"HayDay", numberOfFiles:"3731", size:"293015545"})
-CREATE (:Apk{name:"lichess", numberOfFiles:"1312", size:"123971704"})
-CREATE (:Apk{name:"tier", numberOfFiles:"5783", size:"220529196"})
-CREATE (:Apk{name:"chesscom", numberOfFiles:"5500", size:"105880252"})
-CREATE (:Apk{name:"Lime", numberOfFiles:"6213", size:"148201005"})
+CREATE (:Apk{name:"chesscom", numberOfFiles:"5500", size:"106853953"})
+CREATE (:Apk{name:"com.chess_4.5.17_googleplay_APK4Fun.com", numberOfFiles:"6310", size:"116394145"})
+CREATE (:Apk{name:"HayDay", numberOfFiles:"3731", size:"294411734"})
+CREATE (:Apk{name:"lichess_2021", numberOfFiles:"1358", size:"72108518"})
+CREATE (:Apk{name:"lichess", numberOfFiles:"1312", size:"124169443"})
+CREATE (:Apk{name:"Lime", numberOfFiles:"6213", size:"150111298"})
+CREATE (:Apk{name:"tier", numberOfFiles:"5783", size:"222508302"})
 WITH 1 AS _
-MATCH (lichess_2021:Apk{name:"lichess_2021", numberOfFiles:"1358", size:"71904532"})
-MATCH (HayDay:Apk{name:"HayDay", numberOfFiles:"3731", size:"293015545"})
-MATCH (lichess:Apk{name:"lichess", numberOfFiles:"1312", size:"123971704"})
-MATCH (tier:Apk{name:"tier", numberOfFiles:"5783", size:"220529196"})
-MATCH (chesscom:Apk{name:"chesscom", numberOfFiles:"5500", size:"105880252"})
-MATCH (Lime:Apk{name:"Lime", numberOfFiles:"6213", size:"148201005"})
-MERGE (lichess_2021)-[r1:COMPARED_TO]-(tier)
-MERGE (lichess_2021)-[r2:COMPARED_TO]-(lichess)
-MERGE (lichess_2021)-[r3:COMPARED_TO]-(chesscom)
-MERGE (lichess_2021)-[r4:COMPARED_TO]-(HayDay)
-MERGE (lichess_2021)-[r5:COMPARED_TO]-(Lime)
-MERGE (tier)-[r6:COMPARED_TO]-(chesscom)
-MERGE (tier)-[r7:COMPARED_TO]-(Lime)
-MERGE (lichess)-[r8:COMPARED_TO]-(tier)
-MERGE (lichess)-[r9:COMPARED_TO]-(chesscom)
-MERGE (lichess)-[r10:COMPARED_TO]-(Lime)
-MERGE (chesscom)-[r11:COMPARED_TO]-(Lime)
-MERGE (HayDay)-[r12:COMPARED_TO]-(tier)
-MERGE (HayDay)-[r13:COMPARED_TO]-(lichess)
-MERGE (HayDay)-[r14:COMPARED_TO]-(chesscom)
-MERGE (HayDay)-[r15:COMPARED_TO]-(Lime)
-SET r2.value = 0.56704116
-SET r3.value = 0.98512685
-SET r4.value = 0.9781883
-SET r5.value = 0.98573506
-SET r6.value = 0.96126914
-SET r7.value = 0.7828443
-SET r8.value = 0.98350954
-SET r9.value = 0.9835584
-SET r10.value = 0.98418605
-SET r12.value = 0.8487492
-SET r11.value = 0.9649108
-SET r14.value = 0.96360093
-SET r13.value = 0.97620463
-SET r15.value = 0.8520716
-SET r1.value = 0.9851561
+MATCH (chesscom:Apk{name:"chesscom", numberOfFiles:"5500", size:"106853953"})
+MATCH (com.chess_4.5.17_googleplay_APK4Fun.com:Apk{name:"com.chess_4.5.17_googleplay_APK4Fun.com", numberOfFiles:"6310", size:"116394145"})
+MATCH (HayDay:Apk{name:"HayDay", numberOfFiles:"3731", size:"294411734"})
+MATCH (lichess_2021:Apk{name:"lichess_2021", numberOfFiles:"1358", size:"72108518"})
+MATCH (lichess:Apk{name:"lichess", numberOfFiles:"1312", size:"124169443"})
+MATCH (Lime:Apk{name:"Lime", numberOfFiles:"6213", size:"150111298"})
+MATCH (tier:Apk{name:"tier", numberOfFiles:"5783", size:"222508302"})
+MERGE (Lime)-[r1:COMPARED_TO]-(tier)
+MERGE (HayDay)-[r2:COMPARED_TO]-(Lime)
+MERGE (HayDay)-[r3:COMPARED_TO]-(lichess_2021)
+MERGE (HayDay)-[r4:COMPARED_TO]-(lichess)
+MERGE (HayDay)-[r5:COMPARED_TO]-(tier)
+MERGE (chesscom)-[r6:COMPARED_TO]-(Lime)
+MERGE (chesscom)-[r7:COMPARED_TO]-(HayDay)
+MERGE (chesscom)-[r8:COMPARED_TO]-(lichess_2021)
+MERGE (chesscom)-[r9:COMPARED_TO]-(lichess)
+MERGE (chesscom)-[r10:COMPARED_TO]-(com.chess_4.5.17_googleplay_APK4Fun.com)
+MERGE (chesscom)-[r11:COMPARED_TO]-(tier)
+MERGE (lichess_2021)-[r12:COMPARED_TO]-(Lime)
+MERGE (lichess_2021)-[r13:COMPARED_TO]-(lichess)
+MERGE (lichess_2021)-[r14:COMPARED_TO]-(tier)
+MERGE (lichess)-[r15:COMPARED_TO]-(Lime)
+MERGE (lichess)-[r16:COMPARED_TO]-(tier)
+MERGE (com.chess_4.5.17_googleplay_APK4Fun.com)-[r17:COMPARED_TO]-(Lime)
+MERGE (com.chess_4.5.17_googleplay_APK4Fun.com)-[r18:COMPARED_TO]-(HayDay)
+MERGE (com.chess_4.5.17_googleplay_APK4Fun.com)-[r19:COMPARED_TO]-(lichess_2021)
+MERGE (com.chess_4.5.17_googleplay_APK4Fun.com)-[r20:COMPARED_TO]-(lichess)
+MERGE (com.chess_4.5.17_googleplay_APK4Fun.com)-[r21:COMPARED_TO]-(tier)
+SET r2.value = 0.90949315
+SET r3.value = 0.97995675
+SET r4.value = 0.97977394
+SET r5.value = 0.94723564
+SET r6.value = 0.97327757
+SET r7.value = 0.9874337
+SET r8.value = 0.96281713
+SET r9.value = 0.9555197
+SET r10.value = 0.80186284
+SET r21.value = 0.99487305
+SET r20.value = 0.9633954
+SET r12.value = 0.9862634
+SET r11.value = 0.9712842
+SET r14.value = 0.98655653
+SET r13.value = 0.6692884
+SET r16.value = 0.9850599
+SET r15.value = 0.9860465
+SET r18.value = 0.99014044
+SET r17.value = 0.9942506
+SET r19.value = 0.9683099
+SET r1.value = 0.888046

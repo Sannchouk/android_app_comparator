@@ -1,3 +1,0 @@
-Name,Enabled,TID,DelayMinutes,Sound,NotificationIconExportName
-String,Boolean,String,int,String,String
-CompleteTask,true,TID_FARM_PASS_NOTIFICATION_TASK_COMPLETE,,FarmPassPartyStart,icon_fp_notification_chick

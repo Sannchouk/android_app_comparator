@@ -1,2 +1,0 @@
-person_without_helmet
-person_with_helmet

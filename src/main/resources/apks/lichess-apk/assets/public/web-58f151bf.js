@@ -1,1 +1,0 @@
-import{W as e}from"./main.js";class n extends e{async alert(e){window.alert(e.message)}async prompt(e){const n=window.prompt(e.message,e.inputText||"");return{value:null!==n?n:"",cancelled:null===n}}async confirm(e){return{value:window.confirm(e.message)}}}export{n as DialogWeb};

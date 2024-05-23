@@ -5,20 +5,18 @@ import neo4j.data.Apk;
 import java.io.FileWriter;
 import java.util.List;
 
-public class DistanceMatrixIO {
+public class DistanceMatrixWriter {
 
     public void writeDistanceMatrixInCSV(String path, double[][] distancesMatrix, List<Apk> apks) {
         List<String> apkNames = apks.stream().map(Apk::getName).toList();
         try {
             FileWriter writer = new FileWriter(path);
 
-            // Write header row with APK names
             for (String apkName : apkNames) {
                 writer.append(apkName).append(",");
             }
             writer.append("\n");
 
-            // Write distances matrix
             for (int i = 0; i < distancesMatrix.length; i++) {
                 writer.append(apkNames.get(i)).append(","); // APK name for each row
                 for (int j = 0; j < distancesMatrix[i].length; j++) {

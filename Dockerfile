@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY target/PJI-1.0-SNAPSHOT.jar /app/
 
-COPY src/main/resources/apks /app/resources/apks
+COPY src/main/resources/all_apks /app/resources/apks
 
 CMD ["java", "-jar", "PJI-1.0-SNAPSHOT.jar", "resources/apks"]

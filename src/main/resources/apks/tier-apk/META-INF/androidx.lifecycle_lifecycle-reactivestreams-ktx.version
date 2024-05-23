@@ -1,1 +1,0 @@
-task ':lifecycle:lifecycle-reactivestreams-ktx:writeVersionFile' property 'version'

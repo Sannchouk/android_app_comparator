@@ -3,17 +3,22 @@ package neo4j.data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.IOException;
+import java.io.Serial;
+import java.io.Serializable;
 import java.nio.file.Path;
 
 @Getter
-public final class Apk {
+public final class Apk implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Getter
     private static int ID_COUNTER = 0;
 
     private int id;
     private String name;
-    private Path path;
+    private transient Path path; // Path is not serializable, so mark it as transient
     @Setter
     private int numberOfFiles;
     @Setter
@@ -29,6 +34,20 @@ public final class Apk {
         this.path = path;
     }
 
+    @Serial
+    private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+        out.defaultWriteObject();
+        out.writeObject(path != null ? path.toString() : null);
+    }
+
+    @Serial
+    private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException, IOException {
+        in.defaultReadObject();
+        String pathStr = (String) in.readObject();
+        this.path = pathStr != null ? Path.of(pathStr) : null;
+    }
+
+    @Override
     public String toString() {
         return "Apk {" +
                 "id=" + id +

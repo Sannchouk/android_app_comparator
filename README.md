@@ -16,8 +16,8 @@
 ### Things to do
 
 - [ ] Write documentation
-- [ ] Make some refactors on new points
-- [ ] Clean changes with new tokens
+- [ ] Make some refactors on new points (tokens for example)
+- [ ] Parallelize some parts of the algortihm
 - [ ] Rewrite old tests
 - [ ] Make fine-tuning on parameters
 - [ ] Improve pom.xml

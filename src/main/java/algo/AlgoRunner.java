@@ -7,7 +7,6 @@ import neo4j.data.Apk;
 import neo4j.data.DistancesStorer;
 import fileTree.FileTree;
 import inMemory.Indexer;
-import matching.computers.DistanceComputer;
 import matching.algorithm.MetropolisAlgorithm;
 import matching.computers.SimilarityScoresComputer;
 

@@ -45,16 +45,9 @@ public class SimilarityScoresComputer {
         Metric<Node> distance = (x, y) -> {
             LevenshteinNameDistanceComputer levenshteinNameDistanceComputer = new LevenshteinNameDistanceComputer();
             int nameDistance = levenshteinNameDistanceComputer.computeDistanceBetweenTwoNames(x.getAttributes().get("name"), y.getAttributes().get("name"));
-//            if (x.getAttributes().get("hash") == null || y.getAttributes().get("hash") == null) {
-//                // we authorize distance d
-//                return nameDistance;
-//            }
-//            else {
-                HammingDistanceComputer hammingDistanceComputer = new HammingDistanceComputer();
-                int hashDistance = hammingDistanceComputer.computeDistanceBetweenTwoHashes(x.getAttributes().get("hash"), y.getAttributes().get("hash"));
-                // we authorize distance d or one quarter of the hash length
-                return computeDistance(nameDistance, hashDistance);
-//            }
+            HammingDistanceComputer hammingDistanceComputer = new HammingDistanceComputer();
+            int hashDistance = hammingDistanceComputer.computeDistanceBetweenTwoHashes(x.getAttributes().get("hash"), y.getAttributes().get("hash"));
+            return computeDistance(nameDistance, hashDistance);
         };
         MutableBkTree<Node> bkTree = new MutableBkTree<>(distance);
         for (Node node : indexer.getGroup2()) {

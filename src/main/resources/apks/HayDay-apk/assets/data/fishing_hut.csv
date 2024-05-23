@@ -1,3 +1,0 @@
-Name,FileName,ExportName,TileWidth,TileHeight,CollectSound,TapSound
-String,String,String,int,int,String,String
-FishingHut,sc/fishing_area_buildings_and_decos.sc,Building_Fishing_Hut,5,4,Collect,MenuBleep

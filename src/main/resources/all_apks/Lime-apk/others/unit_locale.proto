@@ -1,0 +1,8 @@
+syntax = "proto3";
+option java_package = "com.lime.rider.proto.model.others";
+
+enum UnitLocale {
+  DEFAULT = 0;
+  METRIC = 1;
+  IMPERIAL = 2;
+}

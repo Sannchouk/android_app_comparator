@@ -1,0 +1,910 @@
+[
+	{
+		"method": "POST",
+		"name": "api/rider/v1/actions/ring_bike"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/actions/ring_bike"
+	},
+	{
+		"method": "PUT",
+		"name": "api/rider/v1/messages/{id}"
+	},
+	{
+		"method": "DELETE",
+		"name": "api/rider/v1/messages/{id}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/experiments"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/experiments/{id}/assign_user"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v2/onboarding/experiments"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v2/onboarding/magic-link"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v2/onboarding/login"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/users/bootstrap"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/onboarding/steps"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/users/bootstrap"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/referral_credits"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/bikes/preview"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/bikes/area_rate_plan"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/actions/rate_trip"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/actions/rate_group_ride"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/trips"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/users/pre_auth_payment_verification_failed"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/trips/create_reservation"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/trips/{id}/cancel_reservation"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/trips/{id}/resume"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/trips/{id}/pause"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/trips/{id}/complete"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/trips/{id}/upload_end_trip_image"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/views/credits"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/coupons/claim"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/payment_methods"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/payment_methods/tokens"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/user/payment_methods/primer_token"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/payment_methods/{payment_method_id}"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/payment_methods"
+	},
+	{
+		"method": "DELETE",
+		"name": "api/rider/v1/payment_methods/{payment_method_id}"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/payment_methods/tokens"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/payment_methods/{payment_method_id}"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/payment_methods"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/payment_methods"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/payment_methods"
+	},
+	{
+		"method": "PUT",
+		"name": "api/rider/v1/payment_methods/{id}"
+	},
+	{
+		"method": "PUT",
+		"name": "api/rider/v1/payment_methods/{id}"
+	},
+	{
+		"method": "PUT",
+		"name": "api/rider/v1/payment_methods/{payment_method_id}"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/user/payment_methods/set_virtual_card_as_default"
+	},
+	{
+		"method": "DELETE",
+		"name": "api/rider/v1/payment_methods/{payment_method_id}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/available_payment_methods"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/actions/add_balance_dynamic"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/actions/add_balance_with_lpm"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/users/donations"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/help/bike"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/self_help"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/bikes/fetch_by_qr_code_token"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/bikes/fetch_by_plate_number"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/views/rider_summary"
+	},
+	{
+		"method": "PUT",
+		"name": "api/rider/v1/actions/auto_reload"
+	},
+	{
+		"method": "DELETE",
+		"name": "api/rider/v1/actions/auto_reload"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/bikes/{id}/bike_missing_reports"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/bikes/{id}/ring"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/users/verify-email"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/coupons/claim"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/views/donation_organizations"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/views/tutorial"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v2/views/tutorial"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_star_rating"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/user/"
+	},
+	{
+		"method": "PUT",
+		"name": "api/rider/v1/user/"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/map_locations/info"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/menus/safety_center"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/views/wallet"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/views/auto_reload"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v2/views/trip_summary"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v2/views/trip_receipt"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v3/group_rides"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v3/group_rides/views/tutorial"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v3/group_rides/{id}"
+	},
+	{
+		"method": "DELETE",
+		"name": "api/rider/v3/group_rides/{group_ride_id}/guests/{guest_id}/trip"
+	},
+	{
+		"method": "PUT",
+		"name": "/api/rider/v3/group_rides/{group_ride_id}/active_trips"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/bikes/{id}/bottom_sheet"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/user/payment_methods/redirect_actions"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/trips/trip_view_info"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_dialogs/{id}/pause"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_dialogs/{id}/complete"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_dialogs/{id}/{type}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/trip_banners"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/helmet_tutorial"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/report_issue"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/help/report_issue"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/menus/help"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v3/group_rides/group_ride_with_trip"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v3/group_rides/{group_ride_id}/trips"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v3/group_rides/{group_ride_id}/trips/guests/{guest_id}/trips"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/trip_dialogs/check_ride_pass_add_on_limit"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/map_config"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/moped/views/bottom_sheets/{context}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_dialogs/{context}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_dialogs/{id}/mandatory_training_mode"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/charging_cabinets/views/bottom_sheets/{context}"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/charging_cabinets/views/bottom_sheets"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/charging_cabinets/quit_battery_swap"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/tripless_dialogs/dialogs/{context}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/helmet/views/bottom_sheets/{context}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v3/group_rides/views/bottom_sheets/{context}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/moped/views/helmet_instructions"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/helmet/views/helmet_instructions"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/my_limes"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/my_limes/{my_lime_id}/unlock"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/my_limes/{my_lime_id}/lock"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/my_limes/{my_lime_id}/flash"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/trips/{trip_id}/trip_riders/{rider_num}/detection"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/trips/{trip_id}/helmet_incentive_detection"
+	},
+	{
+		"method": "PUT",
+		"name": "/api/rider/v1/trips/{trip_id}/trip_riders/{rider_num}"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/moped/second_helmet_report"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/moped/helmets_shortage_check"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/moped/views/terminations"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/bikes/{id}/unlock_case"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v2/trips/{trip_id}/speed_mode/toggle"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/trips/{trip_id}/upload_selfie"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/user_transactions"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/moped/quit_trip"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/moped/compliance_reservation"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/views/order_receipts"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/users/compliance"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/vehicle_filter_banner/show"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/charging_cabinets"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/vehicle_recommendations/enable"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v2/map/bike_pins"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v2/map/bike_pins"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v2/map/static_elements"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v2/map/extra_info"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/views/mandatory_bike_parking/{type}"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/views/bike_end_trip_button"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/tours/tours"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v3/group_rides/views/vehicle_card"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/tours/tours/{tour_id}/start"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/tours/tours/{tour_id}/complete"
+	},
+	{
+		"method": "DELETE",
+		"name": "/api/rider/v3/group_rides/{group_ride_id}/trips/reservations/{id}"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v3/group_rides/{group_ride_id}/trips/reservations"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v3/group_rides/{group_ride_id}/trips/guests/{guest_id}/reservations"
+	},
+	{
+		"method": "DELETE",
+		"name": "/api/rider/v3/group_rides/{group_ride_id}/guests/{guest_id}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/charging_cabinets_info_sheet"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/charging_cabinets/views/info_sheets/{id}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/ar_parking/location_unknown/show"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v2/map/in_trip_static_elements"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v2/map/in_trip_bike_pins"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/in_trip_bottom_sheet"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/tasks"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/tasks/{id}/start"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/charging_cabinets/battery_insertion_status_check"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/tasks/{task_id}/detect_battery"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/tasks/{task_id}/detect_returned_battery"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/tasks/{task_id}/retry_detect_battery"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/zones/views/bottom_sheets/{context}"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/charging_cabinets/check_and_eject_cabinet_battery"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/zones/views/bottom_sheets"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/charging_cabinets/views/ongoing_swap_task"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/charging_cabinets/unlock_bike_battery"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/end_trip_photo/show"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/city/views/bottom_sheets/{id}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_dialogs/{trip_id}/bike_lock_confirmation"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/mandatory_bike_parking/troubleshoots/{context}"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/bikes/{id}/unlock_lock"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/trips/{id}/terminate"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_dialogs/{id}/{context}"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/bikes/{id}/unlock_helmet"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/bikes/{id}/cable_lock_status"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/bikes/{id}/helmet_lock_status"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/location_route"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trips/{id}/parking_compliance"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_start_blocker"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/remote_start/tutorial"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v2/curfew/check"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/remote_start/proximity"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/missing_parking_pins"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_dialogs/{id}/in_trip_switch_promotion_info"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/upsells/views"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/subscriptions/views/{id}/purchase_confirm"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/user/subscriptions"
+	},
+	{
+		"method": "PUT",
+		"name": "api/rider/v1/video_playbacks/{id}"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/video_playbacks/{id}/screen"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_dialogs/{id}/end_trip_steps"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v3/group_rides/{group_ride_id}/guests/{guest_id}/end_trip_steps"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/{tutorial_name}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/city/parking_rules"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/views/mandatory_bike_parking/start_trip_tutorial/dismiss_tutorial"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/app_state"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/destinations/info_card"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/destinations/education_modal"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/destinations/vehicle_route_detail"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/destinations/route_detail"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v2/id_verification/verify"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v3/group_rides/{group_ride_id}/id_scan_compliance"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/city/education"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/views/rider_map_start_blockers"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/trips/{id}/ar_parking_logging"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/actions/email_receipt"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/tandem_riding/bottom_sheet"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/discover/views/bottom_sheets/{id}"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/trip_dialogs/{id}/complete_v2"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/user/payment_methods/setup_intent_from_payment_method"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/rebalance_fee/views/rebalance_fee_info_bottom_sheet"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/actions/invoice_pdf_url"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/city/sidewalk_detection_rider_quiz/bottom_sheets/{id}"
+	},
+	{
+		"method": "PUT",
+		"name": "/api/rider/v1/users/interactions"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v2/app_state"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/trips/steps"
+	},
+	{
+		"method": "POST",
+		"name": "api/auth/v1/oauth/authorize"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/post_trip_actions"
+	},
+	{
+		"method": "GET",
+		"name": "/api/rider/v1/ads/views/ads_progress"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/ads/bottom_sheets/{id}"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/users/availability"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/users/verify-phone"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/users/reset-password-email"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/users/verify-phone"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/user"
+	},
+	{
+		"method": "PATCH",
+		"name": "api/rider/v1/user"
+	},
+	{
+		"method": "PATCH",
+		"name": "api/rider/v1/user"
+	},
+	{
+		"method": "PATCH",
+		"name": "api/rider/v1/user"
+	},
+	{
+		"method": "PATCH",
+		"name": "api/rider/v1/user"
+	},
+	{
+		"method": "PATCH",
+		"name": "api/rider/v1/user"
+	},
+	{
+		"method": "PATCH",
+		"name": "api/rider/v1/user"
+	},
+	{
+		"method": "PUT",
+		"name": "api/rider/v1/user"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/login"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/login"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/third-party-login"
+	},
+	{
+		"method": "POST",
+		"name": "api/rider/v1/third-party-verify"
+	},
+	{
+		"method": "GET",
+		"name": "api/rider/v1/user"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/users/send-email-verification"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/users/verify-email"
+	},
+	{
+		"method": "POST",
+		"name": "/api/rider/v1/user/groups"
+	}
+]

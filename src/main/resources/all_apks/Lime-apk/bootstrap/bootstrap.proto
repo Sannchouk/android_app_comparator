@@ -1,0 +1,33 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/any.proto";
+import "bootstrap/apm_config.proto";
+import "bootstrap/ar_parking_config.proto";
+import "bootstrap/bootstrap_menu_item.proto";
+import "bootstrap/destination_entry_config.proto";
+import "bootstrap/map_refresh_config.proto";
+import "bootstrap/network_debug_config.proto";
+import "bootstrap/parking_pin_config.proto";
+import "bootstrap/machine_learning_edge_config.proto";
+option java_package = "com.lime.rider.proto.model.bootstrap";
+option java_multiple_files = true;
+
+message BootstrapResponse {
+  map<string, google.protobuf.Any> experimentGroups = 1;
+  repeated BootstrapMenuItem objectDataSideMenu = 2;
+  map<string, google.protobuf.BoolValue> moduleInstallFlags = 3;
+  ArParkingConfig arParkingConfig = 4;
+  DestinationEntryConfig destinationEntryConfig = 5;
+  MapRefreshConfig mapRefreshConfigInTrip = 6;
+  MapRefreshConfig mapRefreshConfigPreTrip = 7;
+  google.protobuf.BoolValue singleModalMarket = 8;
+  google.protobuf.StringValue discoverView = 9;
+  NetworkDebugConfig  networkDebugConfiguration = 10;
+  google.protobuf.StringValue accountDeletionUrl = 11;
+  ApmConfig apmConfig = 12;
+  repeated google.protobuf.StringValue statsigEventWhiteList = 13;
+  NearestParkingPinConfig nearestPinConfig = 14;
+  MLOnEdgeConfig mlOnEdgeConfig = 15;
+  google.protobuf.Int32Value protoDataStoreMigrationStatus = 16;
+  repeated google.protobuf.StringValue zonesToHide = 17;
+}

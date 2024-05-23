@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+option java_package = "com.lime.rider.proto.model.bootstrap";
+option java_multiple_files = true;
+
+message ApmConfig {
+  google.protobuf.BoolValue captureEnabled = 1;
+  google.protobuf.StringValue uploadMode = 2;
+  google.protobuf.Int64Value localSessionRetentionDays = 3;
+  google.protobuf.Int64Value sessionTimeoutMinutes = 4;
+  google.protobuf.Int64Value cpuSampleFrequencyMs = 5;
+  google.protobuf.Int64Value batterySampleFrequencyMs = 6;
+  google.protobuf.Int64Value memorySampleFrequencyMs = 7;
+}

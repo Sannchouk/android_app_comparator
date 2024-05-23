@@ -1,4 +1,4 @@
-package matching.computers;
+package algo;
 
 public class DistanceComputer {
 

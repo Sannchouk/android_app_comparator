@@ -1,0 +1,10 @@
+Name,ToolIconExportName,ToolBigIconExportName,BonusIconExportName,BonusTID,TID,DescriptionTID,DiamondPrice,DumbValue,UnlockLevel
+String,String,String,String,String,String,String,int,int,int
+Mistletoe,icon_mistletoe,icon_mistletoe_big,,,TID_MISTLETOE,TID_MISTLETOE_BOATS_EXCHANGE_DESCRIPTION,,5,17
+Chocobunny,icon_chocobunny,icon_chocobunny_big,,,TID_CHOCOBUNNY,TID_CHOCOBUNNY_BOATS_EXCHANGE_DESCRIPTION,,5,17
+SeasonalCurrency1,icon_mistletoe,icon_mistletoe_big,,,TID_MISTLETOE,TID_MISTLETOE_DESCRIPTION,,5,17
+SeasonalCurrency2,icon_mistletoe,icon_mistletoe_big,,,TID_MISTLETOE,TID_MISTLETOE_DESCRIPTION,,5,17
+SeasonalCurrency3,icon_mistletoe,icon_mistletoe_big,,,TID_MISTLETOE,TID_MISTLETOE_DESCRIPTION,,5,17
+SeasonalCurrency4,icon_mistletoe,icon_mistletoe_big,,,TID_MISTLETOE,TID_MISTLETOE_DESCRIPTION,,5,17
+SeasonalCurrency5,icon_mistletoe,icon_mistletoe_big,,,TID_MISTLETOE,TID_MISTLETOE_DESCRIPTION,,5,4
+SeasonalCurrency6,icon_mistletoe,icon_mistletoe_big,,,TID_MISTLETOE,TID_MISTLETOE_DESCRIPTION,,5,4

@@ -1,0 +1,9 @@
+syntax = "proto3";
+option java_package = "com.chess.passplay.proto";
+option java_multiple_files = true;
+
+message GameTimeProto {
+  int32 dayPerMove = 1;
+  float minPerGameFloat = 2;
+  int32 bonusSexPerMove = 3;
+}

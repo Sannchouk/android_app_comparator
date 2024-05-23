@@ -1,0 +1,208 @@
+Name,XPLevelMin,XPLevelMax,Rewards,RewardAmounts,Probabilities
+String,int,int,String,int,int
+CF_reward_7_15,7,15,Plank,1,1
+,,,Nail,1,1
+,,,Bolt,1,1
+,,,Screw,1,1
+,,,Duct Tape,1,1
+,,,Wood Panel,1,1
+,,,Dynamite,1,3
+,,,Demolition Charge,1,3
+,,,Axe,1,3
+,,,Saw,1,3
+,,,Shovel,1,3
+,,,Dynamite,2,2
+,,,Demolition Charge,2,2
+,,,Axe,2,2
+,,,Saw,2,2
+,,,Shovel,2,2
+CF_reward_16_30,16,30,Plank,1,5
+,,,Nail,1,5
+,,,Bolt,1,5
+,,,Screw,1,5
+,,,Duct Tape,1,5
+,,,Wood Panel,1,5
+,,,Dynamite,3,8
+,,,Demolition Charge,3,8
+,,,Axe,3,8
+,,,Saw,3,8
+,,,Shovel,3,8
+,,,Voucher1,5,8
+,,,Voucher2,3,7
+,,,Voucher3,3,6
+,,,Voucher4,1,5
+,,,Land Deed,1,5
+,,,Mallet,1,5
+,,,Marker Stake,1,5
+,,,Expansion Key,1,1
+,,,Plank,2,3
+,,,Nail,2,3
+,,,Bolt,2,3
+,,,Screw,2,3
+,,,Duct Tape,2,3
+,,,Wood Panel,2,3
+,,,Land Deed,2,3
+,,,Mallet,2,3
+,,,Marker Stake,2,3
+CF_reward_31_50,31,50,Plank,2,5
+,,,Nail,2,5
+,,,Bolt,2,5
+,,,Screw,2,5
+,,,Duct Tape,2,5
+,,,Wood Panel,2,5
+,,,Dynamite,5,8
+,,,Demolition Charge,5,8
+,,,Axe,5,8
+,,,Saw,5,8
+,,,Shovel,5,8
+,,,Voucher1,8,7
+,,,Voucher2,5,6
+,,,Voucher3,5,5
+,,,Voucher4,3,4
+,,,Voucher5,1,1
+,,,Land Deed,2,5
+,,,Mallet,2,5
+,,,Marker Stake,2,5
+,,,Expansion Key,1,1
+,,,Pickaxe,5,2
+,,,Hammer,2,2
+,,,Hand Drill,2,2
+,,,Paint Bucket,2,2
+,,,Stone Block,2,2
+,,,Brick,2,2
+,,,Tar Bucket,2,2
+,,,Map Piece,2,2
+,,,Plank,3,1
+,,,Nail,3,1
+,,,Bolt,3,1
+,,,Screw,3,1
+,,,Duct Tape,3,1
+,,,Wood Panel,3,1
+,,,Land Deed,3,1
+,,,Mallet,3,1
+,,,Marker Stake,3,1
+CF_reward_51_80,51,80,Plank,2,5
+,,,Nail,2,5
+,,,Bolt,2,5
+,,,Screw,2,5
+,,,Duct Tape,2,5
+,,,Wood Panel,2,5
+,,,Dynamite,5,2
+,,,Demolition Charge,5,2
+,,,Axe,5,2
+,,,Saw,5,2
+,,,Shovel,5,2
+,,,Voucher1,8,7
+,,,Voucher2,5,6
+,,,Voucher3,5,5
+,,,Voucher4,3,4
+,,,Voucher5,1,1
+,,,Land Deed,2,5
+,,,Mallet,2,5
+,,,Marker Stake,2,5
+,,,Expansion Key,1,1
+,,,Pickaxe,5,2
+,,,Hammer,3,2
+,,,Hand Drill,3,2
+,,,Paint Bucket,3,2
+,,,Stone Block,3,2
+,,,Brick,3,2
+,,,Tar Bucket,3,2
+,,,Map Piece,3,2
+,,,Plank,4,3
+,,,Nail,4,3
+,,,Bolt,4,3
+,,,Screw,4,3
+,,,Duct Tape,4,3
+,,,Wood Panel,4,3
+,,,Land Deed,4,3
+,,,Mallet,4,3
+,,,Marker Stake,4,3
+CF_reward_81_150,81,150,Plank,3,5
+,,,Nail,3,5
+,,,Bolt,3,5
+,,,Screw,3,5
+,,,Duct Tape,3,5
+,,,Wood Panel,3,5
+,,,Dynamite,8,1
+,,,Demolition Charge,8,1
+,,,Axe,8,1
+,,,Saw,8,1
+,,,Shovel,8,1
+,,,Voucher1,12,7
+,,,Voucher2,10,5
+,,,Voucher3,8,4
+,,,Voucher4,5,3
+,,,Voucher5,1,1
+,,,Land Deed,3,5
+,,,Mallet,3,5
+,,,Marker Stake,3,5
+,,,Expansion Key,1,1
+,,,Pickaxe,8,1
+,,,Hammer,3,1
+,,,Hand Drill,3,1
+,,,Paint Bucket,3,1
+,,,Stone Block,3,1
+,,,Brick,3,1
+,,,Tar Bucket,3,1
+,,,Map Piece,3,1
+,,,Plank,6,3
+,,,Nail,6,3
+,,,Bolt,6,3
+,,,Screw,6,3
+,,,Duct Tape,6,3
+,,,Wood Panel,6,3
+,,,Land Deed,6,3
+,,,Mallet,6,3
+,,,Marker Stake,6,3
+,,,Hammer,5,2
+,,,Hand Drill,5,2
+,,,Paint Bucket,5,2
+,,,Stone Block,5,2
+,,,Brick,5,2
+,,,Tar Bucket,5,2
+,,,Map Piece,5,2
+CF_reward_151_plus,151,,Plank,5,5
+,,,Nail,5,5
+,,,Bolt,5,5
+,,,Screw,5,5
+,,,Duct Tape,5,5
+,,,Wood Panel,5,5
+,,,Dynamite,10,1
+,,,Demolition Charge,10,1
+,,,Axe,10,1
+,,,Saw,10,1
+,,,Shovel,10,1
+,,,Voucher1,15,6
+,,,Voucher2,12,6
+,,,Voucher3,10,5
+,,,Voucher4,8,4
+,,,Voucher5,1,1
+,,,Land Deed,5,5
+,,,Mallet,5,5
+,,,Marker Stake,5,5
+,,,Expansion Key,1,1
+,,,Pickaxe,10,2
+,,,Hammer,5,2
+,,,Hand Drill,5,2
+,,,Paint Bucket,5,2
+,,,Stone Block,5,2
+,,,Brick,5,2
+,,,Tar Bucket,5,2
+,,,Map Piece,5,2
+,,,Plank,8,3
+,,,Nail,8,3
+,,,Bolt,8,3
+,,,Screw,8,3
+,,,Duct Tape,8,3
+,,,Wood Panel,8,3
+,,,Land Deed,8,3
+,,,Mallet,8,3
+,,,Marker Stake,8,3
+,,,Hammer,8,2
+,,,Hand Drill,8,2
+,,,Paint Bucket,8,2
+,,,Stone Block,8,2
+,,,Brick,8,2
+,,,Tar Bucket,8,2
+,,,Map Piece,8,2

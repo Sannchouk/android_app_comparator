@@ -1,0 +1,58 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+import "lat_lng.proto";
+import "trip/trip.proto";
+option java_package = "com.lime.rider.proto.model.destination";
+option java_multiple_files = true;
+
+message StoredDestinationMeta {
+  State state = 1;
+  google.protobuf.BoolValue refreshedInTrip = 2;
+  google.protobuf.StringValue name = 3;
+  google.protobuf.StringValue secondaryText = 4;
+  MultiLegRouteJson multiLegRouteJson = 5;
+  Source source = 6;
+}
+
+enum State {
+  STATE_UNKNOWN = 0;
+  RESERVED = 1;
+  IN_TRIP = 2;
+}
+
+message MultiLegRouteJson {
+  MultiLegRouteResponse route = 1;
+  VehicleModel.VehicleType vehicleType = 2;
+  ParkingInfoJson parkingPinInfo = 3;
+}
+
+message MultiLegRouteResponse{
+  Coordinate start = 1;
+  Coordinate end = 2;
+  repeated Leg legs = 3;
+  google.protobuf.Int32Value distanceMeters = 4;
+  google.protobuf.Int32Value durationSeconds = 5;
+}
+
+message ParkingInfoJson {
+  google.protobuf.StringValue description = 1;
+  LatLng location = 2;
+  google.protobuf.Int32Value radiusMeters = 3;
+}
+
+message Coordinate {
+  LatLng latLng = 1;
+}
+
+message Leg {
+  google.protobuf.Int32Value durationSeconds = 1;
+  google.protobuf.StringValue path = 2;
+  google.protobuf.StringValue travelMode = 3;
+}
+
+enum Source {
+  SOURCE_UNKNOWN = 0;
+  SEARCH = 1;
+  PARKING_ROUTE = 2;
+  BACKEND = 3;
+}

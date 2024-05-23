@@ -1,3 +1,0 @@
-Name,FileName,ExportName,TileWidth,TileHeight,CollectSound,TapSound
-String,String,String,int,int,String,String
-SanctuaryCollectionArea,sc/train_buildings.sc,sanctuary_collection_area,2,2,Collect,MenuBleep

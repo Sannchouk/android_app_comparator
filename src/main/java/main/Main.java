@@ -18,7 +18,15 @@ public class Main {
         boolean cluster = false;
         boolean already = false;
 
-        for (int i = 0; i < args.length; i++) {
+        // Check if the first argument could be a new path
+        if (args.length > 0 && !args[0].startsWith("-")) {
+            path = args[0];
+        }
+
+        // Start processing flags from the second argument if a new path was provided
+        int startIndex = path.equals("apks/") ? 0 : 1;
+
+        for (int i = startIndex; i < args.length; i++) {
             switch (args[i]) {
                 case "-neo4j":
                     needNeo4jFile = true;

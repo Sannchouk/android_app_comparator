@@ -17,7 +17,7 @@
 
 - [ ] Write documentation
 - [ ] Make some refactors on new points (tokens for example)
-- [ ] Parallelize some parts of the algortihm
+- [ ] Parallelize some parts of the algorithm
 - [ ] Rewrite old tests
 - [ ] Make fine-tuning on parameters
 - [ ] Improve pom.xml

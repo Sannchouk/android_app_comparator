@@ -8,6 +8,9 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.nio.file.Path;
 
+/**
+ * This class represents an APK.
+ */
 @Getter
 public final class Apk implements Serializable {
 
@@ -23,10 +26,6 @@ public final class Apk implements Serializable {
     private int numberOfFiles;
     @Setter
     private long totalSize;
-
-    public static void resetIdCounter() {
-        ID_COUNTER = 0;
-    }
 
     public Apk(Path path) {
         this.id = ++ID_COUNTER;
@@ -58,10 +57,18 @@ public final class Apk implements Serializable {
                 '}';
     }
 
+    /**
+     * Returns the APK in a format that can be used in Neo4j.
+     * @return the APK in a format that can be used in Neo4j.
+     */
     public String toNeo4JString() {
         return String.format("Apk{name:\"%s\", numberOfFiles:\"%d\", size:\"%d\"}", getNeo4JName(), numberOfFiles, totalSize);
     }
 
+    /**
+     * Returns the name of the APK in a format that can be used in Neo4j.
+     * @return the APK in a format that can be used in Neo4j.
+     */
     public String getNeo4JName() {
         return name.replace("-apk", "").replace("-", "_");
     }

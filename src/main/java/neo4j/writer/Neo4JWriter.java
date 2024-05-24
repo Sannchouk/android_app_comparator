@@ -12,9 +12,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Writer {
+/**
+ * This class is responsible for writing the file that will be used to populate the Neo4J database.
+ */
+public class Neo4JWriter {
 
     private final OperationsCreator operationsCreator = new OperationsCreator();
+
+    /**
+     * Writes the file that will be used to populate the Neo4J database
+     * @param file the file to write
+     * @param algorithmResults the results of the algorithm
+     */
+    public void write(File file, AlgorithmResults algorithmResults) {
+        List<String> operations = getOperations(algorithmResults.getApks(), algorithmResults.getDistances());
+        String operationsString = fromListToString(operations);
+        try {
+            FileUtils.writeStringToFile(file, operationsString, "UTF-8");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     private List<String> getOperations(List<Apk> apks, Map<Apk, HashMap<Apk, Float>> distances) {
         List<String> operations = new ArrayList<>();
@@ -44,13 +62,5 @@ public class Writer {
         return builder.toString();
     }
 
-    public void write(File file, AlgorithmResults algorithmResults) {
-        List<String> operations = getOperations(algorithmResults.getApks(), algorithmResults.getDistances());
-        String operationsString = fromListToString(operations);
-        try {
-            FileUtils.writeStringToFile(file, operationsString, "UTF-8");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 }

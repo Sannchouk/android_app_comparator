@@ -3,6 +3,9 @@ package neo4j.language;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * This class is responsible for creating operations in the Neo4j language.
+ */
 public class OperationsCreator {
 
     private final EdgeValuesHandler edgeValuesHandler = new EdgeValuesHandler();

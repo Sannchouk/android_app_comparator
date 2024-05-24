@@ -5,8 +5,17 @@ import neo4j.data.Apk;
 import java.io.FileWriter;
 import java.util.List;
 
+/**
+ * This class is responsible for writing the distance matrix to a CSV file.
+ */
 public class DistanceMatrixWriter {
 
+    /**
+     * Writes the distance matrix to a CSV file.
+     * @param path the path to the CSV file
+     * @param distancesMatrix the distance matrix
+     * @param apks the list of APKs
+     */
     public void writeDistanceMatrixInCSV(String path, double[][] distancesMatrix, List<Apk> apks) {
         List<String> apkNames = apks.stream().map(Apk::getName).toList();
         try {

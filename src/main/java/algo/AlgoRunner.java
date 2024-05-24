@@ -19,8 +19,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * This class is responsible for running the algorithm.
+ */
 public class AlgoRunner {
 
+    /**
+     * Runs the algorithm
+     * @param path the path to the directory containing the APKs
+     * @return the results of the algorithm
+     */
     public static AlgorithmResults run(String path) {
         List<Apk> apks = new ArrayList<>();
         try {
@@ -54,7 +62,7 @@ public class AlgoRunner {
             }
         }
 
-        static float compareTwoApks(Apk apk1, Apk apk2) throws IOException {
+        private static float compareTwoApks(Apk apk1, Apk apk2) throws IOException {
             FileTree tree1 = FileTree.buildTree(apk1.getPath());
             FileTree tree2 = FileTree.buildTree(apk2.getPath());
             apk1.setNumberOfFiles(tree1.getNodes().size());

@@ -5,6 +5,9 @@ import lombok.Getter;
 
 import java.util.*;
 
+/**
+ * This class represents an indexer that is used to index nodes by their tokens.
+ */
 public class Indexer {
 
     @Getter
@@ -20,13 +23,22 @@ public class Indexer {
         this.group2 = new ArrayList<>();
     }
 
-
+    /**
+     * Adds a list of nodes to the indexer.
+     * @param nodes the list of nodes
+     * @param group the group of the nodes
+     */
     public void addNodes(List<Node> nodes, int group) {
         for (Node node : nodes) {
             addNode(node, group);
         }
     }
 
+    /**
+     * Adds a node to the indexer.
+     * @param node the node
+     * @param group the group of the node
+     */
     public void addNode(Node node, int group) {
         switch (group) {
             case 1:
@@ -44,6 +56,11 @@ public class Indexer {
         }
     }
 
+    /**
+     * Computes the inverse document frequency of a token.
+     * @param token the token
+     * @return the inverse document frequency
+     */
     public double computeIdf(String token) {
         int count = tokenMap.getOrDefault(token, Collections.emptyList()).size();
         int totalNodes = group1.size() + group2.size();

@@ -1,5 +1,8 @@
 package bipartiteGraph;
 
+/**
+ * This class represents an edge in the bipartite graph.
+ */
 public class Edge {
     private Node source;
     private Node target;

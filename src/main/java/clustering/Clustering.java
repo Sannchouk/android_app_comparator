@@ -2,13 +2,22 @@ package clustering;
 
 import java.util.*;
 
+/**
+ * This class represents a clustering algorithm.
+ */
 public class Clustering {
 
+    /**
+     * Clusters the given labels based on the distance matrix and the threshold.
+     * @param distanceMatrix the distance matrix
+     * @param labels the labels
+     * @param threshold the threshold
+     * @return the clusters
+     */
     public List<List<String>> cluster(double[][] distanceMatrix, List<String> labels, double threshold) {
         int n = distanceMatrix.length;
         List<Set<Integer>> clusters = new ArrayList<>();
 
-        // Initialize each item as a cluster
         for (int i = 0; i < n; i++) {
             clusters.add(new HashSet<>(Collections.singletonList(i)));
         }
@@ -19,7 +28,6 @@ public class Clustering {
             double minDistance = Double.MAX_VALUE;
             int clusterA = -1, clusterB = -1;
 
-            // Find the two closest clusters
             for (int i = 0; i < clusters.size(); i++) {
                 for (int j = i + 1; j < clusters.size(); j++) {
                     double distance = clusterDistance(clusters.get(i), clusters.get(j), distanceMatrix);
@@ -31,7 +39,6 @@ public class Clustering {
                 }
             }
 
-            // Merge the two closest clusters if the distance is below the threshold
             if (minDistance < threshold && clusterA != -1 && clusterB != -1) {
                 clusters.get(clusterA).addAll(clusters.get(clusterB));
                 clusters.remove(clusterB);
@@ -40,7 +47,6 @@ public class Clustering {
 
         } while (merged);
 
-        // Convert sets to lists of labels
         List<List<String>> result = new ArrayList<>();
         for (Set<Integer> cluster : clusters) {
             List<String> clusterLabels = new ArrayList<>();

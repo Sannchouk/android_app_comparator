@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This class represents the results of the algorithm.
+ */
 @Getter
 public final class AlgorithmResults implements Serializable {
 
@@ -41,6 +44,11 @@ public final class AlgorithmResults implements Serializable {
         }
     }
 
+    /**
+     * Serializes the object to a file.
+     * @param fileName the name of the file
+     * @throws IOException if an I/O error occurs
+     */
     public void serialize(String fileName) throws IOException {
         try (FileOutputStream fileOut = new FileOutputStream(fileName);
              ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
@@ -48,6 +56,13 @@ public final class AlgorithmResults implements Serializable {
         }
     }
 
+    /**
+     * Deserializes the object from a file.
+     * @param fileName the name of the file
+     * @return the deserialized object
+     * @throws IOException if an I/O error occurs
+     * @throws ClassNotFoundException if the class of the serialized object cannot be found
+     */
     public static AlgorithmResults deserialize(String fileName) throws IOException, ClassNotFoundException {
         try (FileInputStream fileIn = new FileInputStream(fileName);
              ObjectInputStream in = new ObjectInputStream(fileIn)) {

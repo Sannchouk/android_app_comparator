@@ -5,7 +5,7 @@ import algo.AlgorithmResults;
 import algo.DistanceMatrixWriter;
 import clustering.Clustering;
 import neo4j.data.Apk;
-import neo4j.writer.Writer;
+import neo4j.writer.Neo4JWriter;
 
 import java.io.*;
 import java.util.List;
@@ -61,7 +61,7 @@ public class Main {
         new DistanceMatrixWriter().writeDistanceMatrixInCSV("results/distanceMatrix.csv", results.getDistancesMatrix(), results.getApks());
 
         if (needNeo4jFile) {
-            Writer writer = new Writer();
+            Neo4JWriter writer = new Neo4JWriter();
             writer.write(new File("results/neo4j.txt"), results);
         }
         if (cluster) {

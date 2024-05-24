@@ -5,8 +5,11 @@ import lombok.Getter;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This class is responsible for handling the edge values in the Neo4j language.
+ */
 @Getter
-public class EdgeValuesHandler {
+class EdgeValuesHandler {
 
     private int edgeValuesNumber = 0;
 

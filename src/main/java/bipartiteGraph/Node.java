@@ -11,6 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * This class represents a node in the bipartite graph.
+ */
 @Getter
 @AllArgsConstructor
 public class Node {
@@ -48,12 +51,21 @@ public class Node {
         this.tokens = new ArrayList<>(attributes.values());
     }
 
+    /**
+     * Adds a token to the node.
+     * @param token the token
+     */
     public void addToken(String token) {
         tokens.add(token);
     }
 
-    public void addAttribute(String attribute, String name) {
-        attributes.put(attribute, name);
+    /**
+     * Adds an attribute to the node.
+     * @param attribute the attribute
+     * @param value the value of the attribute
+     */
+    public void addAttribute(String attribute, String value) {
+        attributes.put(attribute, value);
     }
 
     @Override

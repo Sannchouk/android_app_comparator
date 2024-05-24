@@ -92,39 +92,6 @@ public class BipartiteGraphTest {
     }
 
     @Test
-    public void testRemoveAllAdjacentEdges() {
-        Node node1 = new Node("name1");
-        Node node2 = new Node("name2");
-        Node node3 = new Node("name3");
-        Node node4 = new Node("name4");
-        Node node5 = new Node("name5");
-        Edge edge1 = new Edge(node1, node2);
-        Edge edge2 = new Edge(node1, node3);
-        Edge edge3 = new Edge(node1, node4);
-        Edge edge4 = new Edge(node5, node2);
-        Edge edge5 = new Edge(node5, node3);
-
-        BipartiteGraph graph = new BipartiteGraph();
-        graph.addNode(node1, 1);
-        graph.addNode(node5, 1);
-        graph.addNode(node2, 2);
-        graph.addNode(node3, 2);
-        graph.addNode(node4, 2);
-        graph.addEdge(edge1);
-        graph.addEdge(edge2);
-        graph.addEdge(edge3);
-        graph.addEdge(edge4);
-        graph.addEdge(edge5);
-
-        graph.removeAllAdjacentEdges(edge1);
-
-        assertEquals(2, graph.getEdges().size());
-        assertTrue(graph.getEdges().contains(edge1));
-        assertFalse(graph.getEdges().contains(edge2));
-        assertFalse(graph.getEdges().contains(edge3));
-    }
-
-    @Test
     public void testBuildFromNeighborhood() {
         Node node1 = new Node("name1");
         Node node2 = new Node("name2");

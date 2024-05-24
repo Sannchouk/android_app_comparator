@@ -26,6 +26,10 @@ public class Tokenizer {
         this.fileHash = config.getBoolean("fileHash");
     }
 
+    /**
+     * Tokenizes a node, and set its attributes.
+     * @param node the node
+     */
     public void tokenize(Node node) {
         node.getTokens().clear();
         String tokenFileName = node.getPath().toString().substring(node.getPath().toString().lastIndexOf(File.separator) + 1);
@@ -48,6 +52,11 @@ public class Tokenizer {
         }
     }
 
+    /**
+     * Returns the size of a file.
+     * @param path the path of the file
+     * @return the size of the file
+     */
     public int getFileSize(Path path) {
         File file = new File(String.valueOf(path));
         return (int) FileUtils.sizeOf(file);

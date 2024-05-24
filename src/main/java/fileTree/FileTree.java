@@ -9,6 +9,9 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class represents a file tree.
+ */
 @Getter
 public class FileTree {
     public static int ID_COUNTER = 0;
@@ -25,6 +28,10 @@ public class FileTree {
         this.id = ID_COUNTER++;
     }
 
+    /**
+     * Returns a list of all nodes in the tree.
+     * @return the list of nodes
+     */
     public List<FileTree> getNodes() {
         List<FileTree> nodes = new ArrayList<>();
         nodes.add(this);
@@ -34,15 +41,29 @@ public class FileTree {
         return nodes;
     }
 
+    /**
+     * Adds a child to the tree.
+     * @param child the child
+     */
     public void addChild(FileTree child) {
         children.add(child);
         child.setParent(this);
     }
 
+    /**
+     * Sets the parent of the tree.
+     * @param parent the parent
+     */
     public void setParent(FileTree parent) {
         this.parent = parent;
     }
 
+    /**
+     * Builds a file tree from a given path.
+     * @param rootPath the root path
+     * @return the file tree
+     * @throws IOException if an I/O error occurs
+     */
     public static FileTree buildTree(Path rootPath) throws IOException {
         rootPath = rootPath.normalize();
         FileTree rootNode = new FileTree(rootPath);
@@ -58,10 +79,17 @@ public class FileTree {
         return rootNode;
     }
 
+    /**
+     * Prints the tree.
+     */
     public void printTree() {
         printTreeRec(0);
     }
 
+    /**
+     * Prints the tree recursively.
+     * @param depth the depth
+     */
     private void printTreeRec(int depth) {
         StringBuilder indent = new StringBuilder();
         for (int i = 0; i < depth; i++) {
@@ -73,11 +101,18 @@ public class FileTree {
         }
     }
 
+    /**
+     * Cleans the paths of the tree.
+     */
     public void cleanPaths() {
         Path parentFolder = this.path.getParent();
         cleanPathsRec(parentFolder);
     }
 
+    /**
+     * Cleans the paths of the tree recursively.
+     * @param parentFolder the parent folder
+     */
     private void cleanPathsRec(Path parentFolder) {
         path = parentFolder.relativize(path);
         for (FileTree child : children) {
@@ -85,14 +120,10 @@ public class FileTree {
         }
     }
 
-    public int getNumberOfFiles() {
-        int numberOfFiles = 0;
-        for (FileTree child : children) {
-            numberOfFiles += child.getNumberOfFiles();
-        }
-        return numberOfFiles + 1;
-    }
-
+    /**
+     * Returns the total size of the tree.
+     * @return the total size
+     */
     public long getTotalSize() {
         long totalSize = 0;
         for (FileTree child : children) {

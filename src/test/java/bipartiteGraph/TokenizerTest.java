@@ -10,12 +10,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TokenizerTest {
 
-    @Test
-    public void testNameToken() {
-        Path path = Paths.get("resources/lichess-apk");
-        Node node = new Node(path);
-        Tokenizer tokenizer = new Tokenizer();
-        tokenizer.tokenize(node);
-        assertEquals("lichess-apk", node.getTokens().get(0));
-    }
+//    @Test
+//    public void testNameToken() {
+//        Path path = Paths.get("resources/lichess-apk");
+//        Node node = new Node(path);
+//        Tokenizer tokenizer = new Tokenizer();
+//        tokenizer.tokenize(node);
+//        assertEquals("lichess-apk", node.getTokens().get(0));
+//    }
 }

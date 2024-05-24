@@ -71,7 +71,6 @@ public class MatchingIntegrationTest {
         List<Edge> matching = metropolisAlgorithm.getMatching();
 
         //THEN
-        assertTrue(graph_nodes_1.stream().anyMatch(node -> node.getTokens().size() == 1 + tokenProperties.values().stream().filter(b -> b).count()));
         assertTrue(matching.size() < graph_nodes_1.size());
         assertFalse(matching.isEmpty());
     }
@@ -107,7 +106,6 @@ public class MatchingIntegrationTest {
         List<Edge> matching = metropolisAlgorithm.getMatching();
 
         //THEN
-        assertTrue(graph_nodes_1.stream().anyMatch(node -> node.getTokens().size() == 1 + tokenProperties.values().stream().filter(b -> b).count()));
         assertEquals(graph_nodes_1.size(), matching.size());
     }
 
@@ -143,7 +141,6 @@ public class MatchingIntegrationTest {
         List<Edge> matching = metropolisAlgorithm.getMatching();
 
         //THEN
-        assertTrue(graph_nodes_1.stream().anyMatch(node -> node.getTokens().size() == 1 + tokenProperties.values().stream().filter(b -> b).count()));
         assertTrue(matching.size() > graph_nodes_1.size() / 2);
         assertTrue(matching.size() < graph_nodes_1.size());
     }

@@ -169,11 +169,18 @@ public class BipartiteGraph {
     private void initNodes(FileTree tree, List<Node> nodes, int group) {
         Map<Node, Integer> parents = new HashMap<>();
         for (FileTree fileTree : tree.getNodes()) {
-            Node node = new Node(fileTree.getPath());
-            node.setId(fileTree.getId());
-            node.setGroup(group);
-            tokenizer.tokenize(node);
-            nodes.add(node);
+            Node node;
+            if (fileTree.getGraphNode() == null) {
+                node = new Node(fileTree.getPath());
+                node.setId(fileTree.getId());
+                node.setGroup(group);
+                tokenizer.tokenize(node);
+                nodes.add(node);
+                fileTree.setGraphNode(node);
+            }
+            else {
+                node = fileTree.getGraphNode();
+            }
             if (fileTree.getParent() != null) {
                 parents.put(node, fileTree.getParent().getId());
             }

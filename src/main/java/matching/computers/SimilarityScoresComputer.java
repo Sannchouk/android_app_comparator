@@ -6,8 +6,8 @@ import edu.gatech.gtri.bktree.BkTreeSearcher.Match;
 import edu.gatech.gtri.bktree.Metric;
 import edu.gatech.gtri.bktree.MutableBkTree;
 import inMemory.Indexer;
-import matching.computers.hashs.HammingDistanceComputer;
-import matching.computers.names.LevenshteinNameDistanceComputer;
+import matching.computers.attributes.hashs.HammingDistanceComputer;
+import matching.computers.attributes.names.LevenshteinNameDistanceComputer;
 
 import java.util.HashMap;
 import java.util.Map;

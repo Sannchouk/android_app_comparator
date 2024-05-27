@@ -20,6 +20,7 @@ public class Tokenizer {
 
     private boolean fileSize;
     private boolean fileHash;
+    private static SimHash hashGenerator = new SimHash();
 
     public Tokenizer() {
         this.fileSize = config.getBoolean("fileSize");
@@ -40,8 +41,7 @@ public class Tokenizer {
         }
         if (fileHash) {
             try {
-                byte[] fileBytes = getFileBytes(node.getPath());
-                String tokenFileHash = getSHA256(fileBytes);
+                String tokenFileHash = hashGenerator.generateHash(node.getPath());
                 node.addAttribute("hash", tokenFileHash);
             } catch (IOException | NoSuchAlgorithmException e) {
                 e.printStackTrace();

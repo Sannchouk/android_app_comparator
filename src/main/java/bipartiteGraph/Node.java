@@ -27,7 +27,6 @@ public class Node {
     private Node parent = null;
     @NonNull
     private List<Node> children = new ArrayList<>();
-
     private Map<String, String> attributes = new HashMap<>();
 
     public Node(String path) {

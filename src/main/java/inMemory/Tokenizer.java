@@ -41,7 +41,8 @@ public class Tokenizer {
         }
         if (fileHash) {
             try {
-                String tokenFileHash = hashGenerator.generateHash(node.getPath());
+//                String tokenFileHash = hashGenerator.generateHash(node.getPath());
+                String tokenFileHash = getSHA256(getFileBytes(node.getPath()));
                 node.addAttribute("hash", tokenFileHash);
             } catch (IOException | NoSuchAlgorithmException e) {
                 e.printStackTrace();

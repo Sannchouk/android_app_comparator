@@ -32,8 +32,9 @@ public class Tokenizer {
      */
     public void tokenize(Node node) {
         node.getTokens().clear();
-        String tokenFileName = node.getPath().toString().substring(node.getPath().toString().lastIndexOf(File.separator) + 1);
-        node.addAttribute("name", tokenFileName);
+        String file = node.getPath().toString().substring(node.getPath().toString().lastIndexOf(File.separator) + 1);
+        node.addAttribute("name", getFileNameWithoutExtension(file));
+        node.addAttribute("extension", getExtension(file));
         if (fileSize) {
             int fileSize = getFileSize(node.getPath());
             node.addAttribute("size", String.valueOf(fileSize));
@@ -84,6 +85,22 @@ public class Tokenizer {
             hexString.append(hex);
         }
         return hexString.toString();
+    }
+
+    private String getFileNameWithoutExtension(String file) {
+        int index = file.lastIndexOf('.');
+        if (index == -1) {
+            return file;
+        }
+        return file.substring(0, index);
+    }
+
+    private String getExtension(String file) {
+        int index = file.lastIndexOf('.');
+        if (index == -1) {
+            return "";
+        }
+        return file.substring(index + 1);
     }
 
 

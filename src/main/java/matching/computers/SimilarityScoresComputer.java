@@ -6,6 +6,7 @@ import edu.gatech.gtri.bktree.BkTreeSearcher.Match;
 import edu.gatech.gtri.bktree.Metric;
 import edu.gatech.gtri.bktree.MutableBkTree;
 import inMemory.Indexer;
+import matching.computers.extensions.ExtensionDistanceComputer;
 import matching.computers.hashs.HammingDistanceComputer;
 import matching.computers.names.LevenshteinNameDistanceComputer;
 
@@ -22,13 +23,15 @@ public class SimilarityScoresComputer {
 
     private final Map<Node, HashMap<Node, Double>> similarityScores = new HashMap<>();
 
+    private final static int EXTENSION_DISTANCE_THRESHOLD = 0;
     private final static int NAME_DISTANCE_THRESHOLD = 3;
     private final static int HASH_DISTANCE_THRESHOLD = 6;
     private final static double HASH_WEIGHT = 0.7;
     private final static double NAME_WEIGHT = 0.3;
+    private final static double EXTENSION_WEIGHT = 2;
 
-    private static int computeDistance(int nameDistance, int hashDistance) {
-        return (int) ((NAME_WEIGHT * nameDistance + 1) + (HASH_WEIGHT * hashDistance + 1));
+    private static int computeDistance(int extensionDistance, int nameDistance, int hashDistance) {
+        return (int) ((EXTENSION_WEIGHT * extensionDistance) + (NAME_WEIGHT * nameDistance + 1) + (HASH_WEIGHT * hashDistance + 1));
     }
 
 
@@ -47,7 +50,9 @@ public class SimilarityScoresComputer {
             int nameDistance = levenshteinNameDistanceComputer.computeDistanceBetweenTwoNames(x.getAttributes().get("name"), y.getAttributes().get("name"));
             HammingDistanceComputer hammingDistanceComputer = new HammingDistanceComputer();
             int hashDistance = hammingDistanceComputer.computeDistanceBetweenTwoHashes(x.getAttributes().get("hash"), y.getAttributes().get("hash"));
-            return computeDistance(nameDistance, hashDistance);
+            ExtensionDistanceComputer extensionDistanceComputer = new ExtensionDistanceComputer();
+            int extensionDistance = extensionDistanceComputer.computeDistance(x.getAttributes().get("extension"), y.getAttributes().get("extension"));
+            return computeDistance(extensionDistance, nameDistance, hashDistance);
         };
         MutableBkTree<Node> bkTree = new MutableBkTree<>(distance);
         for (Node node : indexer.getGroup2()) {
@@ -152,7 +157,7 @@ public class SimilarityScoresComputer {
         for(Node nodes : indexer.getGroup2()) {
             neighbors.put(nodes, 0.0);
         }
-        Set<Match<? extends Node>> matches = searcher.search(node, computeDistance(NAME_DISTANCE_THRESHOLD, HASH_DISTANCE_THRESHOLD));
+        Set<Match<? extends Node>> matches = searcher.search(node, computeDistance(EXTENSION_DISTANCE_THRESHOLD, NAME_DISTANCE_THRESHOLD, HASH_DISTANCE_THRESHOLD));
         for (Match<? extends Node> match : matches) {
             double similarity = 0.0;
             if (match.getDistance() != 0) {

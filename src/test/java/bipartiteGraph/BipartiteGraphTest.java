@@ -133,31 +133,36 @@ public class BipartiteGraphTest {
         Path path4 = Paths.get("name4");
         Path path5 = Paths.get("name5");
 
-        Files.createFile(path1);
-        Files.createFile(path2);
-        Files.createFile(path3);
-        Files.createFile(path4);
-        Files.createFile(path5);
-        FileTree tree1 = new FileTree(path1);
-        FileTree tree2 = new FileTree(path1);
-        FileTree tree3 = new FileTree(path3);
-        FileTree tree4 = new FileTree(path4);
-        FileTree tree5 = new FileTree(path5);
-        tree1.addChild(tree3);
-        tree1.addChild(tree4);
-        tree2.addChild(tree5);
+        try {
+            Files.createFile(path1);
+            Files.createFile(path2);
+            Files.createFile(path3);
+            Files.createFile(path4);
+            Files.createFile(path5);
 
-        BipartiteGraph graph = BipartiteGraph.buildFromTrees(tree1, tree2);
+            FileTree tree1 = new FileTree(path1);
+            FileTree tree2 = new FileTree(path1);
+            FileTree tree3 = new FileTree(path3);
+            FileTree tree4 = new FileTree(path4);
+            FileTree tree5 = new FileTree(path5);
 
-        assertEquals(3, graph.getNodeGroup1().size());
-        assertEquals(2, graph.getNodeGroup2().size());
-        assertEquals(graph.getNodeGroup1().get(1).getPath(), path3);
-        assertEquals(graph.getNodeGroup1().get(1).getParent(), graph.getNodeGroup1().get(0));
+            tree1.addChild(tree3);
+            tree1.addChild(tree4);
+            tree2.addChild(tree5);
 
-        Files.delete(path1);
-        Files.delete(path2);
-        Files.delete(path3);
-        Files.delete(path4);
-        Files.delete(path5);
+            BipartiteGraph graph = BipartiteGraph.buildFromTrees(tree1, tree2);
+
+            assertEquals(3, graph.getNodeGroup1().size());
+            assertEquals(2, graph.getNodeGroup2().size());
+            assertEquals(graph.getNodeGroup1().get(1).getPath(), path3);
+            assertEquals(graph.getNodeGroup1().get(1).getParent(), graph.getNodeGroup1().get(0));
+        } finally {
+            Files.deleteIfExists(path1);
+            Files.deleteIfExists(path2);
+            Files.deleteIfExists(path3);
+            Files.deleteIfExists(path4);
+            Files.deleteIfExists(path5);
+        }
     }
+
 }

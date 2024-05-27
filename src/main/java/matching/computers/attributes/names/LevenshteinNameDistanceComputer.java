@@ -1,4 +1,4 @@
-package matching.computers.names;
+package matching.computers.attributes.names;
 
 public class LevenshteinNameDistanceComputer implements NameDistanceComputer {
 

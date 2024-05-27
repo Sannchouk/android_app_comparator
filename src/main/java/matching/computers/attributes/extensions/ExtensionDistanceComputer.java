@@ -1,4 +1,4 @@
-package matching.computers.extensions;
+package matching.computers.attributes.extensions;
 
 public class ExtensionDistanceComputer {
 

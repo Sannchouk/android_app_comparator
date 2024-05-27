@@ -8,7 +8,7 @@ import neo4j.data.DistancesStorer;
 import fileTree.FileTree;
 import inMemory.Indexer;
 import matching.algorithm.MetropolisAlgorithm;
-import matching.computers.SimilarityScoresComputer;
+import matching.computers.similarities.SimilarityScoresComputer;
 
 import java.io.IOException;
 import java.nio.file.Files;

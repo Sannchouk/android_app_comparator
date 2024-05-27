@@ -1,4 +1,4 @@
-package matching.computers.hashs;
+package matching.computers.attributes.hashs;
 
 import java.math.BigInteger;
 

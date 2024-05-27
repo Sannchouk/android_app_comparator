@@ -7,7 +7,7 @@ import com.typesafe.config.ConfigFactory;
 import fileTree.FileTree;
 import inMemory.Indexer;
 import matching.algorithm.MetropolisAlgorithm;
-import matching.computers.SimilarityScoresComputer;
+import matching.computers.similarities.SimilarityScoresComputer;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;

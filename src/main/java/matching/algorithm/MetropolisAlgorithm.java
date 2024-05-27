@@ -47,7 +47,8 @@ public class MetropolisAlgorithm {
     }
 
     public double computeCost(List<Edge> matching) {
-        return this.costComputer.computeCost(matching, Math.max(graph.getNodeGroup1().size(), graph.getNodeGroup2().size()));
+        return this.costComputer.computeCost(matching, graph.getNodeGroup1(), graph.getNodeGroup2()
+        );
     }
 
     private boolean isFullMatchingCorrect(List<Edge> matching) {

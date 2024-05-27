@@ -1,17 +1,17 @@
 package matching.computers.similarities;
 
+import bipartiteGraph.BipartiteGraph;
 import bipartiteGraph.Node;
 import edu.gatech.gtri.bktree.BkTreeSearcher;
 import edu.gatech.gtri.bktree.Metric;
 import edu.gatech.gtri.bktree.MutableBkTree;
-import inMemory.Indexer;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 public class SimilarityScoresComputer {
-    private final Indexer indexer;
+    private final BipartiteGraph graph;
     private final DistanceComputer distanceComputer;
     private final PropagationComputer propagationComputer;
     private final PenalizationComputer penalizationComputer;
@@ -22,8 +22,8 @@ public class SimilarityScoresComputer {
 
     private final Map<Node, HashMap<Node, Double>> similarityScores = new HashMap<>();
 
-    public SimilarityScoresComputer(Indexer indexer) {
-        this.indexer = indexer;
+    public SimilarityScoresComputer(BipartiteGraph graph) {
+        this.graph = graph;
         this.distanceComputer = new DistanceComputer();
         this.propagationComputer = new PropagationComputer();
         this.penalizationComputer = new PenalizationComputer();
@@ -33,11 +33,11 @@ public class SimilarityScoresComputer {
         Metric<Node> distanceMetric = distanceComputer::computeDistance;
 
         MutableBkTree<Node> bkTree = new MutableBkTree<>(distanceMetric);
-        for (Node node : indexer.getGroup2()) {
+        for (Node node : graph.getNodeGroup2()) {
             bkTree.add(node);
         }
         BkTreeSearcher<Node> searcher = new BkTreeSearcher<>(bkTree);
-        for (Node node : indexer.getGroup1()) {
+        for (Node node : graph.getNodeGroup1()) {
             similarityScores.put(node, computeSimilarityScoresForNode(node, searcher));
         }
         computePropagationScores();
@@ -46,8 +46,8 @@ public class SimilarityScoresComputer {
     }
 
     private void computePropagationScores() {
-        for (Node node : indexer.getGroup1()) {
-            for (Node neighbor : indexer.getGroup2()) {
+        for (Node node : graph.getNodeGroup1()) {
+            for (Node neighbor : graph.getNodeGroup2()) {
                 if (similarityScores.get(node).get(neighbor) != 0.0) {
                     propagationComputer.computePropagationScores(similarityScores, node, neighbor);
                 }
@@ -56,8 +56,8 @@ public class SimilarityScoresComputer {
     }
 
     private void applyPenalization() {
-        for (Node node : indexer.getGroup1()) {
-            for (Node neighbor : indexer.getGroup2()) {
+        for (Node node : graph.getNodeGroup1()) {
+            for (Node neighbor : graph.getNodeGroup2()) {
                 if (similarityScores.get(node).get(neighbor) != 0.0) {
                     penalizationComputer.applyPenalization(similarityScores, node, neighbor);
                 }
@@ -67,7 +67,7 @@ public class SimilarityScoresComputer {
 
     private HashMap<Node, Double> computeSimilarityScoresForNode(Node node, BkTreeSearcher<Node> searcher) {
         HashMap<Node, Double> neighbors = new HashMap<>();
-        for(Node nodes : indexer.getGroup2()) {
+        for(Node nodes : graph.getNodeGroup2()) {
             neighbors.put(nodes, 0.0);
         }
         Set<BkTreeSearcher.Match<? extends Node>> matches = searcher.search(node, distanceComputer.computeDistanceForAttributes(EXTENSION_DISTANCE_THRESHOLD, NAME_DISTANCE_THRESHOLD, HASH_DISTANCE_THRESHOLD));

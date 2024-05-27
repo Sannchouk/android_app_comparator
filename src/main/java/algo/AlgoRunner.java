@@ -6,7 +6,6 @@ import bipartiteGraph.Node;
 import neo4j.data.Apk;
 import neo4j.data.DistancesStorer;
 import fileTree.FileTree;
-import inMemory.Indexer;
 import matching.algorithm.MetropolisAlgorithm;
 import matching.computers.similarities.SimilarityScoresComputer;
 
@@ -72,10 +71,7 @@ public class AlgoRunner {
             BipartiteGraph graph = BipartiteGraph.buildFromTrees(tree1, tree2);
             List<Node> graphNodes1 = graph.getNodeGroup1();
             List<Node> graphNodeGroup2 = graph.getNodeGroup2();
-            Indexer indexer = new Indexer();
-            indexer.addNodes(graphNodes1, 1);
-            indexer.addNodes(graphNodeGroup2, 2);
-            var similarityScoresComputer = new SimilarityScoresComputer(indexer);
+            var similarityScoresComputer = new SimilarityScoresComputer(graph);
             var similarityScores = similarityScoresComputer.computeSimilarityScores();
             graph.buildEdgesFromNeighborhoods(similarityScores);
             MetropolisAlgorithm metropolisAlgorithm = new MetropolisAlgorithm(

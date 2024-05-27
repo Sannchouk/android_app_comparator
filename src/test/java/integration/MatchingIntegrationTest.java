@@ -5,7 +5,6 @@ import bipartiteGraph.Edge;
 import bipartiteGraph.Node;
 import com.typesafe.config.ConfigFactory;
 import fileTree.FileTree;
-import inMemory.Indexer;
 import matching.algorithm.MetropolisAlgorithm;
 import matching.computers.similarities.SimilarityScoresComputer;
 import org.junit.jupiter.api.AfterAll;
@@ -52,11 +51,7 @@ public class MatchingIntegrationTest {
         appConfigModifier.modifyConfigForTesting(tokenProperties);
         graph = BipartiteGraph.buildFromTrees(tree1, tree2);
         List<Node> graph_nodes_1 = graph.getNodeGroup1();
-        List<Node> graph_nodes_2 = graph.getNodeGroup2();
-        Indexer indexer = new Indexer();
-        indexer.addNodes(graph_nodes_1, 1);
-        indexer.addNodes(graph_nodes_2, 2);
-        var similarityScoresComputer = new SimilarityScoresComputer(indexer);
+        var similarityScoresComputer = new SimilarityScoresComputer(graph);
         var similarityScores = similarityScoresComputer.computeSimilarityScores();
         graph.buildEdgesFromNeighborhoods(similarityScores);
         MetropolisAlgorithm metropolisAlgorithm = new MetropolisAlgorithm(
@@ -86,11 +81,7 @@ public class MatchingIntegrationTest {
         appConfigModifier.modifyConfigForTesting(tokenProperties);
         BipartiteGraph graph = BipartiteGraph.buildFromTrees(tree1, tree2);
         List<Node> graph_nodes_1 = graph.getNodeGroup1();
-        List<Node> graph_nodes_2 = graph.getNodeGroup2();
-        Indexer indexer = new Indexer();
-        indexer.addNodes(graph_nodes_1, 1);
-        indexer.addNodes(graph_nodes_2, 2);
-        var similarityScoresComputer = new SimilarityScoresComputer(indexer);
+        var similarityScoresComputer = new SimilarityScoresComputer(graph);
         var similarityScores = similarityScoresComputer.computeSimilarityScores();
         graph.buildEdgesFromNeighborhoods(similarityScores);
         MetropolisAlgorithm metropolisAlgorithm = new MetropolisAlgorithm(
@@ -123,11 +114,7 @@ public class MatchingIntegrationTest {
         appConfigModifier.modifyConfigForTesting(tokenProperties);
         graph = BipartiteGraph.buildFromTrees(tree1, tree2);
         List<Node> graph_nodes_1 = graph.getNodeGroup1();
-        List<Node> graph_nodes_2 = graph.getNodeGroup2();
-        Indexer indexer = new Indexer();
-        indexer.addNodes(graph_nodes_1, 1);
-        indexer.addNodes(graph_nodes_2, 2);
-        var similarityScoresComputer = new SimilarityScoresComputer(indexer);
+        var similarityScoresComputer = new SimilarityScoresComputer(graph);
         var similarityScores = similarityScoresComputer.computeSimilarityScores();
         graph.buildEdgesFromNeighborhoods(similarityScores);
         MetropolisAlgorithm metropolisAlgorithm = new MetropolisAlgorithm(

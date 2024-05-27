@@ -37,7 +37,7 @@ public class Main {
         if (argParser.cluster) {
             try {
                 List<String> apkNames = results.getApks().stream().map(Apk::getNeo4JName).toList();
-                var clusters = new Clustering().cluster(results.getDistancesMatrix(), apkNames, 0.9);
+                var clusters = new Clustering().cluster(results.getDistancesMatrix(), apkNames, 0.6);
                 System.out.println("Clusters:");
                 System.out.println(clusters);
                 new ClusteringIO().writeClustersToFile(clusters, "results/clusters.csv");

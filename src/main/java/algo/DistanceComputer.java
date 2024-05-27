@@ -10,6 +10,6 @@ class DistanceComputer {
      * @return the distance between the two sets
      */
     public float computeDistance(int size1, int size2, int matching) {
-        return 1 - ((float) matching / (size1 + size2));
+        return 1 - ((float) 2*matching / (size1 + size2));
     }
 }

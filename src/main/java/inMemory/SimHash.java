@@ -1,86 +1,70 @@
 package inMemory;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.math.BigInteger;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
-class SimHash {
+public class SimHash {
 
+    private static final int HASH_BITS = 64; // Number of bits for the hash
+
+    /**
+     * Generates a SimHash for the file or directory at the given path.
+     * @param path the path to the file or directory
+     * @return the generated SimHash
+     * @throws IOException if an I/O error occurs
+     */
     public String generateHash(Path path) throws IOException, NoSuchAlgorithmException {
-        File file = path.toFile();
-        if (file.isDirectory()) {
-            // Handle directory
-            BigInteger combinedSimHash = BigInteger.ZERO;
-            File[] files = file.listFiles();
-            if (files != null) {
-                for (File f : files) {
-                    if (f.isFile()) {
-                        String fileContent = readFile(f.getPath());
-                        BigInteger simHashValue = generateSimHash(fileContent);
-                        combinedSimHash = combinedSimHash.add(simHashValue);
-                    }
-                }
-            }
-            // Convert the combined simhash to a hex string
-            return combinedSimHash.toString(16);
+        if (Files.isDirectory(path)) {
+            return generateDirectoryHash(path);
         } else {
-            // Handle single file
-            String fileContent = readFile(file.getPath());
-            BigInteger simHashValue = generateSimHash(fileContent);
-            return simHashValue.toString(16);
+            return generateFileHash(path);
         }
     }
 
-    private static String readFile(String filePath) throws IOException {
-        StringBuilder contentBuilder = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                contentBuilder.append(line).append(" ");
-            }
-        }
-        return contentBuilder.toString();
+    private String generateFileHash(Path path) throws IOException, NoSuchAlgorithmException {
+        byte[] content = Files.readAllBytes(path);
+        return computeSimHash(content);
     }
 
-    private static String[] tokenize(String text) {
-        return text.split("\\s+"); // Split by whitespace
+    private String generateDirectoryHash(Path path) throws IOException, NoSuchAlgorithmException {
+        StringBuilder combinedHash = new StringBuilder();
+        Files.walk(path)
+                .filter(Files::isRegularFile)
+                .forEach(file -> {
+                    try {
+                        combinedHash.append(generateFileHash(file));
+                    } catch (IOException | NoSuchAlgorithmException e) {
+                        e.printStackTrace();
+                    }
+                });
+        return computeSimHash(combinedHash.toString().getBytes());
     }
 
-    private static BigInteger hashToken(String token) throws NoSuchAlgorithmException {
-        MessageDigest md = MessageDigest.getInstance("MD5");
-        byte[] hashBytes = md.digest(token.getBytes());
-        return new BigInteger(1, hashBytes);
-    }
+    private String computeSimHash(byte[] content) throws NoSuchAlgorithmException {
+        int[] hashBits = new int[HASH_BITS];
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] sha256Bytes = digest.digest(content);
 
-    private static BigInteger generateSimHash(String text) throws NoSuchAlgorithmException {
-        int hashBits = 128;
-        int[] v = new int[hashBits];
-        String[] tokens = tokenize(text);
-
-        for (String token : tokens) {
-            BigInteger tokenHash = hashToken(token);
-            for (int i = 0; i < hashBits; i++) {
-                BigInteger bitmask = BigInteger.ONE.shiftLeft(i);
-                if (tokenHash.and(bitmask).signum() != 0) {
-                    v[i] += 1;
-                } else {
-                    v[i] -= 1;
-                }
+        for (int i = 0; i < sha256Bytes.length * 8; i++) {
+            int bitmask = 1 << (7 - (i % 8));
+            if ((sha256Bytes[i / 8] & bitmask) != 0) {
+                hashBits[i % HASH_BITS] += 1;
+            } else {
+                hashBits[i % HASH_BITS] -= 1;
             }
         }
 
-        BigInteger fingerprint = BigInteger.ZERO;
-        for (int i = 0; i < hashBits; i++) {
-            if (v[i] >= 0) {
-                fingerprint = fingerprint.or(BigInteger.ONE.shiftLeft(i));
+        long simHash = 0;
+        for (int i = 0; i < HASH_BITS; i++) {
+            if (hashBits[i] > 0) {
+                simHash |= (1L << i);
             }
         }
 
-        return fingerprint;
+        return Long.toHexString(simHash);
     }
 }

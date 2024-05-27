@@ -28,7 +28,7 @@ public class CostComputerTest {
         }
         else {
             double nomatchCost = CostComputer.getWN() * (maxSize - edges.size());
-            double matchCosts = edges.stream().mapToDouble(edge -> 1 / (1 + edge.getValue())).sum();
+            double matchCosts = edges.stream().mapToDouble(edge -> (1 / (1 + Math.exp(-(1 + 1)))) / (1 + edge.getValue())).sum();
             expectedCost = Math.exp((-2.5 * (matchCosts + nomatchCost) / edges.size()));
         }
         assertEquals(expectedCost, actualCost);
@@ -41,6 +41,12 @@ public class CostComputerTest {
         Node node3 = new Node("3");
         Node node4 = new Node("4");
         Node node5 = new Node("5");
+
+        node1.getAttributes().put("size", "1");
+        node2.getAttributes().put("size", "1");
+        node3.getAttributes().put("size", "1");
+        node4.getAttributes().put("size", "1");
+        node5.getAttributes().put("size", "1");
 
         List<Edge> edges1 = new ArrayList<>();
         edges1.add(new Edge(node1, node2, 3));

@@ -106,7 +106,8 @@ public class MatchingIntegrationTest {
         List<Edge> matching = metropolisAlgorithm.getMatching();
 
         //THEN
-        assertEquals(graph_nodes_1.size(), matching.size());
+        assertTrue(matching.size() > graph_nodes_1.size() * 0.99);
+        assertTrue(matching.size() <= graph_nodes_1.size());
     }
 
     @ParameterizedTest

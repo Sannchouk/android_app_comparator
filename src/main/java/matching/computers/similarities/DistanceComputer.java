@@ -1,14 +1,14 @@
 package matching.computers.similarities;
 
 import bipartiteGraph.Node;
-import matching.computers.extensions.ExtensionDistanceComputer;
-import matching.computers.hashs.HammingDistanceComputer;
-import matching.computers.names.LevenshteinNameDistanceComputer;
+import matching.computers.attributes.extensions.ExtensionDistanceComputer;
+import matching.computers.attributes.hashs.HammingDistanceComputer;
+import matching.computers.attributes.names.LevenshteinNameDistanceComputer;
 
 public class DistanceComputer {
     private static final double HASH_WEIGHT = 0.7;
     private static final double NAME_WEIGHT = 0.3;
-    private static final double EXTENSION_WEIGHT = 2;
+    private static final double EXTENSION_WEIGHT = 5;
 
     public int computeDistanceForAttributes(int extensionDistance, int nameDistance, int hashDistance) {
         return (int) ((EXTENSION_WEIGHT * extensionDistance) + (NAME_WEIGHT * nameDistance + 1) + (HASH_WEIGHT * hashDistance + 1));

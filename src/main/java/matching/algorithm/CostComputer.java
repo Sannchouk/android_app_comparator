@@ -11,7 +11,7 @@ public class CostComputer {
 
     private final double beta;
     @Getter
-    private final static double WN = 1.0;
+    private final static double WN = 1.2;
 
     public CostComputer(double beta) {
         this.beta = beta;

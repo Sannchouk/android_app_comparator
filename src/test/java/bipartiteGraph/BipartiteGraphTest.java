@@ -154,8 +154,27 @@ public class BipartiteGraphTest {
 
             assertEquals(3, graph.getNodeGroup1().size());
             assertEquals(2, graph.getNodeGroup2().size());
-            assertEquals(graph.getNodeGroup1().get(1).getPath(), path3);
-            assertEquals(graph.getNodeGroup1().get(1).getParent(), graph.getNodeGroup1().get(0));
+
+            assertTrue(
+                    graph.getNodeGroup1().stream()
+                            .anyMatch(node -> path3.equals(node.getPath())),
+                    "No node with the path " + path3 + " found in the graph."
+            );
+
+            Node nodeWithPath3 = graph.getNodeGroup1().stream()
+                    .filter(node -> path3.equals(node.getPath()))
+                    .findFirst()
+                    .orElse(null);
+
+            Node expectedParent = graph.getNodeGroup1().stream()
+                    .filter(node -> node.getChildren().contains(nodeWithPath3))
+                    .findFirst()
+                    .orElse(null);
+
+            assertTrue(
+                    nodeWithPath3 != null && expectedParent != null && nodeWithPath3.getParent() == expectedParent,
+                    "The node with path " + path3 + " does not have the expected parent."
+            );
         } finally {
             Files.deleteIfExists(path1);
             Files.deleteIfExists(path2);

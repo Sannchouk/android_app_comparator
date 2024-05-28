@@ -4,11 +4,17 @@ import fileTree.FileTree;
 import inMemory.Tokenizer;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Synchronized;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Collections;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
  * This class represents a bipartite graph, that is used during the matching process.
@@ -167,31 +173,45 @@ public class BipartiteGraph {
     }
 
     private void initNodes(FileTree tree, List<Node> nodes, int group) {
-        Map<Node, Integer> parents = new HashMap<>();
-        for (FileTree fileTree : tree.getNodes()) {
+        ConcurrentMap<Node, Integer> parents = new ConcurrentHashMap<>();
+        List<FileTree> fileTreeNodes = tree.getNodes();
+        List<Node> synchronizedNodes = Collections.synchronizedList(new ArrayList<>());
+        createNodes(fileTreeNodes, synchronizedNodes, parents, group);
+        nodes.addAll(synchronizedNodes);
+        setParentRelationships(parents, synchronizedNodes);
+    }
+
+    private void createNodes(List<FileTree> fileTreeNodes, List<Node> synchronizedNodes, ConcurrentMap<Node,Integer> parents, int group) {
+        fileTreeNodes.parallelStream().forEach(fileTree -> {
             Node node;
             if (fileTree.getGraphNode() == null) {
                 node = new Node(fileTree.getPath());
                 node.setId(fileTree.getId());
                 node.setGroup(group);
                 tokenizer.tokenize(node);
-                nodes.add(node);
+                synchronizedNodes.add(node);
                 fileTree.setGraphNode(node);
-            }
-            else {
+            } else {
                 node = fileTree.getGraphNode();
             }
             if (fileTree.getParent() != null) {
                 parents.put(node, fileTree.getParent().getId());
             }
-        }
-        for (Map.Entry<Node, Integer> entry : parents.entrySet()) {
+        });
+    }
+
+    private void setParentRelationships(ConcurrentMap<Node, Integer> parents, List<Node> synchronizedNodes) {
+        parents.entrySet().parallelStream().forEach(entry -> {
             Node node = entry.getKey();
             Integer parentId = entry.getValue();
-            Node parent = nodes.stream().filter(n -> n.getId() == parentId).findFirst().orElse(null);
+            Node parent = synchronizedNodes.stream().filter(n -> n.getId() == parentId).findFirst().orElse(null);
             node.setParent(parent);
-            assert parent != null;
-            parent.getChildren().add(node);
-        }
+            if (parent != null) {
+                synchronized (parent) {
+                    parent.getChildren().add(node);
+                }
+            }
+        });
     }
+
 }

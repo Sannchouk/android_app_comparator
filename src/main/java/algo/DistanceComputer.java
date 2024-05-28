@@ -2,6 +2,11 @@ package algo;
 
 class DistanceComputer {
 
+
+    private static float CONNECTIVITY_WEIGHT = 0.75F;
+    private static float SIZE_RATIO_WEIGHT = 0.25F;
+
+
     /**
      * Computes the distance between two sets of elements.
      * @param size1 the size of the first set
@@ -13,8 +18,8 @@ class DistanceComputer {
         int biggestSize = Math.max(size1, size2);
         int smallerSize = Math.min(size1, size2);
         float connectivityScore = getConnectivityScore(biggestSize, matching);
-        float sizeRatioScore = getSizeRatioScore(biggestSize, smallerSize);
-        return 1 - (connectivityScore * sizeRatioScore);
+        float sizeRatioScore = getSizeRatioScore(smallerSize, biggestSize);
+        return 1 - (CONNECTIVITY_WEIGHT * connectivityScore + SIZE_RATIO_WEIGHT * sizeRatioScore);
     }
 
     private float getConnectivityScore(int biggestSize, int matching) {

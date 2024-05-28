@@ -32,7 +32,6 @@ public class AlgoRunner {
         List<Apk> apks = new ArrayList<>();
         try {
             apks = listApks(path);
-            System.out.println("Directories:" + apks);
         } catch (IOException e) {
             System.out.println("Wrong path: " + path);
         }
@@ -50,6 +49,7 @@ public class AlgoRunner {
                 }
             }
         }
+        System.out.println("Directories:" + apks);
         return new AlgorithmResults(apks, distancesStorer.getDistances());
     }
 

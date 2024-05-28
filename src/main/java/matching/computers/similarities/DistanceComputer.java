@@ -2,7 +2,9 @@ package matching.computers.similarities;
 
 import bipartiteGraph.Node;
 import matching.computers.attributes.extensions.ExtensionDistanceComputer;
+import matching.computers.attributes.hashs.BooleanDistanceComputer;
 import matching.computers.attributes.hashs.HammingDistanceComputer;
+import matching.computers.attributes.hashs.HashDistanceComputer;
 import matching.computers.attributes.names.LevenshteinNameDistanceComputer;
 
 public class DistanceComputer {
@@ -18,7 +20,7 @@ public class DistanceComputer {
         LevenshteinNameDistanceComputer nameDistanceComputer = new LevenshteinNameDistanceComputer();
         int nameDistance = nameDistanceComputer.computeDistanceBetweenTwoNames(x.getAttributes().get("name"), y.getAttributes().get("name"));
 
-        HammingDistanceComputer hashDistanceComputer = new HammingDistanceComputer();
+        HashDistanceComputer hashDistanceComputer = new BooleanDistanceComputer();
         int hashDistance = hashDistanceComputer.computeDistanceBetweenTwoHashes(x.getAttributes().get("hash"), y.getAttributes().get("hash"));
 
         ExtensionDistanceComputer extensionDistanceComputer = new ExtensionDistanceComputer();

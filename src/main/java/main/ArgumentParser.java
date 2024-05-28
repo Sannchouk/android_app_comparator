@@ -5,6 +5,7 @@ class ArgumentParser {
     public boolean needNeo4jFile = false;
     public boolean cluster = false;
     public boolean already = false;
+    public Double clusterThreshold = null;
 
     public void parseArguments(String[] args) {
         if (args.length > 0 && !args[0].startsWith("-")) {
@@ -18,16 +19,36 @@ class ArgumentParser {
                 case "-neo4j":
                     needNeo4jFile = true;
                     break;
-                case "-cluster":
-                    cluster = true;
-                    break;
                 case "-already":
                     already = true;
+                    break;
+                case "-cluster":
+                    if (i + 1 < args.length) {
+                        try {
+                            clusterThreshold = Double.parseDouble(args[++i]);
+                        } catch (NumberFormatException e) {
+                            System.out.println("Invalid cluster threshold value: " + args[i]);
+                        }
+                    } else {
+                        System.out.println("Missing cluster threshold value after -threshold");
+                    }
                     break;
                 default:
                     System.out.println("Unknown command: " + args[i]);
                     break;
             }
         }
+    }
+
+    public static void main(String[] args) {
+        ArgumentParser parser = new ArgumentParser();
+        parser.parseArguments(args);
+
+        // For testing purposes
+        System.out.println("Path: " + parser.path);
+        System.out.println("Need Neo4j File: " + parser.needNeo4jFile);
+        System.out.println("Cluster: " + parser.cluster);
+        System.out.println("Already: " + parser.already);
+        System.out.println("Cluster Threshold: " + parser.clusterThreshold);
     }
 }

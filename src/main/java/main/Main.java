@@ -34,10 +34,10 @@ public class Main {
             writer.write(new File("results/neo4j.txt"), results);
         }
 
-        if (argParser.cluster) {
+        if (argParser.clusterThreshold != null) {
             try {
                 List<String> apkNames = results.getApks().stream().map(Apk::getNeo4JName).toList();
-                var clusters = new Clustering().cluster(results.getDistancesMatrix(), apkNames, 0.6);
+                var clusters = new Clustering().cluster(results.getDistancesMatrix(), apkNames, argParser.clusterThreshold);
                 System.out.println("Clusters:");
                 System.out.println(clusters);
                 new ClusteringIO().writeClustersToFile(clusters, "results/clusters.csv");

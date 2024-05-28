@@ -6,9 +6,10 @@ import edu.gatech.gtri.bktree.BkTreeSearcher;
 import edu.gatech.gtri.bktree.Metric;
 import edu.gatech.gtri.bktree.MutableBkTree;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class SimilarityScoresComputer {
     private final BipartiteGraph graph;
@@ -37,9 +38,25 @@ public class SimilarityScoresComputer {
             bkTree.add(node);
         }
         BkTreeSearcher<Node> searcher = new BkTreeSearcher<>(bkTree);
+
+        ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        List<CompletableFuture<Void>> futures = new ArrayList<>();
         for (Node node : graph.getNodeGroup1()) {
-            similarityScores.put(node, computeSimilarityScoresForNode(node, searcher));
+            CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
+                HashMap<Node, Double> scores;
+                synchronized (searcher) {
+                    scores = computeSimilarityScoresForNode(node, searcher);
+                }
+                synchronized (similarityScores) {
+                    similarityScores.put(node, scores);
+                }
+            }, executor);
+            futures.add(future);
         }
+        // Wait for all tasks to complete
+        CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
+        executor.shutdown();
+
         computePropagationScores();
         applyPenalization();
         return similarityScores;

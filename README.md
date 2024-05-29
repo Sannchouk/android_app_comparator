@@ -38,7 +38,7 @@ All the generated files can be found on the `results` folder. Here are all the f
 same distances a new time. See the run section for more info.
 - `distanceMatrix.csv` that offers a csv file representing the distance matrix. It is not used in the program, but is given as a vision, or exploitation tool.
 - `neo4j.txt` that offers a file that represents a [Neo4J](https://neo4j.com/) query file. It permits to create the graph representing all the computed distances
-- `cluster.txt` that represents all the computed clusters. 
+- `cluster.txt` that represents all the computed clusters, according to the given threshold.
 
 #### Requirements 
 
@@ -53,5 +53,8 @@ To compile the project, run: `mvn package`
 ##### Run
 
 To run the project, run: `java -jar target/PJI-1.jar` with some available options:
-
+- `-neo4j` that generates the neo4j file.
+- `-cluster $threshold$` that generates the cluster file. The given threshold value is used to create the cluster. Hence, the value must be between 0 and 1. All
+apks in the same cluster cannot have distance superior to this cluster.
+- `-already` that skips the distance computation part. It deserializes the `algorithmResults` class that stores the distance.
 

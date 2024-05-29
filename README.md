@@ -29,6 +29,29 @@ Similarity-Based Flexible Tree Matching. I tried to adapt their algorithm to com
 
 ### Implementation
 
-The algorithm is implemented in Java, with the project management tool Maven.
+The algorithm is implemented in Java, with the project management tool Maven.  
+
+All the distances computed are between 0 and 1 (0 represents two identical apps, and 1 totally different ones).  
+
+All the generated files can be found on the `results` folder. Here are all the files that may be generated:
+- `algorithmResults.ser` that stores the class that represents the computed distances. That may allow to rerun the program, without computing the 
+same distances a new time. See the run section for more info.
+- `distanceMatrix.csv` that offers a csv file representing the distance matrix. It is not used in the program, but is given as a vision, or exploitation tool.
+- `neo4j.txt` that offers a file that represents a [Neo4J](https://neo4j.com/) query file. It permits to create the graph representing all the computed distances
+- `cluster.txt` that represents all the computed clusters. 
 
 #### Requirements 
+
+The project uses Java version 17.
+
+#### How to?
+
+##### Compilation
+
+To compile the project, run: `mvn package`
+
+##### Run
+
+To run the project, run: `java -jar target/PJI-1.jar` with some available options:
+
+

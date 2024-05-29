@@ -21,7 +21,7 @@ deduplication algorithm to gain memory in a given device: if two apps share the 
 to retrieve all apps using a given framework, to train a generative model on that dataset, and to get some "specialized copilots". That brings concrete and important improvements:
 the generative models will be better (because they are specialized), and more frugal (because the training dataset will be reduced).
 
-### How?
+## How?
 
 The algorithm used to perform such a thing is greatly inspired from a work performed some years earlier in the same research team by Sacha Brisset. Here is
 a link to the [concerned paper](https://hal.science/hal-03774245). The authors created an algorithm to compare two web pages, using tree comparisons. They named their algorithm

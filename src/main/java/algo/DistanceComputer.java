@@ -15,10 +15,10 @@ class DistanceComputer {
      * @return the distance between the two sets
      */
     public float computeDistance(int size1, int size2, int matching) {
-        int biggestSize = Math.max(size1, size2);
+        int biggerSize = Math.max(size1, size2);
         int smallerSize = Math.min(size1, size2);
-        float connectivityScore = getConnectivityScore(biggestSize, matching);
-        float sizeRatioScore = getSizeRatioScore(smallerSize, biggestSize);
+        float connectivityScore = getConnectivityScore(biggerSize, matching);
+        float sizeRatioScore = getSizeRatioScore(smallerSize, biggerSize);
         return 1 - (CONNECTIVITY_WEIGHT * connectivityScore + SIZE_RATIO_WEIGHT * sizeRatioScore);
     }
 

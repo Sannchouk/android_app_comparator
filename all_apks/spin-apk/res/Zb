@@ -1,0 +1,574 @@
+0:46 org.jetbrains.kotlin:kotlin-stdlib-jdk7
+47:46 androidx.annotation:annotation
+94:46 org.jetbrains.kotlin:kotlin-stdlib-common
+141:46 org.jetbrains.kotlin:kotlin-stdlib-jdk8
+188:46 org.jetbrains:annotations
+235:46 androidx.databinding:viewbinding
+282:46 org.jetbrains.kotlin:kotlin-stdlib
+329:46 com.google.firebase:firebase-components
+376:46 androidx.fragment:fragment-ktx
+423:47 com.google.android.gms:play-services-ads
+471:1096 Animal Sniffer
+1568:1892 Checker Framework Annotations
+3461:11358 Conscrypt
+14820:11358 Dagger
+26179:11357 Error Prone
+37537:12539 ExoPlayer
+50077:11358 Google Auto
+61436:11358 Gson
+72795:11358 Guava JDK5
+84154:11362 Guava JDK7
+95517:81008 J2ObjC
+176526:11358 JSR 250
+187885:1602 JSR 305
+189488:11365 JSR 330
+200854:11358 JSpecify
+212213:11307 JsInterop Annotations
+223521:105133 Kotlin
+328655:11357 Kotlin coroutines
+340013:1732 Protocol Buffers for Java
+341746:11358 SafeParcelable library
+353105:11358 Tink
+364464:11358 Volley
+375823:11358 android_build
+387182:10695 apksig
+397878:1125 checker_framework_util
+399004:10141 customtabsclient
+409146:11358 gsfclient
+420505:9116 java_annotations
+429622:11356 kotlinx_atomicfu
+440979:12834 mp4parser
+453814:8987 p2putils
+462802:46 androidx.localbroadcastmanager:localbroadcastmanager
+462849:50 com.github.kittinunf.result:result
+462900:46 androidx.drawerlayout:drawerlayout
+462947:46 androidx.lifecycle:lifecycle-livedata
+462994:46 androidx.lifecycle:lifecycle-runtime-ktx
+463041:46 androidx.compose.material:material-ripple
+463088:46 androidx.savedstate:savedstate-ktx
+463135:46 androidx.fragment:fragment
+463182:46 androidx.profileinstaller:profileinstaller
+463229:46 androidx.savedstate:savedstate
+463276:46 com.google.android.datatransport:transport-api
+463323:46 com.google.firebase:firebase-datatransport
+463370:46 androidx.versionedparcelable:versionedparcelable
+463417:46 androidx.biometric:biometric
+463464:46 androidx.compose.foundation:foundation-layout
+463511:46 androidx.slidingpanelayout:slidingpanelayout
+463558:38 org.mozilla.appservices.nightly:sync15
+463597:46 androidx.compose.runtime:runtime
+463644:52 com.google.android.play:review-ktx
+463697:47 com.google.android.gms:play-services-base
+463745:10694 AndroidX lifecycle common library
+474440:10694 AndroidX lifecycle livedatacore library
+485135:10694 AndroidX lifecycle runtime library
+495830:50 com.adjust.sdk:adjust-android
+495881:50 com.github.kittinunf.fuel:fuel
+495932:46 androidx.coordinatorlayout:coordinatorlayout
+495979:46 androidx.startup:startup-runtime
+496026:46 androidx.core:core-splashscreen
+496073:46 androidx.documentfile:documentfile
+496120:52 com.google.android.play:review
+496173:46 androidx.vectordrawable:vectordrawable-animated
+496220:47 com.google.android.gms:play-services-cloud-messaging
+496268:46 androidx.appcompat:appcompat
+496315:38 org.mozilla.appservices.nightly:autofill
+496354:46 androidx.lifecycle:lifecycle-livedata-core-ktx
+496401:47 com.android.billingclient:billing
+496449:46 androidx.lifecycle:lifecycle-viewmodel
+496496:50 io.sentry:sentry
+496547:47 com.android.installreferrer:installreferrer
+496595:27 org.mozilla.geckoview:geckoview-default-omni
+496623:47 com.google.android.gms:play-services-ads-identifier
+496671:1125 Checker Framework Utilities
+497797:46 androidx.activity:activity
+497844:47 com.android.billingclient:billing-ktx
+497892:46 androidx.navigation:navigation-common
+497939:46 androidx.compose.material:material
+497986:46 androidx.privacysandbox.ads:ads-adservices
+498033:46 androidx.vectordrawable:vectordrawable
+498080:46 androidx.loader:loader
+498127:46 androidx.compose.ui:ui-graphics
+498174:46 androidx.collection:collection-ktx
+498221:46 org.mongodb:bson
+498268:46 androidx.cursoradapter:cursoradapter
+498315:46 androidx.compose.ui:ui-unit
+498362:46 androidx.legacy:legacy-support-core-utils
+498409:46 com.google.android.material:material
+498456:50 io.sentry:sentry-android-ndk
+498507:46 androidx.navigation:navigation-fragment-ktx
+498554:50 io.sentry:sentry-android-core
+498605:47 com.google.android.gms:play-services-appset
+498653:10691 AndroidX annotation experimental library
+509345:10694 AndroidX architecture core common library
+520040:10694 AndroidX architecture core runtime library
+530735:10694 AndroidX tracing library
+541430:46 com.google.firebase:firebase-annotations
+541477:46 androidx.arch.core:core-common
+541524:46 androidx.collection:collection
+541571:50 com.github.kittinunf.fuel:fuel-json
+541622:46 javax.inject:javax.inject
+541669:46 androidx.activity:activity-ktx
+541716:47 com.google.android.gms:play-services-tasks
+541764:46 androidx.cardview:cardview
+541811:46 androidx.core:core
+541858:46 androidx.concurrent:concurrent-futures
+541905:46 androidx.customview:customview
+541952:38 org.mozilla.appservices.nightly:tabs
+541991:46 androidx.compose.ui:ui-text
+542038:46 androidx.arch.core:core-runtime
+542085:46 androidx.paging:paging-common-ktx
+542132:46 androidx.datastore:datastore-preferences-core
+542179:46 com.google.accompanist:accompanist-drawablepainter
+542226:46 androidx.annotation:annotation-experimental
+542273:46 androidx.print:print
+542320:46 androidx.lifecycle:lifecycle-runtime
+542367:47 com.google.android.gms:play-services-ads-base
+542415:47 com.google.android.gms:play-services-measurement-base
+542463:46 androidx.annotation:annotation-jvm
+542510:47 org.jetbrains.kotlinx:kotlinx-coroutines-android
+542558:46 androidx.lifecycle:lifecycle-process
+542605:46 androidx.compose.material:material-icons-core
+542652:46 androidx.interpolator:interpolator
+542699:47 com.google.android.gms:play-services-stats
+542747:47 com.google.android.gms:play-services-ads-lite
+542795:46 androidx.legacy:legacy-support-v4
+542842:46 com.google.firebase:firebase-encoders-proto
+542889:46 androidx.lifecycle:lifecycle-livedata-core
+542936:46 androidx.recyclerview:recyclerview
+542983:46 androidx.viewpager2:viewpager2
+543030:38 org.mozilla.appservices.nightly:nimbus
+543069:46 com.google.firebase:firebase-installations-interop
+543116:46 com.google.firebase:firebase-common
+543163:47 com.google.firebase:firebase-measurement-connector
+543211:11357 Firebase
+554569:11342 FlatBuffers
+565912:38 org.mozilla.appservices.nightly:remotesettings
+565951:46 androidx.lifecycle:lifecycle-viewmodel-ktx
+565998:46 androidx.core:core-ktx
+566045:46 androidx.privacysandbox.ads:ads-adservices-java
+566092:46 androidx.navigation:navigation-runtime-ktx
+566139:46 androidx.datastore:datastore-preferences
+566186:46 androidx.dynamicanimation:dynamicanimation
+566233:46 androidx.appcompat:appcompat-resources
+566280:50 io.sentry:sentry-android
+566331:46 androidx.work:work-runtime
+566378:46 androidx.browser:browser
+566425:46 com.google.errorprone:error_prone_annotations
+566472:46 androidx.paging:paging-runtime-ktx
+566519:46 androidx.compose.foundation:foundation
+566566:47 org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm
+566614:46 androidx.swiperefreshlayout:swiperefreshlayout
+566661:46 androidx.viewpager:viewpager
+566708:38 org.mozilla.appservices.nightly:places
+566747:46 androidx.navigation:navigation-common-ktx
+566794:46 androidx.navigation:navigation-ui
+566841:46 androidx.lifecycle:lifecycle-livedata-ktx
+566888:46 androidx.preference:preference
+566935:46 androidx.work:work-runtime-ktx
+566982:52 com.google.android.play:core-common
+567035:46 androidx.activity:activity-compose
+567082:46 androidx.lifecycle:lifecycle-viewmodel-savedstate
+567129:46 androidx.lifecycle:lifecycle-common
+567176:46 androidx.navigation:navigation-runtime
+567223:46 com.google.firebase:firebase-encoders
+567270:46 org.jetbrains.kotlin:kotlin-parcelize-runtime
+567317:46 androidx.transition:transition
+567364:47 com.google.code.gson:gson
+567412:46 com.google.firebase:firebase-installations
+567459:46 androidx.constraintlayout:constraintlayout
+567506:38 org.mozilla.appservices.nightly:fxaclient
+567545:46 com.google.firebase:firebase-encoders-json
+567592:46 androidx.compose.animation:animation
+567639:46 androidx.datastore:datastore
+567686:46 androidx.datastore:datastore-core
+567733:46 com.google.firebase:firebase-messaging
+567780:46 androidx.navigation:navigation-fragment
+567827:46 com.google.android.datatransport:transport-runtime
+567874:46 androidx.compose.animation:animation-core
+567921:38 org.mozilla.telemetry:glean MPL-2.0
+567960:61 org.mozilla.telemetry:glean Apache License 2.0: miniz_oxide
+568022:38 org.mozilla.telemetry:glean Apache License 2.0: lmdb-rkv
+568061:30 org.mozilla.telemetry:glean Apache License 2.0: rkv
+568092:45 org.mozilla.telemetry:glean Apache License 2.0: static_assertions
+568138:35 org.mozilla.telemetry:glean Apache License 2.0: tinyvec
+568174:39 org.mozilla.telemetry:glean Apache License 2.0: windows-sys
+568214:39 org.mozilla.telemetry:glean Apache License 2.0: windows_x86_64_gnu
+568254:30 org.mozilla.telemetry:glean Apache License 2.0: ryu
+568285:37 org.mozilla.telemetry:glean Apache License 2.0: winapi
+568323:39 org.mozilla.telemetry:glean Apache License 2.0: crc32fast
+568363:37 org.mozilla.telemetry:glean Apache License 2.0: humantime
+568401:35 org.mozilla.telemetry:glean Apache License 2.0: inherent
+568437:33 org.mozilla.telemetry:glean Apache License 2.0: libc
+568471:29 org.mozilla.telemetry:glean Apache License 2.0: askama
+568501:29 org.mozilla.telemetry:glean Apache License 2.0: askama_derive
+568531:29 org.mozilla.telemetry:glean Apache License 2.0: askama_escape
+568561:33 org.mozilla.telemetry:glean Apache License 2.0: anyhow
+568595:36 org.mozilla.telemetry:glean Apache License 2.0: bitflags
+568632:35 org.mozilla.telemetry:glean Apache License 2.0: camino
+568668:38 org.mozilla.telemetry:glean Apache License 2.0: cfg-if
+568707:41 org.mozilla.telemetry:glean Apache License 2.0: crossbeam-channel
+568749:41 org.mozilla.telemetry:glean Apache License 2.0: crossbeam-utils
+568791:39 org.mozilla.telemetry:glean Apache License 2.0: env_logger
+568831:35 org.mozilla.telemetry:glean Apache License 2.0: fastrand
+568867:38 org.mozilla.telemetry:glean Apache License 2.0: flate2
+568906:33 org.mozilla.telemetry:glean Apache License 2.0: form_urlencoded
+568940:33 org.mozilla.telemetry:glean Apache License 2.0: glob
+568974:36 org.mozilla.telemetry:glean Apache License 2.0: heck
+569011:35 org.mozilla.telemetry:glean Apache License 2.0: id-arena
+569047:34 org.mozilla.telemetry:glean Apache License 2.0: idna
+569082:43 org.mozilla.telemetry:glean Apache License 2.0: io-lifetimes
+569126:31 org.mozilla.telemetry:glean Apache License 2.0: itoa
+569158:51 org.mozilla.telemetry:glean Apache License 2.0: lazy_static
+569210:44 org.mozilla.telemetry:glean Apache License 2.0: linux-raw-sys
+569255:32 org.mozilla.telemetry:glean Apache License 2.0: mime
+569288:39 org.mozilla.telemetry:glean Apache License 2.0: num-integer
+569328:38 org.mozilla.telemetry:glean Apache License 2.0: num-traits
+569367:39 org.mozilla.telemetry:glean Apache License 2.0: num_cpus
+569407:36 org.mozilla.telemetry:glean Apache License 2.0: once_cell
+569444:32 org.mozilla.telemetry:glean Apache License 2.0: paste
+569477:34 org.mozilla.telemetry:glean Apache License 2.0: percent-encoding
+569512:35 org.mozilla.telemetry:glean Apache License 2.0: plain
+569548:38 org.mozilla.telemetry:glean Apache License 2.0: proc-macro2
+569587:32 org.mozilla.telemetry:glean Apache License 2.0: quote
+569620:42 org.mozilla.telemetry:glean Apache License 2.0: rustix
+569663:33 org.mozilla.telemetry:glean Apache License 2.0: semver
+569697:33 org.mozilla.telemetry:glean Apache License 2.0: serde
+569731:33 org.mozilla.telemetry:glean Apache License 2.0: serde_derive
+569765:32 org.mozilla.telemetry:glean Apache License 2.0: serde_json
+569798:30 org.mozilla.telemetry:glean Apache License 2.0: syn
+569829:37 org.mozilla.telemetry:glean Apache License 2.0: tempfile
+569867:36 org.mozilla.telemetry:glean Apache License 2.0: thiserror
+569904:36 org.mozilla.telemetry:glean Apache License 2.0: thiserror-impl
+569941:31 org.mozilla.telemetry:glean Apache License 2.0: time
+569973:31 org.mozilla.telemetry:glean Apache License 2.0: toml
+570005:38 org.mozilla.telemetry:glean Apache License 2.0: unicase
+570044:37 org.mozilla.telemetry:glean Apache License 2.0: unicode-bidi
+570082:40 org.mozilla.telemetry:glean Apache License 2.0: unicode-ident
+570123:51 org.mozilla.telemetry:glean Apache License 2.0: unicode-normalization
+570175:33 org.mozilla.telemetry:glean Apache License 2.0: url
+570209:31 org.mozilla.telemetry:glean Apache License 2.0: uuid
+570241:46 org.mozilla.telemetry:glean Apache License 2.0: minimal-lexical
+570288:33 org.mozilla.telemetry:glean Apache License 2.0: xshell
+570322:40 org.mozilla.telemetry:glean Apache License 2.0: getrandom
+570363:44 org.mozilla.telemetry:glean Apache License 2.0: adler
+570408:34 org.mozilla.telemetry:glean Apache License 2.0: cargo-platform
+570443:39 org.mozilla.telemetry:glean Apache License 2.0: fs-err
+570483:32 org.mozilla.telemetry:glean Apache License 2.0: log
+570516:45 org.mozilla.telemetry:glean Apache License 2.0: android_log-sys
+570562:44 org.mozilla.telemetry:glean Apache License 2.0: android_logger
+570607:29 org.mozilla.telemetry:glean Apache License 2.0: askama_shared
+570637:36 org.mozilla.telemetry:glean Apache License 2.0: chrono
+570674:38 org.mozilla.telemetry:glean Apache License 2.0: lmdb-rkv-sys
+570713:40 org.mozilla.telemetry:glean Apache License 2.0: siphasher
+570754:39 org.mozilla.telemetry:glean Apache License 2.0: tinyvec_macros
+570794:37 org.mozilla.telemetry:glean Apache License 2.0: winapi-x86_64-pc-windows-gnu
+570832:33 org.mozilla.telemetry:glean Apache License 2.0: xshell-macros
+570866:35 org.mozilla.telemetry:glean BSD 2-Clause "Simplified" License: arrayref
+570902:27 org.mozilla.telemetry:glean MIT License: nom
+570930:42 org.mozilla.telemetry:glean MIT License: ordered-float
+570973:33 org.mozilla.telemetry:glean MIT License: bytes
+571007:36 org.mozilla.telemetry:glean MIT License: weedle2
+571044:29 org.mozilla.telemetry:glean MIT License: scroll_derive
+571074:35 org.mozilla.telemetry:glean MIT License: dashmap
+571110:37 org.mozilla.telemetry:glean MIT License: oslog
+571148:31 org.mozilla.telemetry:glean MIT License: sample
+571180:41 org.mozilla.telemetry:glean MIT License: cargo_metadata
+571222:42 org.mozilla.telemetry:glean MIT License: is-terminal
+571265:39 org.mozilla.telemetry:glean MIT License: byteorder
+571305:36 org.mozilla.telemetry:glean MIT License: memchr
+571342:39 org.mozilla.telemetry:glean MIT License: termcolor
+571382:39 org.mozilla.telemetry:glean MIT License: mime_guess
+571422:41 org.mozilla.telemetry:glean MIT License: winapi-util
+571464:33 org.mozilla.telemetry:glean MIT License: whatsys
+571498:37 org.mozilla.telemetry:glean MIT License: xshell-venv
+571536:29 org.mozilla.telemetry:glean MIT License: scroll
+571566:29 org.mozilla.telemetry:glean MIT License: goblin
+571596:32 org.mozilla.telemetry:glean MIT License: bincode
+571629:32 org.mozilla.telemetry:glean Mozilla Public License 2.0: glean
+571662:32 org.mozilla.telemetry:glean Mozilla Public License 2.0: glean-build
+571695:32 org.mozilla.telemetry:glean Mozilla Public License 2.0: glean-core
+571728:37 org.mozilla.telemetry:glean Mozilla Public License 2.0: zeitstempel
+571766:48 org.mozilla.telemetry:glean Mozilla Public License 2.0: embedded-uniffi-bindgen
+571815:32 org.mozilla.telemetry:glean Mozilla Public License 2.0: glean-bundle
+571848:32 org.mozilla.telemetry:glean Mozilla Public License 2.0: glean-bundle-android
+571881:36 org.mozilla.telemetry:glean Mozilla Public License 2.0: uniffi
+571918:36 org.mozilla.telemetry:glean Mozilla Public License 2.0: uniffi_bindgen
+571955:36 org.mozilla.telemetry:glean Mozilla Public License 2.0: uniffi_build
+571992:36 org.mozilla.telemetry:glean Mozilla Public License 2.0: uniffi_checksum_derive
+572029:36 org.mozilla.telemetry:glean Mozilla Public License 2.0: uniffi_core
+572066:36 org.mozilla.telemetry:glean Mozilla Public License 2.0: uniffi_macros
+572103:36 org.mozilla.telemetry:glean Mozilla Public License 2.0: uniffi_meta
+572140:36 org.mozilla.telemetry:glean Mozilla Public License 2.0: uniffi_testing
+572177:40 org.mozilla.telemetry:glean Unicode License Agreement - Data Files and Software (2016): unicode-ident
+572218:46 androidx.compose.ui:ui
+572265:47 com.google.android.ump:user-messaging-platform
+572313:46 androidx.compose.ui:ui-tooling-preview
+572360:47 com.google.android.gms:play-services-basement
+572408:46 androidx.compose.runtime:runtime-saveable
+572455:47 com.google.android.gms:play-services-measurement-sdk-api
+572503:46 androidx.paging:paging-common
+572550:46 androidx.paging:paging-runtime
+572597:38 org.mozilla.appservices.nightly:full-megazord MPL-2.0
+572636:57 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: NSPR
+572694:56 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: NSS
+572751:53 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: ece
+572805:58 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: hawk
+572864:52 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: jexl-eval
+572917:52 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: jexl-parser
+572970:54 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: uniffi
+573025:54 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: uniffi_bindgen
+573080:54 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: uniffi_build
+573135:54 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: uniffi_checksum_derive
+573190:54 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: uniffi_core
+573245:54 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: uniffi_macros
+573300:54 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: uniffi_meta
+573355:54 org.mozilla.appservices.nightly:full-megazord Mozilla Public License 2.0: uniffi_testing
+573410:62 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: ahash
+573473:75 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: android_system_properties
+573549:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: anyhow
+573610:54 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: askama
+573665:54 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: askama_derive
+573720:54 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: askama_escape
+573775:54 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: askama_shared
+573830:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: autocfg
+573892:72 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: base64
+573965:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: bitflags
+574027:75 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: block-buffer
+574103:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: camino
+574164:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: cargo-platform
+574226:62 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: cc
+574289:63 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: cfg-if
+574353:58 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: chrono
+574412:70 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: core-foundation-sys
+574483:74 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: cpufeatures
+574558:70 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: digest
+574629:53 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: dogear
+574683:58 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: either
+574742:67 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: errno
+574810:77 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: fallible-iterator
+574888:82 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: fallible-streaming-iterator
+574971:62 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: fastrand
+575034:73 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: ffi-support
+575108:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: form_urlencoded
+575169:64 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: fs-err
+575234:67 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: getrandom
+575302:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: glob
+575363:65 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: hashbrown
+575429:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: hashlink
+575490:63 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: heck
+575554:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: hex
+575616:67 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: iana-time-zone
+575684:62 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: id-arena
+575747:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: idna
+575809:68 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: io-lifetimes
+575878:70 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: itertools
+575949:58 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: itoa
+576008:59 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: jna
+576068:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: lalrpop-util
+576130:78 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: lazy_static
+576209:58 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: libc
+576268:69 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: linux-raw-sys
+576338:54 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: lmdb-rkv
+576393:54 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: lmdb-rkv-sys
+576448:65 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: lock_api
+576514:59 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: log
+576574:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: mime
+576635:71 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: minimal-lexical
+576707:66 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: num-integer
+576774:65 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: num-traits
+576840:63 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: once_cell
+576904:75 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: opaque-debug
+576980:65 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: parking_lot
+577046:65 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: parking_lot_core
+577112:59 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: paste
+577172:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: percent-encoding
+577234:69 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: pkg-config
+577304:62 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: plain
+577367:99 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: ppv-lite86
+577467:65 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: proc-macro2
+577533:53 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: prost
+577587:53 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: prost-derive
+577641:59 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: quote
+577701:62 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: rand
+577764:62 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: rand_chacha
+577827:62 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: rand_core
+577890:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: regex
+577952:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: regex-syntax
+578014:48 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: rkv
+578063:67 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: rustix
+578131:57 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: ryu
+578189:62 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: scopeguard
+578252:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: semver
+578313:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: serde
+578374:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: serde_derive
+578435:59 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: serde_json
+578495:67 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: serde_path_to_error
+578563:68 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: sha2
+578632:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: siphasher
+578693:63 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: smallbitvec
+578757:65 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: smallvec
+578823:72 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: static_assertions
+578896:57 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: syn
+578954:64 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: tempfile
+579019:63 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: thiserror
+579083:63 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: thiserror-impl
+579147:58 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: time
+579206:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: tinyvec
+579268:69 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: tinyvec_macros
+579338:66 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: toml
+579405:58 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: typenum
+579464:65 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: unicase
+579530:64 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: unicode-bidi
+579595:67 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: unicode-ident
+579663:78 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: unicode-normalization
+579742:77 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: unicode-segmentation
+579820:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: url
+579881:56 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: uuid
+579938:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: vcpkg
+579999:73 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: version_check
+580073:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: winapi
+580135:61 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: winapi-x86_64-pc-windows-gnu
+580197:63 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: windows-sys
+580261:63 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: windows_x86_64_gnu
+580325:63 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: windows_x86_64_msvc
+580389:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: xshell
+580450:60 org.mozilla.appservices.nightly:full-megazord Apache License 2.0: xshell-macros
+580511:66 org.mozilla.appservices.nightly:full-megazord MIT License: aho-corasick
+580578:63 org.mozilla.appservices.nightly:full-megazord MIT License: byteorder
+580642:60 org.mozilla.appservices.nightly:full-megazord MIT License: memchr
+580703:55 org.mozilla.appservices.nightly:full-megazord MIT License: bincode
+580759:53 org.mozilla.appservices.nightly:full-megazord MIT License: bytes
+580813:63 org.mozilla.appservices.nightly:full-megazord MIT License: cargo_metadata
+580877:63 org.mozilla.appservices.nightly:full-megazord MIT License: caseless
+580941:60 org.mozilla.appservices.nightly:full-megazord MIT License: generic-array
+581002:49 org.mozilla.appservices.nightly:full-megazord MIT License: goblin
+581052:56 org.mozilla.appservices.nightly:full-megazord MIT License: libsqlite3-sys
+581109:56 org.mozilla.appservices.nightly:full-megazord MIT License: rusqlite
+581166:69 org.mozilla.appservices.nightly:full-megazord MIT License: matches
+581236:59 org.mozilla.appservices.nightly:full-megazord MIT License: mime_guess
+581296:45 org.mozilla.appservices.nightly:full-megazord MIT License: nom
+581342:66 org.mozilla.appservices.nightly:full-megazord MIT License: ordered-float
+581409:49 org.mozilla.appservices.nightly:full-megazord MIT License: scroll
+581459:49 org.mozilla.appservices.nightly:full-megazord MIT License: scroll_derive
+581509:65 org.mozilla.appservices.nightly:full-megazord MIT License: weedle2
+581575:55 org.mozilla.appservices.nightly:full-megazord MIT License: xshell-venv
+581631:61 org.mozilla.appservices.nightly:full-megazord CC0-1.0 License: base16
+581693:54 org.mozilla.appservices.nightly:full-megazord ISC License: ring
+581748:55 org.mozilla.appservices.nightly:full-megazord BSD-2-Clause License: arrayref
+581804:63 org.mozilla.appservices.nightly:full-megazord BSD-3-Clause License: protobuf
+581868:58 org.mozilla.appservices.nightly:full-megazord BSD-3-Clause License: sqlcipher
+581927:33 org.mozilla.appservices.nightly:full-megazord Optional Notice: SQLite
+581961:46 androidx.compose.ui:ui-geometry
+582008:38 org.mozilla.appservices.nightly:logins
+582047:46 androidx.legacy:legacy-support-core-ui
+582094:47 com.google.firebase:firebase-iid-interop
+582142:46 com.google.android.datatransport:transport-backend-cct
+582189:46 androidx.asynclayoutinflater:asynclayoutinflater
+582236:46 androidx.media:media
+582283:46 org.jetbrains.kotlin:kotlin-android-extensions-runtime
+582330:46 androidx.preference:preference-ktx
+582377:47 org.jetbrains.kotlinx:kotlinx-serialization-json-jvm
+582425:46 androidx.lifecycle:lifecycle-common-java8
+582472:46 androidx.emoji2:emoji2-views-helper
+582519:46 com.google.code.findbugs:jsr305
+582566:46 androidx.resourceinspection:resourceinspection-annotation
+582613:46 androidx.window:window
+582660:46 androidx.room:room-ktx
+582707:38 org.mozilla.appservices.nightly:push
+582746:46 androidx.palette:palette-ktx
+582793:46 org.yaml:snakeyaml
+582840:46 androidx.emoji2:emoji2
+582887:34 org.checkerframework:checker-qual
+582922:46 androidx.customview:customview-poolingcontainer
+582969:46 androidx.room:room-runtime
+583016:38 org.mozilla.appservices.nightly:native-support
+583055:46 androidx.palette:palette
+583102:38 org.mozilla.appservices.nightly:rustlog
+583141:38 org.mozilla.appservices.nightly:errorsupport
+583180:46 androidx.lifecycle:lifecycle-service
+583227:47 org.jetbrains.kotlinx:kotlinx-serialization-core-jvm
+583275:46 com.google.j2objc:j2objc-annotations
+583322:46 androidx.sqlite:sqlite-framework
+583369:46 androidx.tracing:tracing
+583416:27 org.mozilla.geckoview:geckoview-exoplayer2-default
+583444:46 com.jakewharton:disklrucache
+583491:50 net.java.dev.jna:jna LGPL-2.1-or-later
+583542:47 net.java.dev.jna:jna Apache-2.0
+583590:28 org.json:json
+583619:46 androidx.autofill:autofill
+583666:47 com.google.android.gms:play-services-fido
+583714:1558 chrome_sync
+585273:46 androidx.room:room-common
+585320:38 org.mozilla.appservices.nightly:syncmanager
+585359:46 androidx.compose.ui:ui-util
+585406:38 org.mozilla.appservices.nightly:httpconfig
+585445:46 androidx.sqlite:sqlite
+585492:46 androidx.constraintlayout:constraintlayout-core
+585539:46 com.almworks.sqlite4java:sqlite4java
+585586:35 org.robolectric:shadows-framework
+585622:43 io.mockk:mockk-agent-api-jvm
+585666:31 org.ow2.asm:asm-analysis
+585698:31 org.ow2.asm:asm-util
+585730:35 org.robolectric:pluginapi
+585766:43 io.mockk:mockk-agent-jvm
+585810:46 androidx.work:work-testing
+585857:35 org.robolectric:sandbox
+585893:38 org.mozilla.telemetry:glean-native-forUnitTests
+585932:35 org.robolectric:junit
+585968:31 org.ow2.asm:asm-commons
+586000:46 androidx.test:monitor
+586047:46 androidx.test:core
+586094:47 org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm
+586142:31 org.ow2.asm:asm-tree
+586174:43 io.mockk:mockk-core-jvm
+586218:43 io.mockk:mockk-jvm
+586262:31 org.ow2.asm:asm
+586294:46 androidx.test.services:storage
+586341:35 org.robolectric:plugins-maven-dependency-resolver
+586377:41 junit:junit
+586419:35 org.robolectric:robolectric
+586455:68 com.ibm.icu:icu4j
+586524:35 org.robolectric:utils-reflector
+586560:35 org.robolectric:annotations
+586596:43 io.mockk:mockk-dsl-jvm
+586640:35 org.robolectric:resources
+586676:35 org.robolectric:nativeruntime
+586712:48 backport-util-concurrent:backport-util-concurrent
+586761:46 nekohtml:nekohtml
+586808:46 androidx.test:annotation
+586855:46 androidx.test.ext:junit
+586902:62 javax.annotation:javax.annotation-api
+586965:35 org.robolectric:utils
+587001:46 androidx.test.ext:junit-ktx
+587048:35 org.robolectric:shadowapi
+587084:41 org.bouncycastle:bcprov-jdk18on
+587126:46 androidx.benchmark:benchmark-common
+587173:46 androidx.test.uiautomator:uiautomator
+587220:46 com.jraska:falcon
+587267:46 androidx.compose.ui:ui-test
+587314:46 androidx.compose.ui:ui-tooling
+587361:46 androidx.test:runner
+587408:43 io.mockk:mockk-android
+587452:46 androidx.test.espresso:espresso-idling-resource
+587499:46 androidx.compose.ui:ui-tooling-data
+587546:46 androidx.benchmark:benchmark-junit4
+587593:43 org.hamcrest:hamcrest
+587637:43 org.hamcrest:hamcrest-core
+587681:46 androidx.test.espresso:espresso-core
+587728:46 androidx.test:core-ktx
+587775:46 com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework
+587822:46 androidx.test.espresso:espresso-contrib
+587869:46 com.squareup.okhttp3:okhttp
+587916:46 com.squareup.wire:wire-runtime
+587963:46 com.squareup.okio:okio-jvm
+588010:46 androidx.test:rules
+588057:46 androidx.compose.ui:ui-test-junit4
+588104:43 io.mockk:mockk-agent-android
+588148:43 org.hamcrest:hamcrest-library
+588192:50 tools.fastlane:screengrab
+588243:46 com.squareup.okhttp3:mockwebserver
+588290:46 com.squareup:javawriter
+588337:46 androidx.test.espresso:espresso-intents
+588384:47 org.jetbrains.kotlinx:kotlinx-coroutines-core
+588432:47 org.jetbrains.kotlinx:atomicfu

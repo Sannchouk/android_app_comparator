@@ -8,8 +8,8 @@ import matching.computers.attributes.hashs.HashDistanceComputer;
 import matching.computers.attributes.names.LevenshteinNameDistanceComputer;
 
 public class DistanceComputer {
-    private static final double HASH_WEIGHT = 0.7;
-    private static final double NAME_WEIGHT = 0.3;
+    private static final double HASH_WEIGHT = 0.75;
+    private static final double NAME_WEIGHT = 0.25;
     private static final double EXTENSION_WEIGHT = 5;
 
     public int computeDistanceForAttributes(int extensionDistance, int nameDistance, int hashDistance) {

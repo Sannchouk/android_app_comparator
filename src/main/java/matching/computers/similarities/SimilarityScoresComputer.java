@@ -18,7 +18,7 @@ public class SimilarityScoresComputer {
     private final PenalizationComputer penalizationComputer;
 
     private static final int EXTENSION_DISTANCE_THRESHOLD = 0;
-    private static final int NAME_DISTANCE_THRESHOLD = 3;
+    private static final int NAME_DISTANCE_THRESHOLD = 2;
     private static final int HASH_DISTANCE_THRESHOLD = 6;
 
     private final Map<Node, HashMap<Node, Double>> similarityScores = new HashMap<>();

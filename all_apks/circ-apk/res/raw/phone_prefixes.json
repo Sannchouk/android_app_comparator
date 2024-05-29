@@ -1,0 +1,1533 @@
+[
+    {
+        "name": "Germany",
+        "phonePrefix": "+49",
+        "code": "DE",
+        "threeCharsCode": "DEU"
+    },
+    {
+        "name": "Denmark",
+        "phonePrefix": "+45",
+        "code": "DK",
+        "threeCharsCode": "DNK"
+    },
+    {
+        "name": "Austria",
+        "phonePrefix": "+43",
+        "code": "AT",
+        "threeCharsCode": "AUT"
+    },
+    {
+        "name": "Italy",
+        "phonePrefix": "+39",
+        "code": "IT",
+        "threeCharsCode": "ITA"
+    },
+    {
+        "name": "United Arab Emirates",
+        "phonePrefix": "+971",
+        "code": "AE",
+        "threeCharsCode": "ARE"
+    },
+    {
+        "name": "Sweden",
+        "phonePrefix": "+46",
+        "code": "SE",
+        "threeCharsCode": "SWE"
+    },
+    {
+        "name": "France",
+        "phonePrefix": "+33",
+        "code": "FR",
+        "threeCharsCode": "FRA"
+    },
+    {
+        "name": "Portugal",
+        "phonePrefix": "+351",
+        "code": "PT",
+        "threeCharsCode": "PRT"
+    },
+    {
+        "name": "Spain",
+        "phonePrefix": "+34",
+        "code": "ES",
+        "threeCharsCode": "ESP"
+    },
+    {
+        "name": "Norway",
+        "phonePrefix": "+47",
+        "code": "NO",
+        "threeCharsCode": "NOR"
+    },
+    {
+        "name": "Belgium",
+        "phonePrefix": "+32",
+        "code": "BE",
+        "threeCharsCode": "BEL"
+    },
+    {
+        "name": "Switzerland",
+        "phonePrefix": "+41",
+        "code": "CH",
+        "threeCharsCode": "CHE"
+    },
+    {
+        "name": "United States",
+        "phonePrefix": "+1",
+        "code": "US",
+        "threeCharsCode": "USA"
+    },
+    {
+        "name": "Afghanistan",
+        "phonePrefix": "+93",
+        "code": "AF",
+        "threeCharsCode": "AFG"
+    },
+    {
+        "name": "Aland Islands",
+        "phonePrefix": "+358",
+        "code": "AX",
+        "threeCharsCode": "ALA"
+    },
+    {
+        "name": "Albania",
+        "phonePrefix": "+355",
+        "code": "AL",
+        "threeCharsCode": "ALB"
+    },
+    {
+        "name": "Algeria",
+        "phonePrefix": "+213",
+        "code": "DZ",
+        "threeCharsCode": "DZA"
+    },
+    {
+        "name": "AmericanSamoa",
+        "phonePrefix": "+1684",
+        "code": "AS",
+        "threeCharsCode": "ASM"
+    },
+    {
+        "name": "Andorra",
+        "phonePrefix": "+376",
+        "code": "AD",
+        "threeCharsCode": "AND"
+    },
+    {
+        "name": "Angola",
+        "phonePrefix": "+244",
+        "code": "AO",
+        "threeCharsCode": "AGO"
+    },
+    {
+        "name": "Anguilla",
+        "phonePrefix": "+1264",
+        "code": "AI",
+        "threeCharsCode": "AIA"
+    },
+    {
+        "name": "Antarctica",
+        "phonePrefix": "+672",
+        "code": "AQ",
+        "threeCharsCode": "ATA"
+    },
+    {
+        "name": "Antigua and Barbuda",
+        "phonePrefix": "+1268",
+        "code": "AG",
+        "threeCharsCode": "ATG"
+    },
+    {
+        "name": "Argentina",
+        "phonePrefix": "+54",
+        "code": "AR",
+        "threeCharsCode": "ARG"
+    },
+    {
+        "name": "Armenia",
+        "phonePrefix": "+374",
+        "code": "AM",
+        "threeCharsCode": "ARM"
+    },
+    {
+        "name": "Aruba",
+        "phonePrefix": "+297",
+        "code": "AW",
+        "threeCharsCode": "ABM"
+    },
+    {
+        "name": "Australia",
+        "phonePrefix": "+61",
+        "code": "AU",
+        "threeCharsCode": "AUS"
+    },
+    {
+        "name": "Austria",
+        "phonePrefix": "+43",
+        "code": "AT",
+        "threeCharsCode": "AUT"
+    },
+    {
+        "name": "Azerbaijan",
+        "phonePrefix": "+994",
+        "code": "AZ",
+        "threeCharsCode": "AZE"
+    },
+    {
+        "name": "Bahamas",
+        "phonePrefix": "+1242",
+        "code": "BS",
+        "threeCharsCode": "BHS"
+    },
+    {
+        "name": "Bahrain",
+        "phonePrefix": "+973",
+        "code": "BH",
+        "threeCharsCode": "BHR"
+    },
+    {
+        "name": "Bangladesh",
+        "phonePrefix": "+880",
+        "code": "BD",
+        "threeCharsCode": "BGD"
+    },
+    {
+        "name": "Barbados",
+        "phonePrefix": "+1246",
+        "code": "BB",
+        "threeCharsCode": "BRB"
+    },
+    {
+        "name": "Belarus",
+        "phonePrefix": "+375",
+        "code": "BY",
+        "threeCharsCode": "BLR"
+    },
+    {
+        "name": "Belgium",
+        "phonePrefix": "+32",
+        "code": "BE",
+        "threeCharsCode": "BEL"
+    },
+    {
+        "name": "Belize",
+        "phonePrefix": "+501",
+        "code": "BZ",
+        "threeCharsCode": "BLZ"
+    },
+    {
+        "name": "Benin",
+        "phonePrefix": "+229",
+        "code": "BJ",
+        "threeCharsCode": "BEN"
+    },
+    {
+        "name": "Bermuda",
+        "phonePrefix": "+1441",
+        "code": "BM",
+        "threeCharsCode": "BMU"
+    },
+    {
+        "name": "Bhutan",
+        "phonePrefix": "+975",
+        "code": "BT",
+        "threeCharsCode": "BTN"
+    },
+    {
+        "name": "Bolivia, Plurinational State of",
+        "phonePrefix": "+591",
+        "code": "BO",
+        "threeCharsCode": "BOL"
+    },
+    {
+        "name": "Bosnia and Herzegovina",
+        "phonePrefix": "+387",
+        "code": "BA",
+        "threeCharsCode": "BIH"
+    },
+    {
+        "name": "Botswana",
+        "phonePrefix": "+267",
+        "code": "BW",
+        "threeCharsCode": "BWA"
+    },
+    {
+        "name": "Brazil",
+        "phonePrefix": "+55",
+        "code": "BR",
+        "threeCharsCode": "BRA"
+    },
+    {
+        "name": "British Indian Ocean Territory",
+        "phonePrefix": "+246",
+        "code": "IO",
+        "threeCharsCode": "IOT"
+    },
+    {
+        "name": "Brunei Darussalam",
+        "phonePrefix": "+673",
+        "code": "BN",
+        "threeCharsCode": "BRN"
+    },
+    {
+        "name": "Bulgaria",
+        "phonePrefix": "+359",
+        "code": "BG",
+        "threeCharsCode": "BGR"
+    },
+    {
+        "name": "Burkina Faso",
+        "phonePrefix": "+226",
+        "code": "BF",
+        "threeCharsCode": "BFA"
+    },
+    {
+        "name": "Burundi",
+        "phonePrefix": "+257",
+        "code": "BI",
+        "threeCharsCode": "BDI"
+    },
+    {
+        "name": "Cambodia",
+        "phonePrefix": "+855",
+        "code": "KH",
+        "threeCharsCode": "KHM"
+    },
+    {
+        "name": "Cameroon",
+        "phonePrefix": "+237",
+        "code": "CM",
+        "threeCharsCode": "CMR"
+    },
+    {
+        "name": "Canada",
+        "phonePrefix": "+1",
+        "code": "CA",
+        "threeCharsCode": "CDN"
+    },
+    {
+        "name": "Cape Verde",
+        "phonePrefix": "+238",
+        "code": "CV",
+        "threeCharsCode": "CPV"
+
+    },
+    {
+        "name": "Cayman Islands",
+        "phonePrefix": "+ 345",
+        "code": "KY",
+        "threeCharsCode": "CYM"
+    },
+    {
+        "name": "Central African Republic",
+        "phonePrefix": "+236",
+        "code": "CF",
+        "threeCharsCode": "RCA"
+    },
+    {
+        "name": "Chad",
+        "phonePrefix": "+235",
+        "code": "TD",
+        "threeCharsCode": "TCD"
+    },
+    {
+        "name": "Chile",
+        "phonePrefix": "+56",
+        "code": "CL",
+        "threeCharsCode": "RCH"
+    },
+    {
+        "name": "China",
+        "phonePrefix": "+86",
+        "code": "CN",
+        "threeCharsCode": "CHN"
+    },
+    {
+        "name": "Christmas Island",
+        "phonePrefix": "+61",
+        "code": "CX",
+        "threeCharsCode": "CXR"
+    },
+    {
+        "name": "Cocos (Keeling) Islands",
+        "phonePrefix": "+61",
+        "code": "CC",
+        "threeCharsCode": "CCK"
+    },
+    {
+        "name": "Colombia",
+        "phonePrefix": "+57",
+        "code": "CO",
+        "threeCharsCode": "COL"
+    },
+    {
+        "name": "Comoros",
+        "phonePrefix": "+269",
+        "code": "KM",
+        "threeCharsCode": "COM"
+    },
+    {
+        "name": "Congo",
+        "phonePrefix": "+242",
+        "code": "CG",
+        "threeCharsCode": "COG"
+    },
+    {
+        "name": "Congo, The Democratic Republic of the Congo",
+        "phonePrefix": "+243",
+        "code": "CD",
+        "threeCharsCode": "COD"
+    },
+    {
+        "name": "Cook Islands",
+        "phonePrefix": "+682",
+        "code": "CK",
+        "threeCharsCode": "COK"
+    },
+    {
+        "name": "Costa Rica",
+        "phonePrefix": "+506",
+        "code": "CR",
+        "threeCharsCode": "CRI"
+    },
+    {
+        "name": "Cote d'Ivoire",
+        "phonePrefix": "+225",
+        "code": "CI",
+        "threeCharsCode": "CIV"
+    },
+    {
+        "name": "Croatia",
+        "phonePrefix": "+385",
+        "code": "HR",
+        "threeCharsCode": "HRV"
+    },
+    {
+        "name": "Cuba",
+        "phonePrefix": "+53",
+        "code": "CU",
+        "threeCharsCode": "CUB"
+    },
+    {
+        "name": "Cyprus",
+        "phonePrefix": "+357",
+        "code": "CY",
+        "threeCharsCode": "CYP"
+    },
+    {
+        "name": "Czech Republic",
+        "phonePrefix": "+420",
+        "code": "CZ",
+        "threeCharsCode": "CZE"
+    },
+    {
+        "name": "Denmark",
+        "phonePrefix": "+45",
+        "code": "DK",
+        "threeCharsCode": "DNK"
+    },
+    {
+        "name": "Djibouti",
+        "phonePrefix": "+253",
+        "code": "DJ",
+        "threeCharsCode": "DJI"
+    },
+    {
+        "name": "Dominica",
+        "phonePrefix": "+1767",
+        "code": "DM",
+        "threeCharsCode": "DMA"
+    },
+    {
+        "name": "Dominican Republic",
+        "phonePrefix": "+1849",
+        "code": "DO",
+        "threeCharsCode": "DOM"
+    },
+    {
+        "name": "Ecuador",
+        "phonePrefix": "+593",
+        "code": "EC",
+        "threeCharsCode": "ECU"
+    },
+    {
+        "name": "Egypt",
+        "phonePrefix": "+20",
+        "code": "EG",
+        "threeCharsCode": "EGY"
+    },
+    {
+        "name": "El Salvador",
+        "phonePrefix": "+503",
+        "code": "SV",
+        "threeCharsCode": "SLV"
+    },
+    {
+        "name": "Equatorial Guinea",
+        "phonePrefix": "+240",
+        "code": "GQ",
+        "threeCharsCode": "GNQ"
+    },
+    {
+        "name": "Eritrea",
+        "phonePrefix": "+291",
+        "code": "ER",
+        "threeCharsCode": "ERI"
+    },
+    {
+        "name": "Estonia",
+        "phonePrefix": "+372",
+        "code": "EE",
+        "threeCharsCode": "EST"
+    },
+    {
+        "name": "Ethiopia",
+        "phonePrefix": "+251",
+        "code": "ET",
+        "threeCharsCode": "ETH"
+    },
+    {
+        "name": "Falkland Islands (Malvinas)",
+        "phonePrefix": "+500",
+        "code": "FK",
+        "threeCharsCode": "FLK"
+    },
+    {
+        "name": "Faroe Islands",
+        "phonePrefix": "+298",
+        "code": "FO",
+        "threeCharsCode": "FRO"
+    },
+    {
+        "name": "Fiji",
+        "phonePrefix": "+679",
+        "code": "FJ",
+        "threeCharsCode": "FJI"
+    },
+    {
+        "name": "Finland",
+        "phonePrefix": "+358",
+        "code": "FI",
+        "threeCharsCode": "FIN"
+    },
+    {
+        "name": "France",
+        "phonePrefix": "+33",
+        "code": "FR",
+        "threeCharsCode": "FRA"
+    },
+    {
+        "name": "French Guiana",
+        "phonePrefix": "+594",
+        "code": "GF",
+        "threeCharsCode": "GUF"
+    },
+    {
+        "name": "French Polynesia",
+        "phonePrefix": "+689",
+        "code": "PF",
+        "threeCharsCode": "PYF"
+    },
+    {
+        "name": "Gabon",
+        "phonePrefix": "+241",
+        "code": "GA",
+        "threeCharsCode": "GAB"
+    },
+    {
+        "name": "Gambia",
+        "phonePrefix": "+220",
+        "code": "GM",
+        "threeCharsCode": "GMB"
+    },
+    {
+        "name": "Georgia",
+        "phonePrefix": "+995",
+        "code": "GE",
+        "threeCharsCode": "GEO"
+    },
+    {
+        "name": "Germany",
+        "phonePrefix": "+49",
+        "code": "DE",
+        "threeCharsCode": "DEU"
+    },
+    {
+        "name": "Ghana",
+        "phonePrefix": "+233",
+        "code": "GH",
+        "threeCharsCode": "GHA"
+    },
+    {
+        "name": "Gibraltar",
+        "phonePrefix": "+350",
+        "code": "GI",
+        "threeCharsCode": "GIB"
+    },
+    {
+        "name": "Greece",
+        "phonePrefix": "+30",
+        "code": "GR",
+        "threeCharsCode": "GRC"
+    },
+    {
+        "name": "Greenland",
+        "phonePrefix": "+299",
+        "code": "GL",
+        "threeCharsCode": "GRL"
+    },
+    {
+        "name": "Grenada",
+        "phonePrefix": "+1473",
+        "code": "GD",
+        "threeCharsCode": "GRD"
+    },
+    {
+        "name": "Guadeloupe",
+        "phonePrefix": "+590",
+        "code": "GP",
+        "threeCharsCode": "GLP"
+    },
+    {
+        "name": "Guam",
+        "phonePrefix": "+1671",
+        "code": "GU",
+        "threeCharsCode": "GUM"
+    },
+    {
+        "name": "Guatemala",
+        "phonePrefix": "+502",
+        "code": "GT",
+        "threeCharsCode": "GTM"
+    },
+    {
+        "name": "Guernsey",
+        "phonePrefix": "+44",
+        "code": "GG",
+        "threeCharsCode": "GGY"
+    },
+    {
+        "name": "Guinea",
+        "phonePrefix": "+224",
+        "code": "GN",
+        "threeCharsCode": "GIN"
+    },
+    {
+        "name": "Guinea-Bissau",
+        "phonePrefix": "+245",
+        "code": "GW",
+        "threeCharsCode": "GNB"
+    },
+    {
+        "name": "Guyana",
+        "phonePrefix": "+595",
+        "code": "GY",
+        "threeCharsCode": "GUY"
+    },
+    {
+        "name": "Haiti",
+        "phonePrefix": "+509",
+        "code": "HT",
+        "threeCharsCode": "HTI"
+    },
+    {
+        "name": "Holy See (Vatican City State)",
+        "phonePrefix": "+379",
+        "code": "VA",
+        "threeCharsCode": "VAT"
+    },
+    {
+        "name": "Honduras",
+        "phonePrefix": "+504",
+        "code": "HN",
+        "threeCharsCode": "HND"
+    },
+    {
+        "name": "Hong Kong",
+        "phonePrefix": "+852",
+        "code": "HK",
+        "threeCharsCode": "HKG"
+    },
+    {
+        "name": "Hungary",
+        "phonePrefix": "+36",
+        "code": "HU",
+        "threeCharsCode": "HUN"
+    },
+    {
+        "name": "Iceland",
+        "phonePrefix": "+354",
+        "code": "IS",
+        "threeCharsCode": "ISL"
+    },
+    {
+        "name": "India",
+        "phonePrefix": "+91",
+        "code": "IN",
+        "threeCharsCode": "IND"
+    },
+    {
+        "name": "Indonesia",
+        "phonePrefix": "+62",
+        "code": "ID",
+        "threeCharsCode": "IDN"
+    },
+    {
+        "name": "Iran, Islamic Republic of Persian Gulf",
+        "phonePrefix": "+98",
+        "code": "IR",
+        "threeCharsCode": "IRN"
+    },
+    {
+        "name": "Iraq",
+        "phonePrefix": "+964",
+        "code": "IQ",
+        "threeCharsCode": "IRQ"
+    },
+    {
+        "name": "Ireland",
+        "phonePrefix": "+353",
+        "code": "IE",
+        "threeCharsCode": "IRL"
+    },
+    {
+        "name": "Isle of Man",
+        "phonePrefix": "+44",
+        "code": "IM",
+        "threeCharsCode": "IMN"
+    },
+    {
+        "name": "Israel",
+        "phonePrefix": "+972",
+        "code": "IL",
+        "threeCharsCode": "ISR"
+    },
+    {
+        "name": "Italy",
+        "phonePrefix": "+39",
+        "code": "IT",
+        "threeCharsCode": "ITA"
+    },
+    {
+        "name": "Jamaica",
+        "phonePrefix": "+1876",
+        "code": "JM",
+        "threeCharsCode": "JAM"
+    },
+    {
+        "name": "Japan",
+        "phonePrefix": "+81",
+        "code": "JP",
+        "threeCharsCode": "JPN"
+    },
+    {
+        "name": "Jersey",
+        "phonePrefix": "+44",
+        "code": "JE",
+        "threeCharsCode": "JEY"
+    },
+    {
+        "name": "Jordan",
+        "phonePrefix": "+962",
+        "code": "JO",
+        "threeCharsCode": "JOR"
+    },
+    {
+        "name": "Kazakhstan",
+        "phonePrefix": "+7",
+        "code": "KZ",
+        "threeCharsCode": "KAZ"
+    },
+    {
+        "name": "Kenya",
+        "phonePrefix": "+254",
+        "code": "KE",
+        "threeCharsCode": "KEN"
+    },
+    {
+        "name": "Kiribati",
+        "phonePrefix": "+686",
+        "code": "KI",
+        "threeCharsCode": "KIR"
+    },
+    {
+        "name": "Korea, Democratic People's Republic of Korea",
+        "phonePrefix": "+850",
+        "code": "KP",
+        "threeCharsCode": "PRK"
+    },
+    {
+        "name": "Korea, Republic of South Korea",
+        "phonePrefix": "+82",
+        "code": "KR",
+        "threeCharsCode": "KOR"
+    },
+    {
+        "name": "Kuwait",
+        "phonePrefix": "+965",
+        "code": "KW",
+        "threeCharsCode": "KWT"
+    },
+    {
+        "name": "Kyrgyzstan",
+        "phonePrefix": "+996",
+        "code": "KG",
+        "threeCharsCode": "KGZ"
+    },
+    {
+        "name": "Laos",
+        "phonePrefix": "+856",
+        "code": "LA",
+        "threeCharsCode": "LAO"
+    },
+    {
+        "name": "Latvia",
+        "phonePrefix": "+371",
+        "code": "LV",
+        "threeCharsCode": "LVA"
+    },
+    {
+        "name": "Lebanon",
+        "phonePrefix": "+961",
+        "code": "LB",
+        "threeCharsCode": "LBN"
+    },
+    {
+        "name": "Lesotho",
+        "phonePrefix": "+266",
+        "code": "LS",
+        "threeCharsCode": "LSO"
+    },
+    {
+        "name": "Liberia",
+        "phonePrefix": "+231",
+        "code": "LR",
+        "threeCharsCode": "LBR"
+    },
+    {
+        "name": "Libyan Arab Jamahiriya",
+        "phonePrefix": "+218",
+        "code": "LY",
+        "threeCharsCode": "LBY"
+    },
+    {
+        "name": "Liechtenstein",
+        "phonePrefix": "+423",
+        "code": "LI",
+        "threeCharsCode": "LIE"
+    },
+    {
+        "name": "Lithuania",
+        "phonePrefix": "+370",
+        "code": "LT",
+        "threeCharsCode": "LTU"
+    },
+    {
+        "name": "Luxembourg",
+        "phonePrefix": "+352",
+        "code": "LU",
+        "threeCharsCode": "LUX"
+    },
+    {
+        "name": "Macao",
+        "phonePrefix": "+853",
+        "code": "MO",
+        "threeCharsCode": "MAC"
+    },
+    {
+        "name": "Macedonia",
+        "phonePrefix": "+389",
+        "code": "MK",
+        "threeCharsCode": "MKD"
+    },
+    {
+        "name": "Madagascar",
+        "phonePrefix": "+261",
+        "code": "MG",
+        "threeCharsCode": "MDG"
+    },
+    {
+        "name": "Malawi",
+        "phonePrefix": "+265",
+        "code": "MW",
+        "threeCharsCode": "MWI"
+    },
+    {
+        "name": "Malaysia",
+        "phonePrefix": "+60",
+        "code": "MY",
+        "threeCharsCode": "MYA"
+    },
+    {
+        "name": "Maldives",
+        "phonePrefix": "+960",
+        "code": "MV",
+        "threeCharsCode": "MDV"
+    },
+    {
+        "name": "Mali",
+        "phonePrefix": "+223",
+        "code": "ML",
+        "threeCharsCode": "MLI"
+    },
+    {
+        "name": "Malta",
+        "phonePrefix": "+356",
+        "code": "MT",
+        "threeCharsCode": "MLT"
+    },
+    {
+        "name": "Marshall Islands",
+        "phonePrefix": "+692",
+        "code": "MH",
+        "threeCharsCode": "MHL"
+    },
+    {
+        "name": "Martinique",
+        "phonePrefix": "+596",
+        "code": "MQ",
+        "threeCharsCode": "MTQ"
+    },
+    {
+        "name": "Mauritania",
+        "phonePrefix": "+222",
+        "code": "MR",
+        "threeCharsCode": "MRT"
+    },
+    {
+        "name": "Mauritius",
+        "phonePrefix": "+230",
+        "code": "MU",
+        "threeCharsCode": "MUS"
+    },
+    {
+        "name": "Mayotte",
+        "phonePrefix": "+262",
+        "code": "YT",
+        "threeCharsCode": "MYT"
+    },
+    {
+        "name": "Mexico",
+        "phonePrefix": "+52",
+        "code": "MX",
+        "threeCharsCode": "MEX"
+    },
+    {
+        "name": "Micronesia, Federated States of Micronesia",
+        "phonePrefix": "+691",
+        "code": "FM",
+        "threeCharsCode": "FSM"
+    },
+    {
+        "name": "Moldova",
+        "phonePrefix": "+373",
+        "code": "MD",
+        "threeCharsCode": "MDA"
+    },
+    {
+        "name": "Monaco",
+        "phonePrefix": "+377",
+        "code": "MC",
+        "threeCharsCode": "MCO"
+    },
+    {
+        "name": "Mongolia",
+        "phonePrefix": "+976",
+        "code": "MN",
+        "threeCharsCode": "MNG"
+    },
+    {
+        "name": "Montenegro",
+        "phonePrefix": "+382",
+        "code": "ME",
+        "threeCharsCode": "MNE"
+    },
+    {
+        "name": "Montserrat",
+        "phonePrefix": "+1664",
+        "code": "MS",
+        "threeCharsCode": "MSR"
+    },
+    {
+        "name": "Morocco",
+        "phonePrefix": "+212",
+        "code": "MA",
+        "threeCharsCode": "MAR"
+    },
+    {
+        "name": "Mozambique",
+        "phonePrefix": "+258",
+        "code": "MZ",
+        "threeCharsCode": "MOZ"
+    },
+    {
+        "name": "Myanmar",
+        "phonePrefix": "+95",
+        "code": "MM",
+        "threeCharsCode": "MMR"
+    },
+    {
+        "name": "Namibia",
+        "phonePrefix": "+264",
+        "code": "NA",
+        "threeCharsCode": "NAM"
+    },
+    {
+        "name": "Nauru",
+        "phonePrefix": "+674",
+        "code": "NR",
+        "threeCharsCode": "NRU"
+    },
+    {
+        "name": "Nepal",
+        "phonePrefix": "+977",
+        "code": "NP",
+        "threeCharsCode": "NPL"
+    },
+    {
+        "name": "Netherlands",
+        "phonePrefix": "+31",
+        "code": "NL",
+        "threeCharsCode": "NLD"
+    },
+    {
+        "name": "Netherlands Antilles",
+        "phonePrefix": "+599",
+        "code": "AN",
+        "threeCharsCode": "ANT"
+    },
+    {
+        "name": "New Caledonia",
+        "phonePrefix": "+687",
+        "code": "NC",
+        "threeCharsCode": "NCL"
+    },
+    {
+        "name": "New Zealand",
+        "phonePrefix": "+64",
+        "code": "NZ",
+        "threeCharsCode": "NZL"
+    },
+    {
+        "name": "Nicaragua",
+        "phonePrefix": "+505",
+        "code": "NI",
+        "threeCharsCode": "NIC"
+    },
+    {
+        "name": "Niger",
+        "phonePrefix": "+227",
+        "code": "NE",
+        "threeCharsCode": "NER"
+    },
+    {
+        "name": "Nigeria",
+        "phonePrefix": "+234",
+        "code": "NG",
+        "threeCharsCode": "NGA"
+    },
+    {
+        "name": "Niue",
+        "phonePrefix": "+683",
+        "code": "NU",
+        "threeCharsCode": "NIU"
+    },
+    {
+        "name": "Norfolk Island",
+        "phonePrefix": "+672",
+        "code": "NF",
+        "threeCharsCode": "NFK"
+    },
+    {
+        "name": "Northern Mariana Islands",
+        "phonePrefix": "+1670",
+        "code": "MP",
+        "threeCharsCode": "MNP"
+    },
+    {
+        "name": "Norway",
+        "phonePrefix": "+47",
+        "code": "NO",
+        "threeCharsCode": "NOR"
+    },
+    {
+        "name": "Oman",
+        "phonePrefix": "+968",
+        "code": "OM",
+        "threeCharsCode": "OMN"
+    },
+    {
+        "name": "Pakistan",
+        "phonePrefix": "+92",
+        "code": "PK",
+        "threeCharsCode": "PAK"
+    },
+    {
+        "name": "Palau",
+        "phonePrefix": "+680",
+        "code": "PW",
+        "threeCharsCode": "PLW"
+    },
+    {
+        "name": "Palestinian Territory, Occupied",
+        "phonePrefix": "+970",
+        "code": "PS",
+        "threeCharsCode": "PSE"
+    },
+    {
+        "name": "Panama",
+        "phonePrefix": "+507",
+        "code": "PA",
+        "threeCharsCode": "PAN"
+    },
+    {
+        "name": "Papua New Guinea",
+        "phonePrefix": "+675",
+        "code": "PG",
+        "threeCharsCode": "PNG"
+    },
+    {
+        "name": "Paraguay",
+        "phonePrefix": "+595",
+        "code": "PY",
+        "threeCharsCode": "PRY"
+    },
+    {
+        "name": "Peru",
+        "phonePrefix": "+51",
+        "code": "PE",
+        "threeCharsCode": "PER"
+    },
+    {
+        "name": "Philippines",
+        "phonePrefix": "+63",
+        "code": "PH",
+        "threeCharsCode": "PHL"
+    },
+    {
+        "name": "Pitcairn",
+        "phonePrefix": "+872",
+        "code": "PN",
+        "threeCharsCode": "PCN"
+    },
+    {
+        "name": "Poland",
+        "phonePrefix": "+48",
+        "code": "PL",
+        "threeCharsCode": "POL"
+    },
+    {
+        "name": "Portugal",
+        "phonePrefix": "+351",
+        "code": "PT",
+        "threeCharsCode": "PRT"
+    },
+    {
+        "name": "Puerto Rico",
+        "phonePrefix": "+1939",
+        "code": "PR",
+        "threeCharsCode": "PRI"
+    },
+    {
+        "name": "Qatar",
+        "phonePrefix": "+974",
+        "code": "QA",
+        "threeCharsCode": "QAT"
+    },
+    {
+        "name": "Romania",
+        "phonePrefix": "+40",
+        "code": "RO",
+        "threeCharsCode": "ROU"
+    },
+    {
+        "name": "Russia",
+        "phonePrefix": "+7",
+        "code": "RU",
+        "threeCharsCode": "RUS"
+    },
+    {
+        "name": "Rwanda",
+        "phonePrefix": "+250",
+        "code": "RW",
+        "threeCharsCode": "RWA"
+    },
+    {
+        "name": "Reunion",
+        "phonePrefix": "+262",
+        "code": "RE",
+        "threeCharsCode": "REU"
+    },
+    {
+        "name": "Saint Barthelemy",
+        "phonePrefix": "+590",
+        "code": "BL",
+        "threeCharsCode": "BLM"
+    },
+    {
+        "name": "Saint Helena, Ascension and Tristan Da Cunha",
+        "phonePrefix": "+290",
+        "code": "SH",
+        "threeCharsCode": "SHN"
+    },
+    {
+        "name": "Saint Kitts and Nevis",
+        "phonePrefix": "+1869",
+        "code": "KN",
+        "threeCharsCode": "KHA"
+    },
+    {
+        "name": "Saint Lucia",
+        "phonePrefix": "+1758",
+        "code": "LC",
+        "threeCharsCode": "LCA"
+    },
+    {
+        "name": "Saint Martin",
+        "phonePrefix": "+590",
+        "code": "MF",
+        "threeCharsCode": "MAF"
+    },
+    {
+        "name": "Saint Pierre and Miquelon",
+        "phonePrefix": "+508",
+        "code": "PM",
+        "threeCharsCode": "SPM"
+    },
+    {
+        "name": "Saint Vincent and the Grenadines",
+        "phonePrefix": "+1784",
+        "code": "VC",
+        "threeCharsCode": "VCT"
+    },
+    {
+        "name": "Samoa",
+        "phonePrefix": "+685",
+        "code": "WS",
+        "threeCharsCode": "WSM"
+    },
+    {
+        "name": "San Marino",
+        "phonePrefix": "+378",
+        "code": "SM",
+        "threeCharsCode": "SMR"
+    },
+    {
+        "name": "Sao Tome and Principe",
+        "phonePrefix": "+239",
+        "code": "ST",
+        "threeCharsCode": "STP"
+    },
+    {
+        "name": "Saudi Arabia",
+        "phonePrefix": "+966",
+        "code": "SA",
+        "threeCharsCode": "SAU"
+    },
+    {
+        "name": "Senegal",
+        "phonePrefix": "+221",
+        "code": "SN",
+        "threeCharsCode": "SEN"
+    },
+    {
+        "name": "Serbia",
+        "phonePrefix": "+381",
+        "code": "RS",
+        "threeCharsCode": "SRB"
+    },
+    {
+        "name": "Seychelles",
+        "phonePrefix": "+248",
+        "code": "SC",
+        "threeCharsCode": "SYC"
+    },
+    {
+        "name": "Sierra Leone",
+        "phonePrefix": "+232",
+        "code": "SL",
+        "threeCharsCode": "SLE"
+    },
+    {
+        "name": "Singapore",
+        "phonePrefix": "+65",
+        "code": "SG",
+        "threeCharsCode": "SGP"
+    },
+    {
+        "name": "Slovakia",
+        "phonePrefix": "+421",
+        "code": "SK",
+        "threeCharsCode": "SVK"
+    },
+    {
+        "name": "Slovenia",
+        "phonePrefix": "+386",
+        "code": "SI",
+        "threeCharsCode": "SVN"
+    },
+    {
+        "name": "Solomon Islands",
+        "phonePrefix": "+677",
+        "code": "SB",
+        "threeCharsCode": "SLB"
+    },
+    {
+        "name": "Somalia",
+        "phonePrefix": "+252",
+        "code": "SO",
+        "threeCharsCode": "SOM"
+    },
+    {
+        "name": "South Africa",
+        "phonePrefix": "+27",
+        "code": "ZA",
+        "threeCharsCode": "ZAF"
+    },
+    {
+        "name": "South Sudan",
+        "phonePrefix": "+211",
+        "code": "SS",
+        "threeCharsCode": "SSD"
+    },
+    {
+        "name": "South Georgia and the South Sandwich Islands",
+        "phonePrefix": "+500",
+        "code": "GS",
+        "threeCharsCode": "SGS"
+    },
+    {
+        "name": "Spain",
+        "phonePrefix": "+34",
+        "code": "ES",
+        "threeCharsCode": "ESP"
+    },
+    {
+        "name": "Sri Lanka",
+        "phonePrefix": "+94",
+        "code": "LK",
+        "threeCharsCode": "LKA"
+    },
+    {
+        "name": "Sudan",
+        "phonePrefix": "+249",
+        "code": "SD",
+        "threeCharsCode": "SDN"
+    },
+    {
+        "name": "Suriname",
+        "phonePrefix": "+597",
+        "code": "SR",
+        "threeCharsCode": "SUR"
+    },
+    {
+        "name": "Svalbard and Jan Mayen",
+        "phonePrefix": "+47",
+        "code": "SJ",
+        "threeCharsCode": "SJM"
+    },
+    {
+        "name": "Swaziland",
+        "phonePrefix": "+268",
+        "code": "SZ",
+        "threeCharsCode": "SWZ"
+    },
+    {
+        "name": "Sweden",
+        "phonePrefix": "+46",
+        "code": "SE",
+        "threeCharsCode": "SWE"
+    },
+    {
+        "name": "Switzerland",
+        "phonePrefix": "+41",
+        "code": "CH",
+        "threeCharsCode": "CHE"
+    },
+    {
+        "name": "Syrian Arab Republic",
+        "phonePrefix": "+963",
+        "code": "SY",
+        "threeCharsCode": "SYR"
+    },
+    {
+        "name": "Taiwan",
+        "phonePrefix": "+886",
+        "code": "TW",
+        "threeCharsCode": "TWN"
+    },
+    {
+        "name": "Tajikistan",
+        "phonePrefix": "+992",
+        "code": "TJ",
+        "threeCharsCode": "TJK"
+    },
+    {
+        "name": "Tanzania, United Republic of Tanzania",
+        "phonePrefix": "+255",
+        "code": "TZ",
+        "threeCharsCode": "TZA"
+    },
+    {
+        "name": "Thailand",
+        "phonePrefix": "+66",
+        "code": "TH",
+        "threeCharsCode": "THA"
+    },
+    {
+        "name": "Timor-Leste",
+        "phonePrefix": "+670",
+        "code": "TL",
+        "threeCharsCode": "TLS"
+    },
+    {
+        "name": "Togo",
+        "phonePrefix": "+228",
+        "code": "TG",
+        "threeCharsCode": "TGO"
+    },
+    {
+        "name": "Tokelau",
+        "phonePrefix": "+690",
+        "code": "TK",
+        "threeCharsCode": "TKL"
+    },
+    {
+        "name": "Tonga",
+        "phonePrefix": "+676",
+        "code": "TO",
+        "threeCharsCode": "TON"
+    },
+    {
+        "name": "Trinidad and Tobago",
+        "phonePrefix": "+1868",
+        "code": "TT",
+        "threeCharsCode": "TTO"
+    },
+    {
+        "name": "Tunisia",
+        "phonePrefix": "+216",
+        "code": "TN",
+        "threeCharsCode": "TUN"
+    },
+    {
+        "name": "Turkey",
+        "phonePrefix": "+90",
+        "code": "TR",
+        "threeCharsCode": "TUR"
+    },
+    {
+        "name": "Turkmenistan",
+        "phonePrefix": "+993",
+        "code": "TM",
+        "threeCharsCode": "TKM"
+    },
+    {
+        "name": "Turks and Caicos Islands",
+        "phonePrefix": "+1649",
+        "code": "TC",
+        "threeCharsCode": "TCA"
+    },
+    {
+        "name": "Tuvalu",
+        "phonePrefix": "+688",
+        "code": "TV",
+        "threeCharsCode": "TUV"
+    },
+    {
+        "name": "Uganda",
+        "phonePrefix": "+256",
+        "code": "UG",
+        "threeCharsCode": "UGA"
+    },
+    {
+        "name": "Ukraine",
+        "phonePrefix": "+380",
+        "code": "UA",
+        "threeCharsCode": "UKR"
+    },
+    {
+        "name": "United Arab Emirates",
+        "phonePrefix": "+971",
+        "code": "AE",
+        "threeCharsCode": "ARE"
+    },
+    {
+        "name": "United Kingdom",
+        "phonePrefix": "+44",
+        "code": "GB",
+        "threeCharsCode": "GBR"
+    },
+    {
+        "name": "United States",
+        "phonePrefix": "+1",
+        "code": "US",
+        "threeCharsCode": "USA"
+    },
+    {
+        "name": "Uruguay",
+        "phonePrefix": "+598",
+        "code": "UY",
+        "threeCharsCode": "URY"
+    },
+    {
+        "name": "Uzbekistan",
+        "phonePrefix": "+998",
+        "code": "UZ",
+        "threeCharsCode": "UZB"
+    },
+    {
+        "name": "Vanuatu",
+        "phonePrefix": "+678",
+        "code": "VU",
+        "threeCharsCode": "VUT"
+    },
+    {
+        "name": "Venezuela, Bolivarian Republic of Venezuela",
+        "phonePrefix": "+58",
+        "code": "VE",
+        "threeCharsCode": "VEN"
+    },
+    {
+        "name": "Vietnam",
+        "phonePrefix": "+84",
+        "code": "VN",
+        "threeCharsCode": "VNM"
+    },
+    {
+        "name": "Virgin Islands, British",
+        "phonePrefix": "+1284",
+        "code": "VG",
+        "threeCharsCode": "VGB"
+    },
+    {
+        "name": "Virgin Islands, U.S.",
+        "phonePrefix": "+1340",
+        "code": "VI",
+        "threeCharsCode": "VIR"
+    },
+    {
+        "name": "Wallis and Futuna",
+        "phonePrefix": "+681",
+        "code": "WF",
+        "threeCharsCode": "WLF"
+    },
+    {
+        "name": "Yemen",
+        "phonePrefix": "+967",
+        "code": "YE",
+        "threeCharsCode": "YEM"
+    },
+    {
+        "name": "Zambia",
+        "phonePrefix": "+260",
+        "code": "ZM",
+        "threeCharsCode": "ZMB"
+    },
+    {
+        "name": "Zimbabwe",
+        "phonePrefix": "+263",
+        "code": "ZW",
+        "threeCharsCode": "ZWE"
+    }
+]

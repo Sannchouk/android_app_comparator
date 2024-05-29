@@ -2,13 +2,13 @@
 
 # Research projet : Android App Similarity Study
 
-## Supervised by Romain Rouvoy
+## Supervised by Rouvoy Romain
 
-### Research subject
+## Research subject
 
 The subject is [available here](http://projets-info.univ-lille.fr/master/etu/projects/31e02aad-7795-4194-98b4-f61ff4744123) (written in french).
 
-### Why? 
+## Why? 
 
 The goal of the project is to provide a tool that is able to compare two android apps (using their apk). 
 The implemented program must provide similarity/distance scores between a group of apps. 
@@ -27,7 +27,7 @@ The algorithm used to perform such a thing is greatly inspired from a work perfo
 a link to the [concerned paper](https://hal.science/hal-03774245). The authors created an algorithm to compare two web pages, using tree comparisons. They named their algorithm
 Similarity-Based Flexible Tree Matching. I tried to adapt their algorithm to compare android apps instead of web pages. This is meaningful because the android apps are easily represented as trees (using the file structure of the apk).
 
-### Implementation
+## Implementation
 
 The algorithm is implemented in Java, with the project management tool Maven.  
 
@@ -40,17 +40,17 @@ same distances a new time. See the run section for more info.
 - `neo4j.txt` that offers a file that represents a [Neo4J](https://neo4j.com/) query file. It permits to create the graph representing all the computed distances
 - `cluster.txt` that represents all the computed clusters, according to the given threshold.
 
-#### Requirements 
+### Requirements 
 
 The project uses Java version 17.
 
-#### How to?
+### How to?
 
-##### Compilation
+#### Compilation
 
 To compile the project, run: `mvn package`
 
-##### Run
+#### Run
 
 To run the project, run: `java -jar target/PJI-1.jar` with some available options:
 - `-neo4j` that generates the neo4j file.

@@ -9,12 +9,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class HashComputer {
+    
+    private static String DEFAULT_DIRECTORY_HASH = new String(new char[32]).replace("\0", "0");
 
 
     public String generateHash(Path path) throws IOException, NoSuchAlgorithmException {
 
         if (new File(String.valueOf(path)).isDirectory()) {
-            return "00000000000000000000000000000000";
+            return DEFAULT_DIRECTORY_HASH;
         }
 
         int[] simhash = new int[64];

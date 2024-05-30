@@ -18,13 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppAlgortihmIntegrationTest {
 
-    static final AppConfigModifier appConfigModifier = new AppConfigModifier();
-
-    @AfterAll
-    static void tearDown() throws IOException {
-        appConfigModifier.restoreConfig();
-    }
-
     @Test
     void testApp() throws URISyntaxException {
         //GIVEN

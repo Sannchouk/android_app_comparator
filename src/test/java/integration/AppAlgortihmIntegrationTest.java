@@ -2,11 +2,8 @@ package integration;
 
 import neo4j.data.Apk;
 import algo.AlgoRunner;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
-import utils.AppConfigModifier;
 
-import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,13 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppAlgortihmIntegrationTest {
-
-    static final AppConfigModifier appConfigModifier = new AppConfigModifier();
-
-    @AfterAll
-    static void tearDown() throws IOException {
-        appConfigModifier.restoreConfig();
-    }
 
     @Test
     void testApp() throws URISyntaxException {

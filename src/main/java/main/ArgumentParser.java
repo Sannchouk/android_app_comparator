@@ -39,16 +39,4 @@ class ArgumentParser {
             }
         }
     }
-
-    public static void main(String[] args) {
-        ArgumentParser parser = new ArgumentParser();
-        parser.parseArguments(args);
-
-        // For testing purposes
-        System.out.println("Path: " + parser.path);
-        System.out.println("Need Neo4j File: " + parser.needNeo4jFile);
-        System.out.println("Cluster: " + parser.cluster);
-        System.out.println("Already: " + parser.already);
-        System.out.println("Cluster Threshold: " + parser.clusterThreshold);
-    }
 }

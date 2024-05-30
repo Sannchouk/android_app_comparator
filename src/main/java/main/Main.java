@@ -40,7 +40,7 @@ public class Main {
                 var clusters = new Clustering().cluster(results.getDistancesMatrix(), apkNames, argParser.clusterThreshold);
                 System.out.println("Clusters:");
                 System.out.println(clusters);
-                new ClusteringIO().writeClustersToFile(clusters, "results/clusters.csv");
+                new ClusteringIO().writeClustersToFile(clusters, "results/clusters.txt");
             } catch (Exception e) {
                 System.out.println("Error while clustering: " + e.getMessage());
             }

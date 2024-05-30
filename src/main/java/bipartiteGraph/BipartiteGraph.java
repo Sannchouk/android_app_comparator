@@ -1,12 +1,10 @@
 package bipartiteGraph;
 
 import fileTree.FileTree;
-import inMemory.Tokenizer;
+import inMemory.AttributeSetter;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.Synchronized;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,7 +12,6 @@ import java.util.Map;
 import java.util.Collections;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
  * This class represents a bipartite graph, that is used during the matching process.
@@ -27,7 +24,7 @@ public class BipartiteGraph {
     private List<Node> nodeGroup2;
     @Setter
     private List<Edge> edges;
-    private final Tokenizer tokenizer = new Tokenizer();
+    private final AttributeSetter attributeSetter = new AttributeSetter();
 
     public static BipartiteGraph buildFromTrees(FileTree tree1, FileTree tree2) {
         BipartiteGraph graph = new BipartiteGraph();
@@ -188,7 +185,7 @@ public class BipartiteGraph {
                 node = new Node(fileTree.getPath());
                 node.setId(fileTree.getId());
                 node.setGroup(group);
-                tokenizer.tokenize(node);
+                attributeSetter.setAttributes(node);
                 synchronizedNodes.add(node);
                 fileTree.setGraphNode(node);
             } else {

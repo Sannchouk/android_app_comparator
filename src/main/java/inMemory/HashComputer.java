@@ -14,7 +14,7 @@ public class HashComputer {
     public String generateHash(Path path) throws IOException, NoSuchAlgorithmException {
 
         if (new File(String.valueOf(path)).isDirectory()) {
-            return "0000000000000000000000000000000000000000000000000000000000000000";
+            return "0".repeat(64);
         }
 
         int[] simhash = new int[64];

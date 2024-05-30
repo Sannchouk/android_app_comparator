@@ -39,7 +39,6 @@ public class OperationsCreatorTest {
         OperationsCreator operations = new OperationsCreator();
         operations.createRelationship("Alice", "Bob", RelationshipType.COMPARED_TO, 0.5f);
         List<String> result = operations.setEdgeValues();
-        System.out.println(result);
         assertEquals(1, result.size());
         assertEquals("SET r1.value = 0.5", result.get(0)); // Assuming "someValue" is the test value
     }

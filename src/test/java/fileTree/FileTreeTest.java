@@ -16,10 +16,8 @@ public class FileTreeTest {
 
     @BeforeAll
     public static void setUp() throws IOException {
-        // Create test directory
         Files.createDirectories(TEST_DIR);
 
-        // Create files and directories
         Files.createFile(TEST_DIR.resolve("file1.txt"));
         Files.createDirectories(TEST_DIR.resolve("directory1/subdirectory1"));
         Files.createFile(TEST_DIR.resolve("directory1/file2.txt"));
@@ -30,7 +28,6 @@ public class FileTreeTest {
 
     @AfterAll
     public static void tearDown() throws IOException {
-        // Delete test directory and its contents
         deleteDirectory();
     }
 

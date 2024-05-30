@@ -1,6 +1,6 @@
 ## Dubuisson Samuel
 
-# Research projet : Android App Similarity Study
+# Research project : Android App Similarity Study
 
 ## Supervised by Rouvoy Romain
 
@@ -29,15 +29,17 @@ Similarity-Based Flexible Tree Matching. I tried to adapt their algorithm to com
 
 ## Implementation
 
-The algorithm is implemented in Java, with the project management tool Maven.  
+The algorithm is implemented in Java, with the project management tool Maven.
 
-All the distances computed are between 0 and 1 (0 represents two identical apps, and 1 totally different ones).  
+### The program outputs
+
+All the distances computed between apks are between 0 and 1 (0 represents two identical apps, and 1 totally different ones).
 
 All the generated files can be found on the `results` folder. Here are all the files that may be generated:
 - `algorithmResults.ser` that stores the class that represents the computed distances. That may allow to rerun the program, without computing the 
 same distances a new time. See the run section for more info.
 - `distanceMatrix.csv` that offers a csv file representing the distance matrix. It is not used in the program, but is given as a vision, or exploitation tool.
-- `neo4j.txt` that offers a file that represents a [Neo4J](https://neo4j.com/) query file. It permits to create the graph representing all the computed distances
+- `neo4j.txt` that offers a file that represents a [Neo4J](https://neo4j.com/) query file. Copy and paste the results in a query input to create the graph representing all the computed distances
 - `cluster.txt` that represents all the computed clusters, according to the given threshold.
 
 ### Requirements 
@@ -57,4 +59,36 @@ To run the project, run: `java -jar target/PJI-1.jar` with some available option
 - `-cluster $threshold$` that generates the cluster file. The given threshold value is used to create the cluster. Hence, the value must be between 0 and 1. All
 apks in the same cluster cannot have distance superior to this cluster.
 - `-already` that skips the distance computation part. It deserializes the `algorithmResults` class that stores the distance.
+
+## Details 
+
+Here is a scheme representing the general process of the algorithm that computes the matching:
+![matching_process](resources/images/matching_process)
+
+### Differences with the classical SFTM algorithm.
+
+### Tokens and attributes
+
+The tokens do not longer exist in this version. They are replaced by attributes. The idea is quite similar: the attributes of each node are compared with the attributes of other ones.
+However, here each node has the same number of attributes, and the attributes are defined. Moreover, contrary to the token approach the logical operations are not necessarily binary: one attribute is not simply equal or not equal. We want to define distance functions between attributes
+
+Four attributes are set for each file:
+- The name without the extension and the parent folders.
+- The extension
+- The hash: calculated using a [simhash](https://en.wikipedia.org/wiki/SimHash) approach. However in an apk, the files are not classical text files. Hence, we simulate words by reading byte chunks (one byte chunk is considered as a word).
+- The file size
+
+The first three are used to compute the similarities, and the last one is used later on (we may also want to implement it for distance computation in later work).
+
+### Distance functions
+
+As said, for two different values of the same attributes, it should be possible to compute the distance between them. First of all, all distance functions give values included between 0 and 1. Several distance functions are imaginable, but here are the one chosen:
+- The name distance are computed using Levenstein distance
+- The extension distance is a binary distance: 0 for the same extension, and 1 otherwise (define fuzzy distance is not pertinent for extensions)
+- The hash distance are computed using Hamming distance. 
+
+### Matching cost 
+
+The web pages compared in the original SFTM work are composed of tags that have no concrete size. Here the things are different, because the apks are composed of files that are defined by a size.
+Hence, when the cost of a matching is computed, the files that have bigger size have a bigger impact on the global cost. If they are not linked, the cost rises faster. This calculation is made thanks to the size attribute. 
 

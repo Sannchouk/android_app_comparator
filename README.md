@@ -38,7 +38,7 @@ All the distances computed between apks are between 0 and 1 (0 represents two id
 All the generated files can be found on the `results` folder. Here are all the files that may be generated:
 - `algorithmResults.ser` that stores the class that represents the computed distances. That may allow to rerun the program, without computing the 
 same distances a new time. See the run section for more info.
-- `distanceMatrix.csv` that offers a csv file representing the distance matrix. It is not used in the program, but is given as a vision, or exploitation tool.
+- `distanceMatrix.csv` that offers a csv file representing the distance matrix. 
 - `neo4j.txt` that offers a file that represents a [Neo4J](https://neo4j.com/) query file. Copy and paste the results in a query input to create the graph representing all the computed distances
 - `cluster.txt` that represents all the computed clusters, according to the given threshold.
 

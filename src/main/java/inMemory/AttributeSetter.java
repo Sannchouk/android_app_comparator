@@ -4,10 +4,8 @@ import bipartiteGraph.Node;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import com.typesafe.config.Config;
@@ -15,7 +13,7 @@ import com.typesafe.config.ConfigFactory;
 
 
 
-public class Tokenizer {
+public class AttributeSetter {
     private final Config config = ConfigFactory.load();
 
     private boolean fileSize;
@@ -23,7 +21,7 @@ public class Tokenizer {
 
     private HashComputer hashComputer = new HashComputer();
 
-    public Tokenizer() {
+    public AttributeSetter() {
         this.fileSize = config.getBoolean("fileSize");
         this.fileHash = config.getBoolean("fileHash");
     }

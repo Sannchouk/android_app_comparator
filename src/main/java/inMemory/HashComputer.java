@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class HashComputer {
     
-    private static String DEFAULT_DIRECTORY_HASH = new String(new char[32]).replace("\0", "0");
+    private static String DEFAULT_DIRECTORY_HASH = "00000000000000000000000000000000";
 
 
     public String generateHash(Path path) throws IOException, NoSuchAlgorithmException {

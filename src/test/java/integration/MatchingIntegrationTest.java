@@ -83,7 +83,7 @@ public class MatchingIntegrationTest {
 
         //THEN
         assertTrue(matching.size() <= graph_nodes_1.size());
-        assertTrue(matching.size() > graph_nodes_1.size() * 0.99);
+        assertTrue(matching.size() > graph_nodes_1.size() * 0.99, "matching size: " + matching.size());
     }
 
     @Test

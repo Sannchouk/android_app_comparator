@@ -185,7 +185,7 @@ public class BipartiteGraph {
                 node = new Node(fileTree.getPath());
                 node.setId(fileTree.getId());
                 node.setGroup(group);
-                attributeSetter.tokenize(node);
+                attributeSetter.setAttributes(node);
                 synchronizedNodes.add(node);
                 fileTree.setGraphNode(node);
             } else {

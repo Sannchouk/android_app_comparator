@@ -7,6 +7,5 @@ public class HashComputerTest {
     @Test
     public void testDirectoryHash() {
 
-
     }
 }

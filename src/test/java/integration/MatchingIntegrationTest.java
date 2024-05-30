@@ -3,7 +3,6 @@ package integration;
 import bipartiteGraph.BipartiteGraph;
 import bipartiteGraph.Edge;
 import bipartiteGraph.Node;
-import com.typesafe.config.ConfigFactory;
 import fileTree.FileTree;
 import matching.algorithm.MetropolisAlgorithm;
 import matching.computers.similarities.SimilarityScoresComputer;
@@ -35,7 +34,6 @@ public class MatchingIntegrationTest {
         FileTree tree1 = FileTree.buildTree(apk1);
         FileTree tree2 = FileTree.buildTree(apk2);
         BipartiteGraph graph;
-        ConfigFactory.invalidateCaches();
         graph = BipartiteGraph.buildFromTrees(tree1, tree2);
         List<Node> graph_nodes_1 = graph.getNodeGroup1();
         var similarityScoresComputer = new SimilarityScoresComputer(graph);
@@ -63,7 +61,6 @@ public class MatchingIntegrationTest {
         Path apk1 = resources.resolve("lichess-apk");
         FileTree tree1 = FileTree.buildTree(apk1);
         FileTree tree2 = FileTree.buildTree(apk1);
-        ConfigFactory.invalidateCaches();
         BipartiteGraph graph = BipartiteGraph.buildFromTrees(tree1, tree2);
         List<Node> graph_nodes_1 = graph.getNodeGroup1();
         var similarityScoresComputer = new SimilarityScoresComputer(graph);
@@ -94,7 +91,6 @@ public class MatchingIntegrationTest {
         FileTree tree1 = FileTree.buildTree(apk1);
         FileTree tree2 = FileTree.buildTree(apk2);
         BipartiteGraph graph;
-        ConfigFactory.invalidateCaches();
         graph = BipartiteGraph.buildFromTrees(tree1, tree2);
         List<Node> graph_nodes_1 = graph.getNodeGroup1();
         var similarityScoresComputer = new SimilarityScoresComputer(graph);

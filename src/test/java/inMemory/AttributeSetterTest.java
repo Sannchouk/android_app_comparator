@@ -2,6 +2,7 @@ package inMemory;
 
 import bipartiteGraph.Node;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -15,10 +16,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AttributeSetterTest {
 
+    static Path path = Path.of("test.txt");
+    static File file = new File(path.toString());
+
+    @AfterAll
+    public static void clean() {
+        file.delete();
+    }
+
     @Test
     public void attributesAreCorrectlySet() throws IOException, NoSuchAlgorithmException {
-        Path path = Path.of("test.txt");
-        File file = new File(path.toString());
         if (!file.exists()) {
             Files.createFile(path);
         }
@@ -26,7 +33,6 @@ public class AttributeSetterTest {
         AttributeSetter attributeSetter = new AttributeSetter();
 
         attributeSetter.setAttributes(node);
-        file.delete();
 
         assertEquals(4, node.getAttributes().entrySet().size());
         assertNotNull(node.getAttributes().get("name"));

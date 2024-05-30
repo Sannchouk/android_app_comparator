@@ -19,7 +19,6 @@ public class AttributeSetter {
      * @param node the node
      */
     public void setAttributes(Node node) {
-        node.getTokens().clear();
         String fileName = node.getPath().toString().substring(node.getPath().toString().lastIndexOf(File.separator) + 1);
         node.addAttribute("name", getFileNameWithoutExtension(fileName));
         node.addAttribute("extension", getExtension(fileName));

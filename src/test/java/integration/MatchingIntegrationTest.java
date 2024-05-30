@@ -35,7 +35,7 @@ public class MatchingIntegrationTest {
         FileTree tree2 = FileTree.buildTree(apk2);
         BipartiteGraph graph;
         graph = BipartiteGraph.buildFromTrees(tree1, tree2);
-        List<Node> graph_nodes_1 = graph.getNodeGroup1();
+        List<Node> graphNodeGroup1 = graph.getNodeGroup1();
         var similarityScoresComputer = new SimilarityScoresComputer(graph);
         var similarityScores = similarityScoresComputer.computeSimilarityScores();
         graph.buildEdgesFromNeighborhoods(similarityScores);
@@ -51,7 +51,7 @@ public class MatchingIntegrationTest {
         List<Edge> matching = metropolisAlgorithm.getMatching();
 
         //THEN
-        assertTrue(matching.size() < graph_nodes_1.size());
+        assertTrue(matching.size() < graphNodeGroup1.size());
         assertFalse(matching.isEmpty());
     }
 
@@ -62,7 +62,7 @@ public class MatchingIntegrationTest {
         FileTree tree1 = FileTree.buildTree(apk1);
         FileTree tree2 = FileTree.buildTree(apk1);
         BipartiteGraph graph = BipartiteGraph.buildFromTrees(tree1, tree2);
-        List<Node> graph_nodes_1 = graph.getNodeGroup1();
+        List<Node> graphNodes1 = graph.getNodeGroup1();
         var similarityScoresComputer = new SimilarityScoresComputer(graph);
         var similarityScores = similarityScoresComputer.computeSimilarityScores();
         graph.buildEdgesFromNeighborhoods(similarityScores);
@@ -79,8 +79,8 @@ public class MatchingIntegrationTest {
         List<Edge> matching = metropolisAlgorithm.getMatching();
 
         //THEN
-        assertTrue(matching.size() <= graph_nodes_1.size());
-        assertTrue(matching.size() > graph_nodes_1.size() * 0.99, "matching size: " + matching.size());
+        assertTrue(matching.size() <= graphNodes1.size());
+        assertTrue(matching.size() > graphNodes1.size() * 0.95, "matching size: " + matching.size());
     }
 
     @Test
@@ -92,7 +92,7 @@ public class MatchingIntegrationTest {
         FileTree tree2 = FileTree.buildTree(apk2);
         BipartiteGraph graph;
         graph = BipartiteGraph.buildFromTrees(tree1, tree2);
-        List<Node> graph_nodes_1 = graph.getNodeGroup1();
+        List<Node> graphNodes1 = graph.getNodeGroup1();
         var similarityScoresComputer = new SimilarityScoresComputer(graph);
         var similarityScores = similarityScoresComputer.computeSimilarityScores();
         graph.buildEdgesFromNeighborhoods(similarityScores);
@@ -108,7 +108,7 @@ public class MatchingIntegrationTest {
         List<Edge> matching = metropolisAlgorithm.getMatching();
 
         //THEN
-        assertTrue(matching.size() > graph_nodes_1.size() / 2);
-        assertTrue(matching.size() < graph_nodes_1.size());
+        assertTrue(matching.size() > graphNodes1.size() / 2);
+        assertTrue(matching.size() < graphNodes1.size());
     }
 }

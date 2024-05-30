@@ -53,7 +53,7 @@ public class SimilarityScoresComputer {
             }, executor);
             futures.add(future);
         }
-        // Wait for all tasks to complete
+
         CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
         executor.shutdown();
 

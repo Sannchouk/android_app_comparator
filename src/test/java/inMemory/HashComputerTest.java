@@ -38,7 +38,7 @@ public class HashComputerTest {
     }
 
     @Test
-    public void closeFileHaveCloseHashes() throws IOException, NoSuchAlgorithmException {
+    public void closeFilesHaveCloseHashes() throws IOException, NoSuchAlgorithmException {
         Path filePath1 = Path.of("test_file_1.txt");
         Path filePath2 = Path.of("test_file_2.txt");
         Path filePath3 = Path.of("test_file_3.txt");

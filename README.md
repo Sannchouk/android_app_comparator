@@ -16,7 +16,7 @@ Then, it would be possible to cluster the apps in different groups. But how this
 be useful ?  
 - First, by computing similarity scores between the apps, it would be possible to define what apps in our
 phone devices would be similar, in terms of frameworks or languages used for example. That may lead to some
-deduplication algorithm to gain memory in a given device: if two apps share the same library version, why would we stock it twice in two different places in the devide?
+deduplication algorithm to gain memory in a given device: if two apps share the same library version, why would we stock it twice in two different places in the device?
 - Then, by creating some clusters, some groups of apps using the same technologies will be identified. That may lead to many improves on AI trainings: it would be possible
 to retrieve all apps using a given framework, to train a generative model on that dataset, and to get some "specialized copilots". That brings concrete and important improvements:
 the generative models will be better (because they are specialized), and more frugal (because the training dataset will be reduced).
@@ -30,6 +30,7 @@ Similarity-Based Flexible Tree Matching. I tried to adapt their algorithm to com
 ## Implementation
 
 The algorithm is implemented in Java, with the project management tool Maven.
+The program scans a folder that contains apks, can compute the distances between them.
 
 ### The program outputs
 
@@ -60,16 +61,21 @@ To run the project, run: `java -jar target/PJI-1.jar` with some available option
 apks in the same cluster cannot have distance superior to this cluster.
 - `-already` that skips the distance computation part. It deserializes the `algorithmResults` class that stores the distance.
 
+By default, the program uses the apks in the `/all_apks` folder. There are ten of them. You can easily add or remove some. The program takes between 5 and 10 minutes to compute distances between all the apks and cluster them.  
+However, you can precise another apk folder in the command line by doing so:  
+`java -jar target/PJI-1.jar $apk_name$ $options$`  
+For example, a folder named `/apks` is also available at the root of the project, and it contains only 3 apks. Hence, it would produce faster results.
+
 ## Details 
 
 Here is a scheme representing the general process of the algorithm that computes the matching:
-![matching_process](resources/images/matching_process)
+![matching_process](resources/images/matching_process.png)
 
 ### Differences with the classical SFTM algorithm.
 
 ### Tokens and attributes
 
-The tokens do not longer exist in this version. They are replaced by attributes. The idea is quite similar: the attributes of each node are compared with the attributes of other ones.
+The tokens do no longer exist in this version. They are replaced by attributes. The idea is quite similar: the attributes of each node are compared with the attributes of other ones.
 However, here each node has the same number of attributes, and the attributes are defined. Moreover, contrary to the token approach the logical operations are not necessarily binary: one attribute is not simply equal or not equal. We want to define distance functions between attributes
 
 Four attributes are set for each file:
@@ -86,6 +92,8 @@ As said, for two different values of the same attributes, it should be possible 
 - The name distance are computed using Levenstein distance
 - The extension distance is a binary distance: 0 for the same extension, and 1 otherwise (define fuzzy distance is not pertinent for extensions)
 - The hash distance are computed using Hamming distance. 
+
+Then, the different distance functions are passed to a global distance calculator, that multiply each of them by a given weight.
 
 ### Matching cost 
 

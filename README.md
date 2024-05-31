@@ -51,7 +51,7 @@ The project uses Java version 17.
 
 #### Compilation
 
-To compile the project, run: `mvn package`
+To compile the project, run: `mvn package`.
 
 #### Run
 
@@ -69,33 +69,33 @@ The folders are composed of apks that lands in same or different areas. Similarl
 
 #### Test
 
-To run the unit and end-to-end tests, run: `mvn test`
+To run the unit and end-to-end tests, run: `mvn test`.
 
 ## Details 
 
 Here is a scheme representing the general process of the algorithm that computes the matching:
 ![matching_process](resources/images/matching_process.png)
 
-### Differences with the classical SFTM algorithm.
+### Differences with the classical SFTM algorithm
 
 ### Tokens and attributes
 
 The tokens do no longer exist in this version. They are replaced by attributes. The idea is quite similar: the attributes of each node are compared with the attributes of other ones.
-However, here each node has the same number of attributes, and the attributes are defined. Moreover, contrary to the token approach the logical operations are not necessarily binary: one attribute is not simply equal or not equal. We want to define distance functions between attributes
+However, here each node has the same number of attributes, and the attributes are defined. Moreover, contrary to the token approach the logical operations are not necessarily binary: one attribute is not simply equal or not equal. We want to define distance functions between attributes.
 
 Four attributes are set for each file:
 - The name without the extension and the parent folders.
-- The extension
+- The extension.
 - The hash: calculated using a [simhash](https://en.wikipedia.org/wiki/SimHash) approach. However in an apk, the files are not classical text files. Hence, we simulate words by reading byte chunks (one byte chunk is considered as a word).
-- The file size 
+- The file size.
 
 ### Distance functions
 
 As said, for two different values of the same attributes, it should be possible to compute the distance between them. First of all, all distance functions give values included between 0 and 1. Several distance functions are imaginable, but here are the one chosen:
-- The name distance are computed using Levenstein distance
+- The name distance are computed using Levenstein distance.
 - The extension distance is a binary distance: 0 for the same extension, and 1 otherwise (define fuzzy distance is not pertinent for extensions)
 - The hash distance are computed using Hamming distance. 
-- The size distance is computed using the ratio between the smallest and the biggest size
+- The size distance is computed using the ratio between the smallest and the biggest size.
 
 Then, the different distance functions are passed to a global distance calculator, that multiply each of them by a given weight.
 

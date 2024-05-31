@@ -64,9 +64,10 @@ apks in the same cluster cannot have distance superior to this cluster.
 By default, the program uses the apks in the `/all_apks` folder. There are ten of them. You can easily add or remove some. The program takes between 5 and 10 minutes to compute distances between all the apks and cluster them.  
 However, you can precise another apk folder in the command line by doing so:  
 `java -jar target/PJI-1.jar $apk_name$ $options$`  
-For example, a folder named `/apks` is also available at the root of the project, and it contains only 3 apks. Hence, it would produce faster results.
+For example, a folder named `/apks` is also available at the root of the project, and it contains only 4 apks. Hence, it would produce faster results.  
+The folders are composed of apks that lands in same or different areas. Similarly, some apks come from the same apps, but from different versions (these one should have low distance between them.)
 
-### Test
+#### Test
 
 To run the unit and end-to-end tests, run: `mvn test`
 

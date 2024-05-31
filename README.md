@@ -66,6 +66,10 @@ However, you can precise another apk folder in the command line by doing so:
 `java -jar target/PJI-1.jar $apk_name$ $options$`  
 For example, a folder named `/apks` is also available at the root of the project, and it contains only 3 apks. Hence, it would produce faster results.
 
+### Test
+
+To run the unit and end-to-end tests, run: `mvn test`
+
 ## Details 
 
 Here is a scheme representing the general process of the algorithm that computes the matching:

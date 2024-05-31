@@ -61,7 +61,7 @@ To run the project, run: `java -jar target/PJI-1.jar` with some available option
 apks in the same cluster cannot have distance superior to this cluster.
 - `-already` that skips the distance computation part. It deserializes the `algorithmResults` class that stores the distance.
 
-By default, the program uses the apks in the `/all_apks` folder. There are ten of them. You can easily add or remove some. The program takes between 5 and 10 minutes to compute distances between all the apks and cluster them.  
+By default, the program uses the apks in the `/all_apks` folder. There are ten of them. You can easily add or remove some. The program execution to compute distances between all the apks and cluster them lasts between 5 and 10 minutes.  
 However, you can precise another apk folder in the command line by doing so:  
 `java -jar target/PJI-1.jar $apk_name$ $options$`  
 For example, a folder named `/apks` is also available at the root of the project, and it contains only 4 apks. Hence, it would produce faster results.  
@@ -87,9 +87,7 @@ Four attributes are set for each file:
 - The name without the extension and the parent folders.
 - The extension
 - The hash: calculated using a [simhash](https://en.wikipedia.org/wiki/SimHash) approach. However in an apk, the files are not classical text files. Hence, we simulate words by reading byte chunks (one byte chunk is considered as a word).
-- The file size
-
-The first three are used to compute the similarities, and the last one is used later on (we may also want to implement it for distance computation in later work).
+- The file size 
 
 ### Distance functions
 
@@ -97,6 +95,7 @@ As said, for two different values of the same attributes, it should be possible 
 - The name distance are computed using Levenstein distance
 - The extension distance is a binary distance: 0 for the same extension, and 1 otherwise (define fuzzy distance is not pertinent for extensions)
 - The hash distance are computed using Hamming distance. 
+- The size distance is computed using the ratio between the smallest and the biggest size
 
 Then, the different distance functions are passed to a global distance calculator, that multiply each of them by a given weight.
 

@@ -20,6 +20,7 @@ public class SimilarityScoresComputer {
     private static final int EXTENSION_DISTANCE_THRESHOLD = 0;
     private static final int NAME_DISTANCE_THRESHOLD = 2;
     private static final int HASH_DISTANCE_THRESHOLD = 6;
+    private static final double SIZE_DISTANCE_THRESHOLD = 0.25;
 
     private final Map<Node, HashMap<Node, Double>> similarityScores = new HashMap<>();
 
@@ -87,7 +88,7 @@ public class SimilarityScoresComputer {
         for(Node nodes : graph.getNodeGroup2()) {
             neighbors.put(nodes, 0.0);
         }
-        Set<BkTreeSearcher.Match<? extends Node>> matches = searcher.search(node, distanceComputer.computeDistanceForAttributes(EXTENSION_DISTANCE_THRESHOLD, NAME_DISTANCE_THRESHOLD, HASH_DISTANCE_THRESHOLD));
+        Set<BkTreeSearcher.Match<? extends Node>> matches = searcher.search(node, distanceComputer.computeDistanceForAttributes(EXTENSION_DISTANCE_THRESHOLD, NAME_DISTANCE_THRESHOLD, HASH_DISTANCE_THRESHOLD, SIZE_DISTANCE_THRESHOLD));
         for (BkTreeSearcher.Match<? extends Node> match : matches) {
             double similarity = match.getDistance() != 0 ? (double) 1 / match.getDistance() : 1.0;
             neighbors.put(match.getMatch(), similarity);

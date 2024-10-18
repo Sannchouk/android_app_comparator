@@ -1,2 +1,5 @@
 **/*apks*/** linguist-vendored
 **/*apks*/** linguist-generated
+
+*.js linguist-vendored
+*.min.js linguist-vendored

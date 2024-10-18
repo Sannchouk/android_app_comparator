@@ -1,8 +1,0 @@
-syntax = "proto3";
-import "parkingpins/metadata.proto";
-option java_package = "com.lime.rider.proto.model.parkingpins";
-option java_multiple_files = true;
-
-message ParkingPinsResponse {
-  ParkingPinsMetaData data = 1;
-}
